@@ -1,5 +1,41 @@
 <!doctype html>
-<html lang="fr">
+const btn = document.getElementById('langToggle');
+
+function setLang(lang){
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-fr]').forEach(el => {
+        el.textContent = el.dataset[lang];
+    });
+
+    btn.textContent = lang === 'fr' ? 'EN' : 'FR';
+
+    localStorage.setItem('ixera-language', lang);
+}
+
+const savedLanguage = localStorage.getItem('ixera-language');
+
+if(savedLanguage){
+    setLang(savedLanguage);
+}else{
+    const browserLanguage = navigator.language || navigator.userLanguage;
+
+    if(browserLanguage.startsWith('fr')){
+        setLang('fr');
+    }else{
+        setLang('en');
+    }
+}
+
+btn.addEventListener('click', () => {
+
+    const currentLang = document.documentElement.lang === 'fr'
+        ? 'en'
+        : 'fr';
+
+    setLang(currentLang);
+
+});
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
