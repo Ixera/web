@@ -24,7 +24,7 @@ a{color:inherit;text-decoration:none}
 .principle p{
   max-width:900px;
   margin:0 auto;
-  font-size:clamp(28px,3vw,48px);
+  font-size:clamp(24px,2.8vw,42px);
   line-height:1.12;
   letter-spacing:-0.03em;
   font-weight:800;
