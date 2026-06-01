@@ -134,3 +134,22 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:30px;pa
   font-size:clamp(20px,1.6vw,28px);
   line-height:1.35;
 }
+.value-line{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:28px;
+  max-width:780px;
+}
+
+.value-line span{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid var(--line);
+  background:#fffaf6;
+  border-radius:999px;
+  padding:10px 14px;
+  font-size:14px;
+  font-weight:800;
+  color:var(--ink);
+}
