@@ -192,3 +192,10 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:30px;pa
   line-height:1.45;
   color:var(--muted);
 }
+.service-highlight{
+  margin:32px 0;
+  padding:24px 28px;
+  background:#fffaf6;
+  border-left:4px solid var(--red);
+  border-radius:12px;
+}
