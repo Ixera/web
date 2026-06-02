@@ -19,10 +19,29 @@ function setLang(lang) {
     metaDescription.setAttribute(
       "content",
       lang === "fr"
-        ? "Ixera aide les propriétaires, dirigeants et conseils à relier la stratégie, le leadership et la capacité d'exécution."
-        : "Ixera helps owners, executives and boards connect strategy, leadership and execution capability."
+? "Ixera aide les organisations à bâtir les bonnes équipes de direction en reliant la stratégie, le management et le marché des talents."
+: "Ixera helps organizations build the right leadership teams by connecting strategy, management and the executive talent market."
     );
   }
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+if (ogTitle) {
+  ogTitle.setAttribute(
+    "content",
+    lang === "fr"
+      ? "Ixera | Stratégie, leadership et relève"
+      : "Ixera | Strategy, leadership and succession"
+  );
+}
+
+const ogDescription = document.querySelector('meta[property="og:description"]');
+if (ogDescription) {
+  ogDescription.setAttribute(
+    "content",
+    lang === "fr"
+      ? "Bâtir les bonnes équipes de direction avant que l’urgence ne dicte les choix."
+      : "Building the right leadership teams before urgency drives the decision."
+  );
+}
 
   localStorage.setItem("ixera-language", lang);
 }
