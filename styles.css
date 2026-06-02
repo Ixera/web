@@ -199,3 +199,45 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:30px;pa
   border-left:4px solid var(--red);
   border-radius:12px;
 }
+.audience-strip{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#fffaf6;
+}
+
+.audience-inner{
+  max-width:1400px;
+  margin:0 auto;
+  padding:18px 24px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.audience-inner span{
+  color:var(--muted);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+
+.audience-inner span:not(:last-child)::after{
+  content:"•";
+  margin-left:18px;
+  color:var(--red);
+}
+
+@media(max-width:640px){
+  .audience-inner{
+    gap:10px;
+  }
+
+  .audience-inner span{
+    font-size:13px;
+  }
+
+  .audience-inner span:not(:last-child)::after{
+    margin-left:10px;
+  }
+}
