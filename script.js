@@ -11,8 +11,8 @@ function setLang(lang) {
 
   document.title =
     lang === "fr"
-      ? "Ixera | Continuité managériale"
-      : "Ixera | Management continuity";
+? "Ixera | Stratégie, leadership et relève"
+: "Ixera | Strategy, leadership and succession";
 
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
