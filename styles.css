@@ -139,3 +139,6 @@ footer p{margin:0;text-align:right}
   footer{align-items:flex-start;flex-direction:column}
   footer p{text-align:left}
 }
+.value-stat-copy-secondary{
+  margin-top:12px;
+}
