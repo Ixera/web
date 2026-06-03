@@ -174,14 +174,23 @@ a{color:inherit;text-decoration:none}
   background:var(--paper);
 }
 .contact .eyebrow{margin-bottom:22px}
+
 .contact-intro{
   max-width:700px;
   margin:0 0 40px;
   text-align:left;
+  font-size:clamp(22px,2vw,34px);
+  line-height:1.25;
+  letter-spacing:-0.03em;
+  font-weight:700;
+}
 
-  .contact-actions{
+.contact-actions{
   display:flex;
   justify-content:flex-start;
+  flex-wrap:wrap;
+  gap:14px;
+}
 
 .linkedin-icon{width:52px;height:52px;border:1px solid #1a1a1a;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1a1a1a;text-decoration:none;transition:all .2s ease}
 .linkedin-icon svg{width:22px;height:22px}
@@ -265,4 +274,5 @@ footer p{margin:0;text-align:right}
  .stat-bottom,
 .value-stat-bottom{
   font-size:18px;
+}
 }
