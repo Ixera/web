@@ -170,7 +170,7 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:30px;pa
   border-bottom:1px solid var(--line);
 }
 
-.stat-number{
+.value-stat-number{
   font-size:clamp(84px,13vw,190px);
   font-weight:900;
   line-height:.85;
@@ -178,11 +178,12 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:30px;pa
   letter-spacing:-0.08em;
 }
 
-.stat-label{
+.value-stat-label{
   margin-top:14px;
   font-size:clamp(18px,1.6vw,26px);
   font-weight:850;
   letter-spacing:-0.02em;
+  color:var(--red);
 }
 
 .stat-copy{
