@@ -334,7 +334,7 @@ footer p{margin:0;text-align:right}
   .hero-card{min-height:350px}
   .card-line{margin-top:50px}
 
-  .hero-card > p{font-size:40px}
+.hero-card > p{font-size:40px}
 
 .hero-panel p{
   font-size:16px;
@@ -343,7 +343,10 @@ footer p{margin:0;text-align:right}
   font-weight:500;
 }
 
+}
+
 @media(max-width:800px){
+  
   .results-list{grid-template-columns:1fr}
 }
 @media(max-width:640px){
