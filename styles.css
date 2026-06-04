@@ -495,3 +495,15 @@ footer p{margin:0;text-align:right}
     line-height:1.18;
   }
 }
+.hero-plus{
+  font-family:inherit;
+}
+
+.hero-toggle[aria-expanded="true"] .hero-plus{
+  font-size:0;
+}
+
+.hero-toggle[aria-expanded="true"] .hero-plus::before{
+  content:"−";
+  font-size:30px;
+}
