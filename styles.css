@@ -333,13 +333,28 @@ footer p{margin:0;text-align:right}
   .about-photo-wrap{justify-self:start}
   .hero-card{min-height:350px}
   .card-line{margin-top:50px}
-  .hero-card p{font-size:40px}
+
+  .hero-card > p{font-size:40px}
+
+.hero-panel p{
+  font-size:16px;
+  line-height:1.45;
+  letter-spacing:0;
+  font-weight:500;
 }
 
 @media(max-width:800px){
   .results-list{grid-template-columns:1fr}
 }
 @media(max-width:640px){
+  .hero-panel p{
+  font-size:15px;
+  line-height:1.45;
+  letter-spacing:0;
+  font-weight:500;
+  color:rgba(255,255,255,.72);
+  max-width:100%;
+}
   .site-header{height:70px;padding-inline:18px}
   .brand img{width:42px;height:42px}
   .hero{padding:56px 20px;gap:34px}
