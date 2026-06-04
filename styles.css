@@ -216,7 +216,6 @@ footer p{margin:0;text-align:right}
 @media(max-width:800px){
   .results-list{grid-template-columns:1fr}
 }
-
 @media(max-width:640px){
   .site-header{height:70px;padding-inline:18px}
   .brand img{width:42px;height:42px}
@@ -244,14 +243,14 @@ footer p{margin:0;text-align:right}
   .value-stat-source{
     margin-bottom:26px;
     font-size:10px;
-    letter-spacing:.26em;
+    letter-spacing:.08em;
   }
 
-.stat-top,
-.value-stat-top{
-  font-size:18px;
-  margin-bottom:18px;
-}
+  .stat-top,
+  .value-stat-top{
+    font-size:18px;
+    margin-bottom:18px;
+  }
 
   .stat-core,
   .value-stat-highlight{
@@ -271,10 +270,13 @@ footer p{margin:0;text-align:right}
     font-size:30px;
   }
 
- .stat-bottom,
-.value-stat-bottom{
-  font-size:18px;
+  .stat-bottom,
+  .value-stat-bottom{
+    font-size:18px;
+  }
 }
+
+/* SYNTHÈSE ÉCOSYSTÈME */
 .ecosystem-summary{
   padding:clamp(58px,7vw,94px) clamp(24px,5vw,94px);
   background:#fff;
@@ -305,4 +307,10 @@ footer p{margin:0;text-align:right}
   font-weight:850;
   color:var(--ink);
 }
+
+@media(max-width:640px){
+  .ecosystem-main{
+    font-size:28px;
+    line-height:1.18;
   }
+}
