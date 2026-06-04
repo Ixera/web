@@ -262,6 +262,12 @@ footer p{margin:0;text-align:right}
   .approach-system{grid-template-columns:1fr}
   .approach-step{border-right:0!important;border-bottom:1px solid var(--line);min-height:210px}
   .timeline li{grid-template-columns:1fr;gap:12px}
+
+  .timeline li:not(:last-child) span::after,
+.timeline li:not(:last-child) span::before{
+  display:none;
+}
+  
   .results-list p{font-size:23px}
   .about{gap:34px}
   .about-photo{width:190px;height:235px}
