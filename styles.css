@@ -75,17 +75,30 @@ a{color:inherit;text-decoration:none}
   font-weight:900;
 }
 
-.hero-toggle::after{
-  content:"+";
+.hero-plus{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:44px;
+  min-height:44px;
+  margin-left:18px;
   font-size:28px;
   line-height:1;
   font-weight:300;
   color:rgba(255,255,255,.72);
-  transition:transform .18s ease;
+  pointer-events:none;
 }
 
-.hero-toggle[aria-expanded="true"]::after{
+.hero-toggle[aria-expanded="true"] .hero-plus{
+  font-size:30px;
+}
+
+.hero-toggle[aria-expanded="true"] .hero-plus::before{
   content:"−";
+}
+
+.hero-toggle[aria-expanded="true"] .hero-plus{
+  color:rgba(255,255,255,.82);
 }
 
 .hero-toggle:hover span{
