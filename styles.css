@@ -134,8 +134,20 @@ a{color:inherit;text-decoration:none}
 .red-step span,.red-step p{color:#fff}
 
 .method{background:var(--paper)}
-.method-kicker{margin-bottom:34px}
-.timeline{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+
+.method-kicker{
+  max-width:980px;
+  margin:0 auto 34px;
+}
+
+.timeline{
+  list-style:none;
+  padding:0;
+  margin:0 auto;
+  border-top:1px solid var(--line);
+  max-width:980px;
+}
+
 .timeline li{display:grid;grid-template-columns:78px 1fr;gap:28px;align-items:start;padding:28px 0;border-bottom:1px solid var(--line)}
 .timeline span{
   width:46px;
