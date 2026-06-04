@@ -95,15 +95,14 @@ a{color:inherit;text-decoration:none}
 }
 
 .hero-toggle[aria-expanded="true"] .hero-plus{
-  font-size:30px;
+  font-size:0;
+  color:rgba(255,255,255,.82);
 }
 
 .hero-toggle[aria-expanded="true"] .hero-plus::before{
   content:"−";
-}
-
-.hero-toggle[aria-expanded="true"] .hero-plus{
-  color:rgba(255,255,255,.82);
+  font-size:34px;
+  line-height:1;
 }
 
 .hero-toggle:hover span{
