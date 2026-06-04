@@ -263,28 +263,23 @@ footer p{margin:0;text-align:right}
   .approach-step{border-right:0!important;border-bottom:1px solid var(--line);min-height:210px}
   
 .timeline li{
-  grid-template-columns:58px 1fr;
-  gap:18px;
+  grid-template-columns:64px 1fr;
+  gap:16px;
   align-items:start;
-  padding:26px 0;
+  padding:28px 0;
 }
 
 .timeline span{
-  width:42px;
-  height:42px;
-  font-size:16px;
+  width:46px;
+  height:46px;
+  font-size:17px;
 }
 
-.timeline li:not(:last-child) span::after{
-  display:block;
-  top:52px;
-  height:54px;
-}
-
+.timeline li:not(:last-child) span::after,
 .timeline li:not(:last-child) span::before{
-  display:block;
-  top:100px;
+  display:none;
 }
+
   
   .results-list p{font-size:23px}
   .about{gap:34px}
