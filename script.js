@@ -61,3 +61,23 @@ btn.addEventListener("click", () => {
   const currentLang = document.documentElement.lang === "fr" ? "en" : "fr";
   setLang(currentLang);
 });
+document.querySelectorAll(".hero-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const panelId = toggle.getAttribute("aria-controls");
+    const panel = document.getElementById(panelId);
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    document.querySelectorAll(".hero-toggle").forEach((item) => {
+      item.setAttribute("aria-expanded", "false");
+    });
+
+    document.querySelectorAll(".hero-panel").forEach((item) => {
+      item.hidden = true;
+    });
+
+    if (!isOpen) {
+      toggle.setAttribute("aria-expanded", "true");
+      panel.hidden = false;
+    }
+  });
+});
