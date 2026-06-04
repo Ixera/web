@@ -396,12 +396,20 @@ footer p{margin:0;text-align:right}
     padding:64px 20px;
   }
 
-  .stat-source,
-  .value-stat-source{
-    margin-bottom:26px;
-    font-size:10px;
-    letter-spacing:.08em;
-  }
+.stat-source,
+.value-stat-source{
+  margin-bottom:26px;
+  font-size:15px;
+  letter-spacing:.06em;
+  font-weight:700;
+}
+
+  .stat-source::after,
+.value-stat-source::after{
+  width:64px;
+  height:3px;
+  margin:14px auto 0;
+}
 
   .stat-top,
   .value-stat-top{
