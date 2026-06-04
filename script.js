@@ -75,9 +75,9 @@ document.querySelectorAll(".hero-toggle").forEach((toggle) => {
       item.hidden = true;
     });
 
-    if (!isOpen) {
-      toggle.setAttribute("aria-expanded", "true");
-      panel.hidden = false;
-    }
+   if (!isOpen) {
+  toggle.setAttribute("aria-expanded", "true");
+  panel.hidden = false;
+}
   });
 });
