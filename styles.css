@@ -414,7 +414,6 @@ footer p{margin:0;text-align:right}
 
 @media(max-width:800px){
   
-  .results-list{grid-template-columns:1fr}
 }
 @media(max-width:640px){
   .hero-panel p{
