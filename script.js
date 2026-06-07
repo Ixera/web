@@ -81,3 +81,13 @@ document.querySelectorAll(".hero-toggle").forEach((toggle) => {
 }
   });
 });
+document.querySelectorAll(".approach-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const item = toggle.closest(".approach-step");
+    const detail = item.querySelector(".approach-detail");
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    detail.hidden = isOpen;
+  });
+});
