@@ -706,8 +706,8 @@ footer p{margin:0;text-align:right}
 .logo-set{
   display:flex;
   align-items:center;
-  gap:18px;
-  padding-right:18px;
+  gap:14px;
+  padding-right:14px;
 }
 
 .logo-chip{
