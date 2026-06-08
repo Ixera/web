@@ -752,8 +752,9 @@ footer p{margin:0;text-align:right}
 }
 
 .logo-mcgill{
-  max-width:150px;
-  max-height:64px;
+  max-width:210px;
+  max-height:92px;
+  transform:scale(1.35);
 }
 
 .logo-chip:hover img{
