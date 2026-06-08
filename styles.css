@@ -649,3 +649,135 @@ footer p{margin:0;text-align:right}
 .red-step .approach-detail p{
   color:#fff;
 }
+/* FORMÉ PAR */
+.formed-by{
+  padding:36px clamp(24px,5vw,94px);
+  background:#fffaf6;
+  border-top:1px solid var(--line);
+  overflow:hidden;
+}
+
+.formed-by-label{
+  margin:0 0 22px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+.logo-ticker{
+  position:relative;
+  overflow:hidden;
+}
+
+.logo-ticker::before,
+.logo-ticker::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:90px;
+  z-index:2;
+  pointer-events:none;
+}
+
+.logo-ticker::before{
+  left:0;
+  background:linear-gradient(to right,#fffaf6,rgba(255,250,246,0));
+}
+
+.logo-ticker::after{
+  right:0;
+  background:linear-gradient(to left,#fffaf6,rgba(255,250,246,0));
+}
+
+.logo-track{
+  display:flex;
+  width:max-content;
+  animation:logoTicker 34s linear infinite;
+}
+
+.logo-ticker:hover .logo-track{
+  animation-play-state:paused;
+}
+
+.logo-set{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding-right:18px;
+}
+
+.logo-chip{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:156px;
+  height:84px;
+  padding:14px 20px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  box-shadow:0 8px 24px rgba(17,17,15,.05);
+}
+
+.logo-chip img{
+  display:block;
+  max-width:100%;
+  max-height:46px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  transition:transform .18s ease, opacity .18s ease;
+}
+
+.logo-chip:hover img{
+  transform:scale(1.03);
+}
+
+@keyframes logoTicker{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
+}
+
+@media(max-width:640px){
+  .formed-by{
+    padding:30px 20px;
+  }
+
+  .formed-by-label{
+    margin-bottom:18px;
+    font-size:11px;
+  }
+
+  .logo-ticker::before,
+  .logo-ticker::after{
+    width:44px;
+  }
+
+  .logo-set{
+    gap:14px;
+    padding-right:14px;
+  }
+
+  .logo-chip{
+    min-width:128px;
+    height:72px;
+    padding:12px 16px;
+    border-radius:16px;
+  }
+
+  .logo-chip img{
+    max-height:38px;
+  }
+
+  .logo-track{
+    animation-duration:28s;
+  }
+}
