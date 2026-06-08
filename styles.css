@@ -816,10 +816,15 @@ footer p{margin:0;text-align:right}
   max-height:62px;
 }
 
-.logo-telus,
-.logo-mcgill{
+.logo-telus{
   max-width:120px;
   max-height:50px;
+}
+
+.logo-mcgill{
+  max-width:170px;
+  max-height:74px;
+  transform:scale(1.28);
 }
 
   .logo-track{
