@@ -1066,17 +1066,7 @@ button:focus-visible,
   }
 
   .nav-links{
-    display:flex;
-    justify-content:flex-end;
-    gap:0;
-  }
-
-  .nav-links a{
     display:none;
-  }
-
-  .nav-distinction{
-    display:inline;
   }
 
   .hero,
