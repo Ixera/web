@@ -1,5 +1,16 @@
 const btn = document.getElementById("langToggle");
 
+function getInitialLang() {
+  const savedLanguage = localStorage.getItem("ixera-language");
+  const browserLanguage = navigator.language || navigator.userLanguage || "fr";
+
+  if (savedLanguage) {
+    return savedLanguage;
+  }
+
+  return browserLanguage.toLowerCase().startsWith("fr") ? "fr" : "en";
+}
+
 function setLang(lang) {
   document.documentElement.lang = lang;
 
