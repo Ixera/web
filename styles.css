@@ -1140,10 +1140,9 @@ footer small{
     border-bottom:1px solid var(--line);
   }
 
-  .audience-grid,
-  .results-grid{
-    grid-template-columns:1fr;
-  }
+.audience-grid{
+  grid-template-columns:1fr;
+}
 
   .audience-content,
   .results-content{
@@ -1158,7 +1157,11 @@ footer small{
     justify-self:start;
   }
 }
-
+@media(max-width:760px){
+  .results-grid{
+    grid-template-columns:1fr;
+  }
+}
 /* MOBILE */
 @media(max-width:640px){
   .site-header{
