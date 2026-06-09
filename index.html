@@ -62,6 +62,12 @@
       <img src="assets/ixera-logo.png" alt="ixera" />
     </a>
 
+    <button type="button" class="brand-distinction" id="distinctionOpen"
+      data-fr="Notre différence"
+      data-en="Our difference">
+      Notre différence
+    </button>
+
 <nav class="nav-links" aria-label="Navigation principale">
   <a href="#service" data-fr="Service" data-en="Service">Service</a>
   <a href="#approche" data-fr="Approche" data-en="Approach">Approche</a>
@@ -142,7 +148,8 @@
       </div>
     </div>
 
-<button class="hero-toggle" type="button" aria-expanded="false" aria-controls="hero-panel-2">
+    <div class="hero-accordion-item">
+      <button class="hero-toggle" type="button" aria-expanded="false" aria-controls="hero-panel-2">
         <span data-fr="Aligner" data-en="Align">Aligner</span>
         <span class="hero-plus" aria-hidden="true">+</span>
       </button>
@@ -153,7 +160,6 @@
   data-en="Connect your key positions, required capabilities and the executive market.">
   Relier vos postes clés, les capacités recherchées et le marché des dirigeants.
 </p>
-      </div>
       </div>
     </div>
 
@@ -224,7 +230,7 @@
       <p class="eyebrow" data-fr="Service" data-en="Service">Service</p>
     </div>
 
-<div class="section-copy">
+    <div class="section-copy">
 
       <p class="large"
          data-fr="Le bon leadership, relié à votre stratégie."
@@ -233,9 +239,9 @@
       </p>
 
       <p
-        data-fr="Ixera est une firme de conseil stratégique en leadership pour les conseils, les propriétaires dirigeants et les investisseurs. Le recrutement de dirigeants en fait partie, relié à votre stratégie plutôt que traité comme une simple transaction."
-        data-en="Ixera is a strategic leadership advisory firm for boards, owner-operators and investors. Executive search is part of it, connected to your strategy rather than treated as a mere transaction.">
-        Ixera est une firme de conseil stratégique en leadership pour les conseils, les propriétaires dirigeants et les investisseurs. Le recrutement de dirigeants en fait partie, relié à votre stratégie plutôt que traité comme une simple transaction.
+        data-fr="Ixera est une firme de conseil stratégique en leadership pour les administrateurs, les propriétaires dirigeants et les investisseurs. Le recrutement de dirigeants en fait partie, relié à votre stratégie plutôt que traité comme une simple transaction."
+        data-en="Ixera is a strategic leadership advisory firm for board members, owner-operators and investors. Executive search is part of it, connected to your strategy rather than treated as a mere transaction.">
+        Ixera est une firme de conseil stratégique en leadership pour les administrateurs, les propriétaires dirigeants et les investisseurs. Le recrutement de dirigeants en fait partie, relié à votre stratégie plutôt que traité comme une simple transaction.
       </p>
 
       <div class="service-highlight">
@@ -255,6 +261,65 @@
     </div>
   </div>
 </section>
+
+<div class="distinction-overlay" id="distinctionOverlay" hidden>
+  <div class="distinction-modal" role="dialog" aria-modal="true" aria-labelledby="distinctionTitle">
+    <button type="button" class="distinction-close" id="distinctionClose" aria-label="Fermer">&times;</button>
+
+    <p class="eyebrow" data-fr="Notre différence" data-en="Our difference">Notre différence</p>
+    <h2 id="distinctionTitle"
+      data-fr="Ce qui nous distingue"
+      data-en="What sets us apart">
+      Ce qui nous distingue
+    </h2>
+
+    <div class="distinction-grid">
+      <div class="dg-head dg-dim"></div>
+      <div class="dg-head dg-them" data-fr="Recherche classique" data-en="Traditional search">Recherche classique</div>
+      <div class="dg-head dg-us" data-fr="Ixera" data-en="Ixera">Ixera</div>
+
+      <div class="dg-dim" data-fr="Approche" data-en="Approach">Approche</div>
+      <div class="dg-them">
+        <span class="dg-lead" data-fr="Réactive" data-en="Reactive">Réactive</span>
+        <span class="dg-sub" data-fr="On cherche un profil quand le poste est vacant." data-en="A search begins once the role is vacant.">On cherche un profil quand le poste est vacant.</span>
+      </div>
+      <div class="dg-us">
+        <span class="dg-lead" data-fr="Proactive et stratégique" data-en="Proactive and strategic">Proactive et stratégique</span>
+        <span class="dg-sub" data-fr="On aligne le leadership sur le modèle d’affaires futur." data-en="Leadership is aligned with the future business model.">On aligne le leadership sur le modèle d’affaires futur.</span>
+      </div>
+
+      <div class="dg-dim" data-fr="Relation" data-en="Relationship">Relation</div>
+      <div class="dg-them">
+        <span class="dg-lead" data-fr="Ponctuelle" data-en="One-off">Ponctuelle</span>
+        <span class="dg-sub" data-fr="Liée à un mandat, puis elle s’arrête." data-en="Tied to one mandate, then it ends.">Liée à un mandat, puis elle s’arrête.</span>
+      </div>
+      <div class="dg-us">
+        <span class="dg-lead" data-fr="Continue" data-en="Ongoing">Continue</span>
+        <span class="dg-sub" data-fr="Diagnostic, cartographie et rencontres dans le temps." data-en="Diagnostic, mapping and meetings over time.">Diagnostic, cartographie et rencontres dans le temps.</span>
+      </div>
+
+      <div class="dg-dim" data-fr="Interlocuteur" data-en="Point of contact">Interlocuteur</div>
+      <div class="dg-them">
+        <span class="dg-lead" data-fr="Niveau fonctionnel" data-en="Functional level">Niveau fonctionnel</span>
+        <span class="dg-sub" data-fr="Centré sur les compétences et le fit du poste." data-en="Focused on skills and role fit.">Centré sur les compétences et le fit du poste.</span>
+      </div>
+      <div class="dg-us">
+        <span class="dg-lead" data-fr="Direction et conseil" data-en="Leadership and board">Direction et conseil</span>
+        <span class="dg-sub" data-fr="Le langage des décideurs : valeur, risque, gouvernance." data-en="The language of decision-makers: value, risk, governance.">Le langage des décideurs : valeur, risque, gouvernance.</span>
+      </div>
+
+      <div class="dg-dim" data-fr="Livrable" data-en="Deliverable">Livrable</div>
+      <div class="dg-them dg-last">
+        <span class="dg-lead" data-fr="Une liste de candidats" data-en="A list of candidates">Une liste de candidats</span>
+        <span class="dg-sub" data-fr="Et une garantie de remplacement." data-en="And a replacement guarantee.">Et une garantie de remplacement.</span>
+      </div>
+      <div class="dg-us dg-last">
+        <span class="dg-lead" data-fr="Une architecture de leadership" data-en="A leadership architecture">Une architecture de leadership</span>
+        <span class="dg-sub" data-fr="Postes critiques, vulnérabilités, plan de continuité." data-en="Critical roles, vulnerabilities, continuity plan.">Postes critiques, vulnérabilités, plan de continuité.</span>
+      </div>
+    </div>
+  </div>
+</div>
    
 <section id="approche" class="section approach-section" aria-label="Approche">
 

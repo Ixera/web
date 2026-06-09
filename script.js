@@ -120,3 +120,35 @@ if (audienceGate) {
     }
   });
 }
+
+const distinctionOpen = document.getElementById("distinctionOpen");
+const distinctionClose = document.getElementById("distinctionClose");
+const distinctionOverlay = document.getElementById("distinctionOverlay");
+
+if (distinctionOpen && distinctionOverlay) {
+  distinctionOpen.addEventListener("click", () => {
+    distinctionOverlay.hidden = false;
+    document.body.style.overflow = "hidden";
+  });
+
+  function closeDistinction() {
+    distinctionOverlay.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  if (distinctionClose) {
+    distinctionClose.addEventListener("click", closeDistinction);
+  }
+
+  distinctionOverlay.addEventListener("click", (e) => {
+    if (e.target === distinctionOverlay) {
+      closeDistinction();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !distinctionOverlay.hidden) {
+      closeDistinction();
+    }
+  });
+}
