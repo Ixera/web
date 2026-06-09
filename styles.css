@@ -863,6 +863,7 @@ footer small{
 }
 
 .audience-gate-card{
+  position:relative;
   width:min(100%,620px);
   padding:44px;
   border-radius:30px;
@@ -938,6 +939,21 @@ footer small{
     padding:34px 22px;
     border-radius:26px;
   }
+  .audience-lang-toggle{
+  position:absolute;
+  top:22px;
+  right:22px;
+  border:1px solid var(--soft);
+  background:#fff;
+  color:var(--ink);
+  border-radius:999px;
+  padding:9px 13px;
+  font:inherit;
+  font-size:13px;
+  font-weight:850;
+  line-height:1;
+  cursor:pointer;
+}
 
   .audience-gate-logo{
     width:44px;
@@ -953,5 +969,11 @@ footer small{
   .audience-choice{
     min-height:58px;
     font-size:15px;
+  }
+    .audience-lang-toggle{
+    top:18px;
+    right:18px;
+    padding:8px 12px;
+    font-size:12px;
   }
 }
