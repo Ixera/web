@@ -91,3 +91,13 @@ document.querySelectorAll(".approach-toggle").forEach((toggle) => {
     detail.hidden = isOpen;
   });
 });
+const audienceGate = document.getElementById("audienceGate");
+const audienceChoices = document.querySelectorAll(".audience-choice");
+
+if (audienceGate) {
+  audienceChoices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+      audienceGate.classList.add("is-hidden");
+    });
+  });
+}
