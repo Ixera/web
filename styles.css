@@ -375,9 +375,6 @@ footer small{
 
 }
 
-@media(max-width:800px){
-  
-}
 @media(max-width:640px){
   .hero-panel p{
   font-size:15px;
