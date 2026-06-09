@@ -135,12 +135,13 @@ a{
 }
 
 .hero-lead{
-  max-width:740px;
+  max-width:none;
   margin:0;
   color:#292620;
   font-size:clamp(23px,1.95vw,31px);
   line-height:1.22;
   letter-spacing:-.025em;
+  white-space:nowrap;
 }
 
 .value-line{
@@ -1160,6 +1161,7 @@ button:focus-visible,
 
   .hero-lead{
     font-size:21px;
+    white-space:normal;
   }
 
   .hero-panel p{
