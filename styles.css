@@ -1103,7 +1103,6 @@ footer small{
   .hero,
   .service-layout,
   .audience-layout,
-  .results-layout,
   .about{
     grid-template-columns:1fr;
   }
@@ -1158,8 +1157,20 @@ footer small{
   }
 }
 @media(max-width:760px){
+  .results-layout{
+    grid-template-columns:1fr;
+  }
+
   .results-grid{
     grid-template-columns:1fr;
+  }
+
+  .results-content{
+    max-width:none;
+  }
+
+  .result-item p{
+    max-width:none;
   }
 }
 /* MOBILE */
