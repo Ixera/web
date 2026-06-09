@@ -1062,11 +1062,21 @@ button:focus-visible,
 /* TABLETTE */
 @media(max-width:980px){
   .site-header{
-    grid-template-columns:auto auto 1fr auto;
+    grid-template-columns:auto 1fr auto;
   }
 
   .nav-links{
+    display:flex;
+    justify-content:flex-end;
+    gap:0;
+  }
+
+  .nav-links a{
     display:none;
+  }
+
+  .nav-distinction{
+    display:inline;
   }
 
   .hero,
@@ -1140,13 +1150,7 @@ button:focus-visible,
 @media(max-width:640px){
   .site-header{
     height:70px;
-    padding-inline:14px;
-    gap:8px;
-  }
-
-  .brand-distinction{
-    padding:8px 12px;
-    font-size:13px;
+    padding-inline:18px;
   }
 
   .brand img{
@@ -1360,29 +1364,20 @@ button:focus-visible,
 }
 
 /* BOUTON ET FENÊTRE DE DISTINCTION */
-.site-header{
-  grid-template-columns:auto auto 1fr auto;
-}
-
-.brand-distinction{
-  justify-self:start;
-  border:1px solid var(--soft);
-  background:#fffaf6;
-  border-radius:999px;
-  padding:9px 16px;
+.nav-distinction{
+  border:0;
+  background:transparent;
+  padding:0;
   font:inherit;
-  font-size:14px;
-  font-weight:800;
-  color:var(--ink);
+  font-size:15px;
+  font-weight:650;
+  color:var(--red);
   cursor:pointer;
-  white-space:nowrap;
-  transition:background .18s ease,color .18s ease,border-color .18s ease;
+  transition:color .18s ease;
 }
 
-.brand-distinction:hover{
-  background:var(--red);
-  border-color:var(--red);
-  color:#fff;
+.nav-distinction:hover{
+  color:var(--red-dark);
 }
 
 .distinction-overlay{
