@@ -24,7 +24,7 @@ function setLang(lang) {
   document.title =
     lang === "fr"
       ? "Ixera | Recherche de dirigeants et continuité managériale"
-      : "Ixera | Executive search and management continuity";
+      : "Ixera | Executive search and leadership continuity";
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
     metaDescription.setAttribute(
@@ -40,7 +40,7 @@ function setLang(lang) {
       "content",
       lang === "fr"
         ? "Ixera | Recherche de dirigeants et continuité managériale"
-        : "Ixera | Executive search and management continuity"
+        : "Ixera | Executive search and leadership continuity"
     );
   }
   const ogDescription = document.querySelector('meta[property="og:description"]');
