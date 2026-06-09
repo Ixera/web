@@ -57,16 +57,7 @@ if (ogDescription) {
   localStorage.setItem("ixera-language", lang);
 }
 
-const savedLanguage = localStorage.getItem("ixera-language");
-const browserLanguage = navigator.language || navigator.userLanguage || "fr";
-
-if (savedLanguage) {
-  setLang(savedLanguage);
-} else if (browserLanguage.toLowerCase().startsWith("fr")) {
-  setLang("fr");
-} else {
-  setLang("en");
-}
+setLang(getInitialLang());
 
 btn.addEventListener("click", () => {
   const currentLang = document.documentElement.lang === "fr" ? "en" : "fr";
