@@ -831,7 +831,7 @@ a{
 .logo-track{
   display:flex;
   width:max-content;
-  animation:logoTicker 34s linear infinite;
+  animation:logoTicker 22s linear infinite;
 }
 
 .logo-set{
@@ -904,10 +904,10 @@ a{
 
 @keyframes logoTicker{
   from{
-    transform:translateX(0);
+    transform:translateX(-50%);
   }
   to{
-    transform:translateX(-50%);
+    transform:translateX(0);
   }
 }
 
