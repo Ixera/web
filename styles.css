@@ -711,6 +711,7 @@ a{
   gap:clamp(40px,8vw,120px);
   align-items:center;
   background:#fff;
+  border-bottom:0;
 }
 
 .about-copy p:not(.eyebrow){
