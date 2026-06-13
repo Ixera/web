@@ -786,9 +786,9 @@ a{
 
 /* FORMÉ PAR */
 .formed-by{
-  padding:24px clamp(24px,5vw,94px);
-  background:#fffaf6;
-  border-top:1px solid var(--line);
+  padding:8px clamp(24px,5vw,94px) 48px;
+  background:#fff;
+  border-top:0;
   overflow:hidden;
 }
 
@@ -820,12 +820,12 @@ a{
 
 .logo-ticker::before{
   left:0;
-  background:linear-gradient(to right,#fffaf6,rgba(255,250,246,0));
+  background:linear-gradient(to right,#fff,rgba(255,255,255,0));
 }
 
 .logo-ticker::after{
   right:0;
-  background:linear-gradient(to left,#fffaf6,rgba(255,250,246,0));
+  background:linear-gradient(to left,#fff,rgba(255,255,255,0));
 }
 
 .logo-track{
@@ -1265,7 +1265,7 @@ button:focus-visible,
   }
 
   .formed-by{
-    padding:24px 20px;
+    padding:8px 20px 40px;
   }
 
   .formed-by-label{
