@@ -23,15 +23,15 @@ function setLang(lang) {
   }
   document.title =
     lang === "fr"
-      ? "Ixera | Recherche de dirigeants et continuité managériale"
-      : "Ixera | Executive search and leadership continuity";
+      ? "Ixera | Recherche de dirigeants à Montréal et continuité managériale"
+      : "Ixera | Executive search in Montréal and management continuity";
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
     metaDescription.setAttribute(
       "content",
       lang === "fr"
-        ? "Ixera est une firme de recherche de dirigeants. Nous aidons les propriétaires, dirigeants et conseils à recruter les bons leaders et à réduire le risque de leadership."
-        : "Ixera is an executive search firm. We help owners, executives and boards recruit the right leaders and reduce leadership risk."
+        ? "Conseils Ixera inc. est une firme de recherche de dirigeants basée à Montréal. Nous aidons les PDG, les conseils et les propriétaires à recruter les bons hauts dirigeants et à assurer la continuité managériale."
+        : "Conseils Ixera inc. is a Montréal-based executive search firm. We help CEOs, boards and owners recruit the right senior executives and ensure management continuity."
     );
   }
   const ogTitle = document.querySelector('meta[property="og:title"]');
@@ -39,8 +39,8 @@ function setLang(lang) {
     ogTitle.setAttribute(
       "content",
       lang === "fr"
-        ? "Ixera | Recherche de dirigeants et continuité managériale"
-        : "Ixera | Executive search and leadership continuity"
+        ? "Ixera | Recherche de dirigeants à Montréal et continuité managériale"
+        : "Ixera | Executive search in Montréal and management continuity"
     );
   }
   const ogDescription = document.querySelector('meta[property="og:description"]');
