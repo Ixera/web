@@ -831,7 +831,7 @@ a{
 .logo-track{
   display:flex;
   width:max-content;
-  animation:logoTicker 22s linear infinite;
+  animation:logoTicker 16s linear infinite;
 }
 
 .logo-set{
@@ -845,13 +845,13 @@ a{
   display:flex;
   align-items:center;
   justify-content:center;
-  min-width:134px;
-  height:64px;
-  padding:10px 16px;
+  min-width:67px;
+  height:32px;
+  padding:5px 8px;
   background:#fff;
   border:1px solid var(--line);
-  border-radius:15px;
-  box-shadow:0 8px 24px rgba(17,17,15,.05);
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(17,17,15,.05);
 }
 
 .logo-chip img{
@@ -863,28 +863,28 @@ a{
 }
 
 .logo-square{
-  max-width:54px;
-  max-height:54px;
+  max-width:27px;
+  max-height:27px;
 }
 
 .logo-wordmark{
-  max-width:118px;
-  max-height:44px;
+  max-width:59px;
+  max-height:22px;
 }
 
 .logo-emblem{
-  max-width:58px;
-  max-height:58px;
+  max-width:29px;
+  max-height:29px;
 }
 
 .logo-telus{
-  max-width:126px;
-  max-height:46px;
+  max-width:63px;
+  max-height:23px;
 }
 
 .logo-mcgill{
-  max-width:190px;
-  max-height:76px;
+  max-width:95px;
+  max-height:38px;
   transform:scale(1.28);
 }
 
