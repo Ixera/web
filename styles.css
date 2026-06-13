@@ -885,7 +885,6 @@ a{
 .logo-mcgill{
   max-width:95px;
   max-height:38px;
-  transform:scale(1.28);
 }
 
 @media(hover:hover) and (pointer:fine){
@@ -1296,7 +1295,6 @@ button:focus-visible,
   .logo-mcgill{
     max-width:75px;
     max-height:31px;
-    transform:scale(1.22);
   }
 
   .audience-gate{
