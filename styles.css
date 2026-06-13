@@ -904,7 +904,7 @@ a{
 
 @keyframes logoTicker{
   from{
-    transform:translateX(-50%);
+    transform:translateX(-66.666%);
   }
   to{
     transform:translateX(0);
