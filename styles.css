@@ -895,6 +895,7 @@ a{
   .logo-chip:hover img{
     transform:scale(1.03);
   }
+}
 
 @keyframes logoTicker{
   from{ transform:translateX(0); }
