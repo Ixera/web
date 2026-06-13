@@ -831,7 +831,7 @@ a{
 .logo-track{
   display:flex;
   width:max-content;
-  animation:logoTicker 16s linear infinite;
+  animation:logoTicker 28s linear infinite;
 }
 
 .logo-set{
@@ -841,74 +841,15 @@ a{
   padding-right:14px;
 }
 
-.logo-chip{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-width:67px;
-  height:32px;
-  padding:5px 8px;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:8px;
-  box-shadow:0 4px 12px rgba(17,17,15,.05);
-}
-
-.logo-chip img{
-  display:block;
-  width:auto;
-  height:auto;
-  object-fit:contain;
-  transition:transform .18s ease,opacity .18s ease;
-}
-
-.logo-square{
-  max-width:27px;
-  max-height:27px;
-}
-
-.logo-wordmark{
-  max-width:59px;
-  max-height:22px;
-}
-
-.logo-emblem{
-  max-width:29px;
-  max-height:29px;
-}
-
-.logo-telus{
-  max-width:63px;
-  max-height:23px;
-}
-
-.logo-mcgill{
-  max-width:95px;
-  max-height:38px;
-  transform:scale(1.28);
-}
-
 @media(hover:hover) and (pointer:fine){
   .logo-ticker:hover .logo-track{
     animation-play-state:paused;
   }
-
-  .logo-chip:hover img{
-    transform:scale(1.03);
-  }
-
-  .logo-chip:hover .logo-mcgill{
-    transform:scale(1.32);
-  }
 }
 
 @keyframes logoTicker{
-  from{
-    transform:translateX(-66.666%);
-  }
-  to{
-    transform:translateX(0);
-  }
+  from{ transform:translateX(0); }
+  to{ transform:translateX(-50%); }
 }
 
 /* FOOTER */
@@ -1053,9 +994,6 @@ button:focus-visible,
     animation-iteration-count:1!important;
     transition-duration:.001ms!important;
     scroll-behavior:auto!important;
-  }
-  .logo-track{
-    animation:none;
   }
 }
 
@@ -1273,11 +1211,6 @@ button:focus-visible,
     font-size:10px;
   }
 
-  .logo-set{
-    gap:12px;
-    padding-right:12px;
-  }
-
   .logo-chip{
     min-width:56px;
     height:29px;
@@ -1309,15 +1242,6 @@ button:focus-visible,
     max-width:75px;
     max-height:31px;
     transform:scale(1.22);
-  }
-
-  .logo-track{
-    animation-duration:13s;
-  }
-
-  .logo-ticker::before,
-  .logo-ticker::after{
-    width:44px;
   }
 
   .audience-gate{
