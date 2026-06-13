@@ -841,9 +841,64 @@ a{
   padding-right:14px;
 }
 
+.logo-chip{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:67px;
+  height:32px;
+  padding:5px 8px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(17,17,15,.05);
+}
+
+.logo-chip img{
+  display:block;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  transition:transform .18s ease,opacity .18s ease;
+}
+
+.logo-square{
+  max-width:27px;
+  max-height:27px;
+}
+
+.logo-wordmark{
+  max-width:59px;
+  max-height:22px;
+}
+
+.logo-emblem{
+  max-width:29px;
+  max-height:29px;
+}
+
+.logo-telus{
+  max-width:63px;
+  max-height:23px;
+}
+
+.logo-mcgill{
+  max-width:95px;
+  max-height:38px;
+  transform:scale(1.28);
+}
+
 @media(hover:hover) and (pointer:fine){
   .logo-ticker:hover .logo-track{
     animation-play-state:paused;
+  }
+
+  .logo-chip:hover img{
+    transform:scale(1.03);
+  }
+
+  .logo-chip:hover .logo-mcgill{
+    transform:scale(1.32);
   }
 }
 
