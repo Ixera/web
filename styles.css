@@ -896,11 +896,6 @@ a{
     transform:scale(1.03);
   }
 
-  .logo-chip:hover .logo-mcgill{
-    transform:scale(1.32);
-  }
-}
-
 @keyframes logoTicker{
   from{ transform:translateX(0); }
   to{ transform:translateX(-50%); }
