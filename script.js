@@ -36,8 +36,8 @@ function setLang(lang) {
     metaDescription.setAttribute(
       "content",
       lang === "fr"
-        ? "Conseils Ixera inc. est une firme de recherche de dirigeants basée à Montréal. Nous aidons les PDG, les conseils et les propriétaires à recruter les bons hauts dirigeants et à assurer la continuité managériale."
-        : "Conseils Ixera inc. is a Montréal-based executive search firm. We help CEOs, boards and owners recruit the right senior executives and ensure management continuity."
+        ? "Conseils Ixera inc. est une firme de recherche de dirigeants et de cadres basée à Montréal. Recherche de dirigeants, planification de la relève, revue du risque de leadership et continuité managériale pour PDG, conseils d'administration et propriétaires dirigeants."
+        : "Conseils Ixera inc. is a Montréal-based executive and senior management search firm. Executive search, succession planning, leadership risk review and management continuity for CEOs, boards and owner-operators."
     );
   }
   const ogTitle = document.querySelector('meta[property="og:title"]');
