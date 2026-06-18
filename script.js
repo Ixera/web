@@ -152,3 +152,30 @@ if (distinctionOpen && distinctionOverlay) {
     }
   });
 }
+// ===== COMPTE À REBOURS — à ajouter à la fin de script.js =====
+(function () {
+  const el = document.getElementById("countdown");
+  if (!el) return;
+  const deadline = new Date(el.dataset.deadline).getTime();
+
+  function pad(n) { return String(n).padStart(2, "0"); }
+
+  function tick() {
+    const diff = deadline - Date.now();
+    if (diff <= 0) {
+      el.querySelectorAll("[data-cd]").forEach((n) => (n.textContent = "00"));
+      return;
+    }
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+    el.querySelector('[data-cd="days"]').textContent = days;
+    el.querySelector('[data-cd="hours"]').textContent = pad(hours);
+    el.querySelector('[data-cd="minutes"]').textContent = pad(mins);
+    el.querySelector('[data-cd="seconds"]').textContent = pad(secs);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
