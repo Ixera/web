@@ -751,27 +751,30 @@ a{
   gap:14px;
 }
 
-.linkedin-icon{
-  width:52px;
-  height:52px;
-  border:1px solid #1a1a1a;
-  border-radius:50%;
-  display:flex;
+.linkedin-btn{
+  display:inline-flex;
   align-items:center;
-  justify-content:center;
-  color:#1a1a1a;
-  text-decoration:none;
-  transition:all .2s ease;
-}
-
-.linkedin-icon svg{
-  width:22px;
-  height:22px;
-}
-
-.linkedin-icon:hover{
-  background:#1a1a1a;
+  gap:9px;
+  height:52px;
+  padding:0 24px;
+  border-radius:999px;
+  background:#0a66c2;
   color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:850;
+  line-height:1;
+  transition:transform .18s ease,background .18s ease;
+}
+
+.linkedin-btn svg{
+  width:20px;
+  height:20px;
+}
+
+.linkedin-btn:hover{
+  background:#004182;
+  transform:translateY(-2px);
 }
 
 /* FORMÉ PAR */
