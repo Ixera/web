@@ -706,12 +706,13 @@ a{
 
 /* ABOUT */
 .about{
-  display:grid;
-  grid-template-columns:minmax(0,1.12fr) 280px;
-  gap:clamp(40px,8vw,120px);
-  align-items:center;
   background:#fff;
   border-bottom:0;
+}
+
+.about-copy{
+  max-width:880px;
+  margin:0 auto;
 }
 
 .about-copy p:not(.eyebrow){
@@ -721,18 +722,6 @@ a{
   font-size:clamp(20px,1.58vw,25px);
   line-height:1.38;
   letter-spacing:-.018em;
-}
-
-.about-photo-wrap{
-  justify-self:end;
-}
-
-.about-photo{
-  width:230px;
-  height:285px;
-  object-fit:cover;
-  border-radius:20px;
-  box-shadow:0 18px 55px rgba(0,0,0,.12);
 }
 
 /* CONTACT */
@@ -1068,8 +1057,7 @@ button:focus-visible,
   }
 
   .hero,
-  .service-layout,
-  .about{
+  .service-layout{
     grid-template-columns:1fr;
   }
 
@@ -1111,10 +1099,6 @@ button:focus-visible,
 
   .result-item p{
     max-width:none;
-  }
-
-  .about-photo-wrap{
-    justify-self:start;
   }
 }
 @media(max-width:760px){
@@ -1247,15 +1231,6 @@ button:focus-visible,
 
   .results-intro{
     margin-bottom:28px;
-  }
-
-  .about{
-    gap:34px;
-  }
-
-  .about-photo{
-    width:190px;
-    height:235px;
   }
 
   .contact-actions{
