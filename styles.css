@@ -1328,6 +1328,16 @@ button:focus-visible,
   color:var(--red-dark);
 }
 
+.nav-gouvernance{
+  color:var(--red);
+  font-weight:650;
+  transition:color .18s ease;
+}
+
+.nav-gouvernance:hover{
+  color:var(--red-dark);
+}
+
 .distinction-overlay{
   position:fixed;
   inset:0;
