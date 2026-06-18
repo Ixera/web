@@ -1,3 +1,9 @@
+// Toujours revenir en haut de la page au chargement
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.scrollTo(0, 0);
+
 const btn = document.getElementById("langToggle");
 const gateBtn = document.getElementById("gateLangToggle");
 
