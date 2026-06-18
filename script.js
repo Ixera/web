@@ -29,8 +29,8 @@ function setLang(lang) {
   }
   document.title =
     lang === "fr"
-      ? "Ixera | Recherche de dirigeants à Montréal et continuité managériale"
-      : "Ixera | Executive search in Montréal and management continuity";
+      ? "Ixera | Continuité managériale"
+      : "Ixera | Management continuity";
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
     metaDescription.setAttribute(
@@ -45,8 +45,8 @@ function setLang(lang) {
     ogTitle.setAttribute(
       "content",
       lang === "fr"
-        ? "Ixera | Recherche de dirigeants à Montréal et continuité managériale"
-        : "Ixera | Executive search in Montréal and management continuity"
+        ? "Ixera | Continuité managériale"
+        : "Ixera | Management continuity"
     );
   }
   const ogDescription = document.querySelector('meta[property="og:description"]');
