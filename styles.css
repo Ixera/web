@@ -128,8 +128,8 @@ a{
 .hero h1{
   max-width:880px;
   margin:0 0 28px;
-  font-size:clamp(56px,5.8vw,100px);
-  line-height:.96;
+  font-size:clamp(50px,5.2vw,84px);
+  line-height:.98;
   letter-spacing:-.062em;
   font-weight:900;
 }
@@ -1149,7 +1149,7 @@ button:focus-visible,
   }
 
   .hero h1{
-    font-size:48px;
+    font-size:44px;
     letter-spacing:-.058em;
   }
 
