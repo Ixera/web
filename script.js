@@ -119,7 +119,7 @@ const heroVariants = {
   ca: {
     titleFr: "La relève de votre équipe de direction ne devrait jamais être une surprise.",
     titleEn: "The succession of your leadership team should never catch you off guard.",
-    leadFr: "La gouvernance doit assurer la continuité du leadership. Ixera procure une lecture indépendante du risque et de la relève, avant l’urgence.",
+    leadFr: "La gouvernance doit assurer la continuité managériale. Ixera procure une lecture indépendante du risque et de la relève, avant l’urgence.",
     leadEn: "Governance must ensure leadership continuity. Ixera provides an independent reading of risk and succession, before urgency strikes."
   },
   invest: {
