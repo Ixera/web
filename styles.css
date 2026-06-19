@@ -368,6 +368,10 @@ a{
   font-weight:850;
 }
 
+.section-copy .service-lead{
+  margin:0 0 22px;
+}
+
 .service-highlight{
   margin:32px 0;
   padding:24px 28px;
