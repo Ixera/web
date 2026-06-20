@@ -171,6 +171,21 @@ if (audienceGate) {
   });
 }
 
+function openGate() {
+  if (audienceGate) {
+    audienceGate.classList.remove("is-hidden");
+    window.scrollTo(0, 0);
+  }
+}
+
+const brandLogo = document.getElementById("brandLogo");
+if (brandLogo) {
+  brandLogo.addEventListener("click", (e) => {
+    e.preventDefault();
+    openGate();
+  });
+}
+
 const distinctionOpen = document.getElementById("distinctionOpen");
 const distinctionClose = document.getElementById("distinctionClose");
 const distinctionOverlay = document.getElementById("distinctionOverlay");
