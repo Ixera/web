@@ -1494,6 +1494,49 @@ button:focus-visible,
   }
 }
 /* ===== GOUVERNANCE — à ajouter à la fin de styles.css (avant les @media si tu veux, ou tout à la fin) ===== */
+.mv-grid{
+  max-width:900px;
+  margin:0 auto 48px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(28px,4vw,56px);
+}
+
+.mv-block{
+  border-top:3px solid var(--red);
+  padding-top:20px;
+}
+
+.mv-label{
+  margin:0 0 12px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--red);
+}
+
+.mv-text{
+  margin:0;
+  color:var(--ink);
+  font-size:clamp(18px,1.5vw,22px);
+  line-height:1.36;
+  letter-spacing:-.01em;
+  font-weight:500;
+}
+
+.governance-countdown-wrap{
+  text-align:center;
+  margin:0 0 56px;
+}
+
+@media (max-width:720px){
+  .mv-grid{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+}
+
 .governance{
   background:var(--paper-2);
 }
