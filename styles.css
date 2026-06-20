@@ -1494,9 +1494,15 @@ button:focus-visible,
   }
 }
 /* ===== GOUVERNANCE — à ajouter à la fin de styles.css (avant les @media si tu veux, ou tout à la fin) ===== */
+.governance-intro{
+  max-width:760px;
+  margin:0 auto 36px;
+  text-align:center;
+}
+
 .mv-grid{
   max-width:900px;
-  margin:0 auto 48px;
+  margin:0 auto 56px;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:clamp(28px,4vw,56px);
@@ -1518,16 +1524,10 @@ button:focus-visible,
 
 .mv-text{
   margin:0;
-  color:var(--ink);
-  font-size:clamp(18px,1.5vw,22px);
-  line-height:1.36;
-  letter-spacing:-.01em;
-  font-weight:500;
-}
-
-.governance-countdown-wrap{
-  text-align:center;
-  margin:0 0 56px;
+  color:var(--muted);
+  font-size:clamp(17px,1.4vw,20px);
+  line-height:1.45;
+  font-weight:400;
 }
 
 @media (max-width:720px){
