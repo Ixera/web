@@ -1497,47 +1497,36 @@ button:focus-visible,
 
 @media(max-width:560px){
   .distinction-modal{
-    padding:26px 20px 30px;
+    padding:24px 18px 28px;
   }
   .distinction-grid{
-    grid-template-columns:1fr;
-    border-top:0;
+    grid-template-columns:1fr 1fr;
   }
   .distinction-grid > div{
-    border:0;
-    padding:0;
+    padding:12px 12px;
+    border-top:0;
   }
-  .distinction-grid .dg-head{
+  .dg-head.dg-dim{
     display:none;
   }
-  .distinction-grid .dg-tag{
-    display:block;
-    font-size:11px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    font-weight:800;
-    color:var(--muted);
-    margin-bottom:6px;
-  }
   .distinction-grid .dg-dim{
-    margin-top:26px;
-    padding-bottom:10px;
-    border-bottom:1px solid var(--ink);
-    font-size:13px;
-    letter-spacing:.1em;
-    text-transform:uppercase;
+    grid-column:1 / -1;
+    padding:18px 2px 6px;
+    border-top:1px solid var(--line);
   }
   .distinction-grid .dg-them{
-    padding-top:16px;
+    border-left:0;
   }
-  .distinction-grid .dg-us{
-    margin-top:10px;
-    padding:14px 16px;
-    background:#fdf6f6;
-    border-radius:12px;
+  .distinction-grid .dg-sub{
+    display:none;
   }
-  .distinction-grid .dg-us .dg-tag{
-    color:var(--red);
+  .distinction-grid .dg-head{
+    font-size:10px;
+    letter-spacing:.1em;
+    padding-bottom:10px;
+  }
+  .distinction-grid .dg-lead{
+    margin-bottom:0;
   }
 }
 /* ===== MISSION ET VISION — boutons dans À propos + pop-up ===== */
@@ -1564,6 +1553,10 @@ button:focus-visible,
 .mv-btn-single:hover{
   transform:translateY(-1px);
   box-shadow:0 10px 26px rgba(17,17,15,.09);
+}
+
+.continuity .mv-btn-single{
+  background:var(--paper);
 }
 
 .mv-modal-grid{
