@@ -725,7 +725,7 @@ a{
 
 /* ABOUT */
 .about{
-  background:#fff;
+  background:var(--paper);
   border-bottom:0;
 }
 
@@ -805,7 +805,7 @@ a{
 /* FORMÉ PAR */
 .formed-by{
   padding:8px clamp(24px,5vw,94px) 48px;
-  background:#fff;
+  background:var(--paper);
   border-top:0;
   overflow:hidden;
 }
@@ -847,12 +847,12 @@ a{
 
 .logo-ticker::before{
   left:0;
-  background:linear-gradient(to right,#fff,rgba(255,255,255,0));
+  background:linear-gradient(to right,var(--paper),rgba(247,243,238,0));
 }
 
 .logo-ticker::after{
   right:0;
-  background:linear-gradient(to left,#fff,rgba(255,255,255,0));
+  background:linear-gradient(to left,var(--paper),rgba(247,243,238,0));
 }
 
 .logo-track{
@@ -936,7 +936,7 @@ footer{
   justify-content:flex-start;
   padding:24px clamp(24px,5vw,94px);
   border-top:1px solid var(--line);
-  background:#fffaf6;
+  background:var(--paper-2);
   color:var(--muted);
   font-size:14px;
   text-align:left;
