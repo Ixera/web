@@ -333,6 +333,14 @@ if (mvOverlay) {
       const top = e.section.getBoundingClientRect().top;
       if (top <= marker) current = e;
     });
+
+    const atBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 2;
+    if (atBottom) {
+      current = entries[entries.length - 1];
+    }
+
     navLinks.forEach((l) => l.classList.remove("is-active"));
     if (current) current.link.classList.add("is-active");
   }
