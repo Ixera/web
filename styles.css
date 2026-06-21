@@ -1356,13 +1356,13 @@ button:focus-visible,
   font:inherit;
   font-size:15px;
   font-weight:650;
-  color:#4a453f;
+  color:var(--red);
   cursor:pointer;
   transition:color .18s ease;
 }
 
 .nav-distinction:hover{
-  color:var(--red);
+  color:var(--red-dark);
 }
 
 .nav-gouvernance{
