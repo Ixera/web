@@ -316,35 +316,39 @@ if (mvOverlay) {
   const navLinks = Array.from(
     document.querySelectorAll('.nav-links a[href^="#"]')
   );
-  if (!navLinks.length || !("IntersectionObserver" in window)) return;
+  if (!navLinks.length) return;
 
-  const linkFor = {};
-  const sections = [];
+  const entries = [];
   navLinks.forEach((link) => {
     const id = link.getAttribute("href").slice(1);
     const section = document.getElementById(id);
-    if (section) {
-      linkFor[id] = link;
-      sections.push(section);
-    }
+    if (section) entries.push({ link, section });
   });
+  if (!entries.length) return;
 
-  function clearActive() {
+  function setActive() {
+    const marker = window.innerHeight * 0.35;
+    let current = null;
+    entries.forEach((e) => {
+      const top = e.section.getBoundingClientRect().top;
+      if (top <= marker) current = e;
+    });
     navLinks.forEach((l) => l.classList.remove("is-active"));
+    if (current) current.link.classList.add("is-active");
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          clearActive();
-          const link = linkFor[entry.target.id];
-          if (link) link.classList.add("is-active");
-        }
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        setActive();
+        ticking = false;
       });
-    },
-    { threshold: 0.5, rootMargin: "-80px 0px -40% 0px" }
-  );
+      ticking = true;
+    }
+  }
 
-  sections.forEach((s) => observer.observe(s));
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  setActive();
 })();
