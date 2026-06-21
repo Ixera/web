@@ -1096,6 +1096,9 @@ footer small{
   .audience-choice{
     box-shadow:0 8px 22px rgba(237,28,36,.30);
   }
+  .mv-btn-single{
+    box-shadow:0 3px 0 var(--red-dark),0 9px 20px rgba(17,17,15,.20);
+  }
   .btn-primary:active,
   .mv-btn-single:active,
   .audience-choice:active{
@@ -1623,7 +1626,7 @@ button:focus-visible,
   font-weight:800;
   color:#fff;
   cursor:pointer;
-  box-shadow:0 6px 18px rgba(237,28,36,.18);
+  box-shadow:0 3px 0 var(--red-dark),0 9px 20px rgba(17,17,15,.20);
   transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
 }
 
@@ -1633,7 +1636,7 @@ button:focus-visible,
     border-color:var(--ink);
     color:var(--ink);
     transform:translateY(-2px);
-    box-shadow:0 10px 26px rgba(17,17,15,.12);
+    box-shadow:0 3px 0 var(--ink),0 13px 26px rgba(17,17,15,.18);
   }
 }
 
