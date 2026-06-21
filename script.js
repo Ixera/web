@@ -152,6 +152,21 @@ function closeGate() {
   }
 }
 
+function openGate() {
+  if (audienceGate) {
+    audienceGate.classList.remove("is-hidden");
+  }
+}
+
+const brandLogo = document.getElementById("brandLogo");
+if (brandLogo) {
+  brandLogo.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo(0, 0);
+    openGate();
+  });
+}
+
 if (audienceGate) {
   audienceChoices.forEach((choice) => {
     choice.addEventListener("click", () => {
