@@ -205,8 +205,9 @@ a{
 }
 
 .btn-primary:hover{
-  background:var(--red-dark);
-  border-color:var(--red-dark);
+  background:var(--paper);
+  border-color:var(--ink);
+  color:var(--ink);
 }
 
 .btn-quiet{
@@ -780,8 +781,9 @@ a{
   justify-content:center;
   background:#0a66c2;
   color:#fff;
+  border:1px solid transparent;
   text-decoration:none;
-  transition:transform .18s ease,background .18s ease;
+  transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
 }
 
 .linkedin-btn svg{
@@ -790,7 +792,9 @@ a{
 }
 
 .linkedin-btn:hover{
-  background:#004182;
+  background:var(--paper);
+  border-color:#0a66c2;
+  color:#0a66c2;
   transform:translateY(-2px);
 }
 
