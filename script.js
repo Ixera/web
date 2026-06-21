@@ -394,13 +394,26 @@ if (mvOverlay) {
     const t = {
       sending: { fr: "Envoi en cours…", en: "Sending…" },
       ok: { fr: "Merci. Votre message est envoyé, on vous revient rapidement.", en: "Thank you. Your message was sent, we’ll get back to you quickly." },
-      error: { fr: "Une erreur est survenue. Réessayez ou écrivez à jf.lavigne@ixera.ca.", en: "Something went wrong. Try again or email jf.lavigne@ixera.ca." }
+      error: { fr: "Une erreur est survenue. Réessayez ou écrivez à jf.lavigne@ixera.ca.", en: "Something went wrong. Try again or email jf.lavigne@ixera.ca." },
+      badEmail: { fr: "Veuillez entrer une adresse courriel valide (exemple : nom@domaine.com).", en: "Please enter a valid email address (example: name@domain.com)." }
     };
     return t[key][lang];
   }
 
+  const emailRe = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    const emailField = form.querySelector('input[name="email"]');
+    if (emailField && !emailRe.test(emailField.value.trim())) {
+      status.hidden = false;
+      status.className = "contact-status is-error";
+      status.textContent = msg("badEmail");
+      emailField.focus();
+      return;
+    }
+
     status.hidden = false;
     status.className = "contact-status";
     status.textContent = msg("sending");

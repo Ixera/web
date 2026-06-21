@@ -417,7 +417,11 @@
 
       <label class="contact-field">
         <span data-fr="Courriel" data-en="Email">Courriel</span>
-        <input type="email" name="email" required autocomplete="email">
+        <input type="email" name="email" required autocomplete="email"
+               pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+               title="Entrez une adresse courriel valide, par exemple nom@domaine.com"
+               data-fr-title="Entrez une adresse courriel valide, par exemple nom@domaine.com"
+               data-en-title="Enter a valid email address, for example name@domain.com">
       </label>
 
       <label class="contact-field">
