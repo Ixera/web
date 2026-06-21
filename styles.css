@@ -1650,6 +1650,38 @@ button:focus-visible,
   padding-top:18px;
 }
 
+.mv-modal-grid--trio{
+  grid-template-columns:1fr 1fr 1fr;
+  gap:clamp(22px,2.6vw,40px);
+  border-top:0;
+  padding-top:18px;
+}
+
+.mv-modal-tag{
+  display:inline-block;
+  background:var(--red);
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  padding:6px 14px;
+  border-radius:999px;
+  margin-bottom:16px;
+}
+
+.mv-modal-def{
+  margin:0 0 12px;
+  font-size:16px;
+  font-weight:800;
+  color:var(--ink);
+  line-height:1.25;
+}
+
+.mv-modal-grid--trio .mv-modal-text{
+  font-size:clamp(15px,1.1vw,17px);
+}
+
 .mv-modal-accent{
   display:block;
   width:30px;
