@@ -204,6 +204,7 @@ a{
   background:var(--red);
   border-color:var(--red);
   color:#fff;
+  box-shadow:0 3px 0 var(--red-dark),0 9px 20px rgba(17,17,15,.20);
 }
 
 @media(hover:hover) and (pointer:fine){
@@ -211,6 +212,7 @@ a{
     background:var(--paper);
     border-color:var(--ink);
     color:var(--ink);
+    box-shadow:0 3px 0 var(--ink),0 13px 26px rgba(17,17,15,.18);
   }
 }
 
@@ -1091,11 +1093,10 @@ footer small{
 
 /* MOBILE TACTILE : relief plus franc + feedback au toucher */
 @media(hover:none){
-  .btn-primary,
-  .mv-btn-single,
   .audience-choice{
     box-shadow:0 8px 22px rgba(237,28,36,.30);
   }
+  .btn-primary,
   .mv-btn-single{
     box-shadow:0 3px 0 var(--red-dark),0 9px 20px rgba(17,17,15,.20);
   }
@@ -1612,6 +1613,15 @@ button:focus-visible,
 /* ===== MISSION ET VISION — boutons dans À propos + pop-up ===== */
 .mv-buttons{
   margin-top:30px;
+}
+
+@media(max-width:720px){
+  .hero-actions{
+    justify-content:center;
+  }
+  .mv-buttons{
+    text-align:center;
+  }
 }
 
 .mv-btn-single{

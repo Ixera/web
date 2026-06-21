@@ -158,6 +158,7 @@ if (audienceGate) {
       const role = choice.getAttribute("data-role");
       if (role) {
         applyRole(role);
+        localStorage.setItem("ixera-role", role);
       }
       closeGate();
     });
@@ -370,9 +371,21 @@ if (mvOverlay) {
   const status = document.getElementById("contactStatus");
   if (!overlay || !form) return;
 
+  const roleMap = {
+    pdg: "PDG",
+    ca: "Conseil d'administration",
+    invest: "Propriétaire / Investisseur"
+  };
+
   function openContact() {
     overlay.hidden = false;
     document.body.style.overflow = "hidden";
+    const saved = localStorage.getItem("ixera-role");
+    const roleSelect = form.querySelector('select[name="role"]');
+    if (saved && roleSelect && !roleSelect.value) {
+      const mapped = roleMap[saved];
+      if (mapped) roleSelect.value = mapped;
+    }
   }
   function closeContact() {
     overlay.hidden = true;
