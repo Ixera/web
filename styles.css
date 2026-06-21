@@ -1499,27 +1499,49 @@ button:focus-visible,
     display:none;
   }
 }
-/* ===== GOUVERNANCE — à ajouter à la fin de styles.css (avant les @media si tu veux, ou tout à la fin) ===== */
-.governance-intro{
-  max-width:760px;
-  margin:0 auto 36px;
-  text-align:center;
+/* ===== MISSION ET VISION — boutons dans À propos + pop-up ===== */
+.mv-buttons{
+  display:flex;
+  gap:14px;
+  margin-top:34px;
+  flex-wrap:wrap;
 }
 
-.mv-grid{
-  max-width:900px;
-  margin:0 auto 56px;
+.mv-btn{
+  appearance:none;
+  border:1px solid var(--ink);
+  background:transparent;
+  color:var(--ink);
+  font:inherit;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:13px 30px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:background .18s ease,color .18s ease;
+}
+
+.mv-btn:hover{
+  background:var(--ink);
+  color:#fff;
+}
+
+.mv-modal-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:clamp(28px,4vw,56px);
+  gap:clamp(28px,4vw,52px);
+  border-top:1px solid var(--ink);
+  padding-top:34px;
 }
 
-.mv-block{
-  padding-top:0;
+.mv-modal-grid--bare{
+  border-top:0;
+  padding-top:18px;
 }
 
-.mv-block::before{
-  content:"";
+.mv-modal-accent{
   display:block;
   width:30px;
   height:3px;
@@ -1527,7 +1549,7 @@ button:focus-visible,
   margin-bottom:20px;
 }
 
-.mv-label{
+.mv-modal-label{
   margin:0 0 12px;
   font-size:13px;
   font-weight:800;
@@ -1536,7 +1558,7 @@ button:focus-visible,
   color:var(--ink);
 }
 
-.mv-text{
+.mv-modal-text{
   margin:0;
   color:var(--muted);
   font-size:clamp(17px,1.4vw,20px);
@@ -1545,7 +1567,7 @@ button:focus-visible,
 }
 
 @media (max-width:720px){
-  .mv-grid{
+  .mv-modal-grid{
     grid-template-columns:1fr;
     gap:32px;
   }

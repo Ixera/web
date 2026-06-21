@@ -217,6 +217,46 @@ if (distinctionOpen && distinctionOverlay) {
     }
   });
 }
+
+// ===== POP-UP MISSION ET VISION =====
+const mvOverlay = document.getElementById("mvOverlay");
+const mvClose = document.getElementById("mvClose");
+const missionOpen = document.getElementById("missionOpen");
+const visionOpen = document.getElementById("visionOpen");
+
+if (mvOverlay) {
+  function openMv() {
+    mvOverlay.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMv() {
+    mvOverlay.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  if (missionOpen) {
+    missionOpen.addEventListener("click", openMv);
+  }
+  if (visionOpen) {
+    visionOpen.addEventListener("click", openMv);
+  }
+  if (mvClose) {
+    mvClose.addEventListener("click", closeMv);
+  }
+
+  mvOverlay.addEventListener("click", (e) => {
+    if (e.target === mvOverlay) {
+      closeMv();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !mvOverlay.hidden) {
+      closeMv();
+    }
+  });
+}
 // ===== COMPTE À REBOURS — à ajouter à la fin de script.js =====
 (function () {
   const el = document.getElementById("countdown");
