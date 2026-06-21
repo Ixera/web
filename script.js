@@ -310,3 +310,41 @@ if (mvOverlay) {
 
   targets.forEach((el) => observer.observe(el));
 })();
+
+// ===== LIEN DE MENU ACTIF SELON LA SECTION VISIBLE =====
+(function () {
+  const navLinks = Array.from(
+    document.querySelectorAll('.nav-links a[href^="#"]')
+  );
+  if (!navLinks.length || !("IntersectionObserver" in window)) return;
+
+  const linkFor = {};
+  const sections = [];
+  navLinks.forEach((link) => {
+    const id = link.getAttribute("href").slice(1);
+    const section = document.getElementById(id);
+    if (section) {
+      linkFor[id] = link;
+      sections.push(section);
+    }
+  });
+
+  function clearActive() {
+    navLinks.forEach((l) => l.classList.remove("is-active"));
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          clearActive();
+          const link = linkFor[entry.target.id];
+          if (link) link.classList.add("is-active");
+        }
+      });
+    },
+    { threshold: 0.5, rootMargin: "-80px 0px -40% 0px" }
+  );
+
+  sections.forEach((s) => observer.observe(s));
+})();

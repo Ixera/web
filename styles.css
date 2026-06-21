@@ -77,6 +77,11 @@ a{
   color:var(--red);
 }
 
+.nav-links a.is-active{
+  color:var(--red);
+  font-weight:850;
+}
+
 .lang-toggle{
   justify-self:end;
   border:1px solid var(--soft);
@@ -1351,23 +1356,22 @@ button:focus-visible,
   font:inherit;
   font-size:15px;
   font-weight:650;
-  color:var(--red);
+  color:#4a453f;
   cursor:pointer;
   transition:color .18s ease;
 }
 
 .nav-distinction:hover{
-  color:var(--red-dark);
+  color:var(--red);
 }
 
 .nav-gouvernance{
-  color:var(--red);
   font-weight:650;
   transition:color .18s ease;
 }
 
 .nav-gouvernance:hover{
-  color:var(--red-dark);
+  color:var(--red);
 }
 
 .distinction-overlay{
