@@ -188,6 +188,11 @@ a{
   box-shadow:0 12px 28px rgba(17,17,15,.28);
 }
 
+.btn:active{
+  transform:translateY(0);
+  box-shadow:0 4px 10px rgba(17,17,15,.22);
+}
+
 .btn-primary{
   background:var(--red);
   border-color:var(--red);
@@ -1178,6 +1183,7 @@ button:focus-visible,
 
   .btn{
     width:100%;
+    box-shadow:0 6px 16px rgba(17,17,15,.18);
   }
 
   .stat-section,
