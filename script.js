@@ -393,7 +393,7 @@ if (mvOverlay) {
     const lang = document.documentElement.lang === "en" ? "en" : "fr";
     const t = {
       sending: { fr: "Envoi en cours…", en: "Sending…" },
-      ok: { fr: "Merci. Votre message est envoyé.", en: "Thank you. Your message was sent." },
+      ok: { fr: "Merci. Votre message est envoyé, on vous revient rapidement.", en: "Thank you. Your message was sent, we’ll get back to you quickly." },
       error: { fr: "Une erreur est survenue. Réessayez ou écrivez à jf.lavigne@ixera.ca.", en: "Something went wrong. Try again or email jf.lavigne@ixera.ca." }
     };
     return t[key][lang];

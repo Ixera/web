@@ -402,7 +402,7 @@
     <button type="button" class="distinction-close" id="contactClose" aria-label="Fermer">&times;</button>
 
     <p class="mv-modal-label" id="contactFormTitle" data-fr="Entrons en contact" data-en="Let’s connect">Entrons en contact</p>
-    <p class="contact-modal-sub" data-fr="Quelques mots, et on vous revient." data-en="A few words, and we’ll get back to you.">Quelques mots, et on vous revient.</p>
+    <p class="contact-modal-sub" data-fr="Quelques mots, et on vous revient rapidement." data-en="A few words, and we’ll get back to you quickly.">Quelques mots, et on vous revient rapidement.</p>
 
     <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="ef22f66c-07da-4244-a185-51871ceb0869">
@@ -418,6 +418,22 @@
       <label class="contact-field">
         <span data-fr="Courriel" data-en="Email">Courriel</span>
         <input type="email" name="email" required autocomplete="email">
+      </label>
+
+      <label class="contact-field">
+        <span data-fr="Entreprise (facultatif)" data-en="Company (optional)">Entreprise (facultatif)</span>
+        <input type="text" name="company" autocomplete="organization">
+      </label>
+
+      <label class="contact-field">
+        <span data-fr="Votre rôle (facultatif)" data-en="Your role (optional)">Votre rôle (facultatif)</span>
+        <select name="role" class="contact-select">
+          <option value="" data-fr="— Choisir —" data-en="— Select —">— Choisir —</option>
+          <option value="PDG" data-fr="PDG / Président" data-en="CEO / President">PDG / Président</option>
+          <option value="Conseil d'administration" data-fr="Membre de CA" data-en="Board member">Membre de CA</option>
+          <option value="Propriétaire / Investisseur" data-fr="Propriétaire / Investisseur" data-en="Owner / Investor">Propriétaire / Investisseur</option>
+          <option value="Autre" data-fr="Autre" data-en="Other">Autre</option>
+        </select>
       </label>
 
       <label class="contact-field">

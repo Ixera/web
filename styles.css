@@ -1881,7 +1881,8 @@ button:focus-visible,
 }
 
 .contact-field input,
-.contact-field textarea{
+.contact-field textarea,
+.contact-field select{
   width:100%;
   padding:13px 15px;
   border:1px solid var(--soft);
@@ -1894,13 +1895,20 @@ button:focus-visible,
   box-sizing:border-box;
 }
 
+.contact-field select{
+  cursor:pointer;
+  appearance:none;
+  -webkit-appearance:none;
+}
+
 .contact-field textarea{
   resize:vertical;
   min-height:96px;
 }
 
 .contact-field input:focus,
-.contact-field textarea:focus{
+.contact-field textarea:focus,
+.contact-field select:focus{
   outline:none;
   border-color:var(--red);
   box-shadow:0 0 0 3px rgba(237,28,36,.12);
@@ -1919,5 +1927,5 @@ button:focus-visible,
   text-align:center;
 }
 
-.contact-status.is-ok{ color:#1a7a3c; }
+.contact-status.is-ok{ color:var(--red); }
 .contact-status.is-error{ color:var(--red); }
