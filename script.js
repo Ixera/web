@@ -440,3 +440,39 @@ if (mvOverlay) {
     }
   });
 })();
+
+// ===== POP-UP NOTRE MODÈLE =====
+const modelOverlay = document.getElementById("modelOverlay");
+const modelClose = document.getElementById("modelClose");
+const modelOpen = document.getElementById("modelOpen");
+
+if (modelOverlay) {
+  function openModel() {
+    modelOverlay.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModel() {
+    modelOverlay.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  if (modelOpen) {
+    modelOpen.addEventListener("click", openModel);
+  }
+  if (modelClose) {
+    modelClose.addEventListener("click", closeModel);
+  }
+
+  modelOverlay.addEventListener("click", (e) => {
+    if (e.target === modelOverlay) {
+      closeModel();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modelOverlay.hidden) {
+      closeModel();
+    }
+  });
+}

@@ -1929,3 +1929,58 @@ button:focus-visible,
 
 .contact-status.is-ok{ color:var(--red); }
 .contact-status.is-error{ color:var(--red); }
+
+/* ===== FENÊTRE NOTRE MODÈLE ===== */
+.model-modal{
+  width:min(100%,720px);
+  text-align:center;
+}
+
+.model-figure{
+  margin:24px auto 14px;
+  max-width:560px;
+}
+
+.model-figure svg{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.model-benefits{
+  display:grid;
+  gap:18px;
+  margin-top:8px;
+  text-align:left;
+}
+
+.model-benefit{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:start;
+  gap:16px;
+}
+
+.model-benefit-num{
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.08em;
+  color:var(--red);
+  line-height:1.5;
+}
+
+.model-benefit-text{
+  margin:0;
+  font-size:clamp(15px,1.2vw,17px);
+  line-height:1.5;
+}
+
+.model-benefit-lead{
+  color:var(--ink);
+  font-weight:700;
+}
+
+.model-benefit-detail{
+  color:var(--muted);
+  font-weight:400;
+}
