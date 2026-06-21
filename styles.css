@@ -569,13 +569,6 @@ a{
   z-index:0;
 }
 
-.stat-section.stat-value::before{
-  right:auto;
-  top:auto;
-  left:-18vw;
-  bottom:-16vw;
-}
-
 .stat-section > *{
   position:relative;
   z-index:1;
@@ -1703,7 +1696,7 @@ button:focus-visible,
   width:42vw;
   height:42vw;
   right:-18vw;
-  bottom:-16vw;
+  top:-16vw;
   border-radius:50%;
   background:radial-gradient(circle,rgba(237,28,36,.12),rgba(237,28,36,0) 64%);
   pointer-events:none;
