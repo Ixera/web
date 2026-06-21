@@ -1258,7 +1258,7 @@ button:focus-visible,
 
   .btn{
     width:100%;
-    box-shadow:0 6px 16px rgba(17,17,15,.18);
+    box-shadow:0 3px 0 var(--red-dark),0 9px 20px rgba(17,17,15,.20);
   }
 
   .stat-section,
