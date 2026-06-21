@@ -188,9 +188,11 @@ a{
   transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease;
 }
 
-.btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 28px rgba(17,17,15,.28);
+@media(hover:hover) and (pointer:fine){
+  .btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(17,17,15,.28);
+  }
 }
 
 .btn:active{
@@ -1064,6 +1066,23 @@ footer small{
     border-color:var(--ink);
     color:var(--ink);
     transform:translateY(-2px);
+  }
+}
+
+/* MOBILE TACTILE : relief plus franc + feedback au toucher */
+@media(hover:none){
+  .btn-primary,
+  .mv-btn-single,
+  .audience-choice{
+    box-shadow:0 8px 22px rgba(237,28,36,.30);
+  }
+  .btn-primary:active,
+  .mv-btn-single:active,
+  .audience-choice:active{
+    transform:scale(.97);
+    background:var(--red-dark);
+    border-color:var(--red-dark);
+    box-shadow:0 4px 12px rgba(237,28,36,.24);
   }
 }
 
