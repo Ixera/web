@@ -369,7 +369,35 @@
     </div>
   </div>
 </div>
-   
+
+<div class="distinction-overlay" id="mvOverlay" hidden>
+  <div class="distinction-modal" role="dialog" aria-modal="true" aria-labelledby="mvTitle">
+    <button type="button" class="distinction-close" id="mvClose" aria-label="Fermer">&times;</button>
+
+    <div class="mv-modal-grid mv-modal-grid--bare">
+      <div class="mv-modal-block">
+        <span class="mv-modal-accent"></span>
+        <p class="mv-modal-label" id="mvTitle" data-fr="Mission" data-en="Mission">Mission</p>
+        <p class="mv-modal-text"
+           data-fr="Éclairer la gouvernance et aligner le management sur les ambitions de l’organisation pour maîtriser le risque et décupler la valeur."
+           data-en="Informing governance and aligning management with the organization’s ambitions to master risk and multiply value.">
+           Éclairer la gouvernance et aligner le management sur les ambitions de l’organisation pour maîtriser le risque et décupler la valeur.
+        </p>
+      </div>
+
+      <div class="mv-modal-block">
+        <span class="mv-modal-accent"></span>
+        <p class="mv-modal-label" data-fr="Vision" data-en="Vision">Vision</p>
+        <p class="mv-modal-text"
+           data-fr="Faire de la continuité managériale un avantage concurrentiel incopiable et décisif, du Québec au reste du monde."
+           data-en="Making leadership continuity a decisive competitive advantage that cannot be copied, from Québec to the rest of the world.">
+           Faire de la continuité managériale un avantage concurrentiel incopiable et décisif, du Québec au reste du monde.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section id="approche" class="section approach-section" aria-label="Approche">
 
   <p class="eyebrow"
@@ -568,9 +596,12 @@
 
     
     <section id="apropos" class="section about">
-      <div class="about-copy">
-        <p class="eyebrow" data-fr="À propos" data-en="About">À propos</p>
+      <div class="about-layout">
+        <div>
+          <p class="eyebrow" data-fr="À propos" data-en="About">À propos</p>
+        </div>
 
+        <div class="about-copy">
 <p
   data-fr="Ixera a été fondée par Jean-François Lavigne autour d’une conviction : bien s’entourer est une responsabilité stratégique."
   data-en="Ixera was founded by Jean-François Lavigne on one conviction: surrounding yourself well is a strategic responsibility.">
@@ -578,9 +609,9 @@
 </p>
 
 <p
-  data-fr="La firme aide les PDG, propriétaires, investisseurs et conseils d’administration à renforcer leur équipe de direction, à protéger leurs postes clés et à structurer leur continuité managériale."
-  data-en="The firm helps CEOs, owners, investors and boards strengthen their leadership team, protect their key positions and structure their leadership continuity.">
-  La firme aide les PDG, propriétaires, investisseurs et conseils d’administration à renforcer leur équipe de direction, à protéger leurs postes clés et à structurer leur continuité managériale.
+  data-fr="La firme aide les PDG, propriétaires, investisseurs et conseils d’administration à renforcer leur équipe de direction et à structurer leur continuité managériale."
+  data-en="The firm helps CEOs, owners, investors and boards strengthen their leadership team and structure their leadership continuity.">
+  La firme aide les PDG, propriétaires, investisseurs et conseils d’administration à renforcer leur équipe de direction et à structurer leur continuité managériale.
 </p>
 
 <p
@@ -590,16 +621,15 @@
 </p>
 
 <p
-  data-fr="Notre approche combine la science, l’expérience, l’entrepreneuriat et les bons réseaux."
-  data-en="Our approach combines science, experience, entrepreneurship and the right networks.">
-  Notre approche combine la science, l’expérience, l’entrepreneuriat et les bons réseaux.
-</p>
-
-<p
   data-fr="Voir venir. Choisir juste. Bâtir pour gagner."
   data-en="See it coming. Choose well. Build to win.">
   Voir venir. Choisir juste. Bâtir pour gagner.
 </p>
+
+<div class="mv-buttons">
+  <button type="button" class="mv-btn-single" id="mvOpen" data-fr="Notre mission et vision" data-en="Our mission and vision">Notre mission et vision</button>
+</div>
+        </div>
       </div>
     </section>
 

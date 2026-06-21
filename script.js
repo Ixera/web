@@ -152,21 +152,6 @@ function closeGate() {
   }
 }
 
-function openGate() {
-  if (audienceGate) {
-    audienceGate.classList.remove("is-hidden");
-  }
-}
-
-const brandLogo = document.getElementById("brandLogo");
-if (brandLogo) {
-  brandLogo.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo(0, 0);
-    openGate();
-  });
-}
-
 if (audienceGate) {
   audienceChoices.forEach((choice) => {
     choice.addEventListener("click", () => {
@@ -183,6 +168,21 @@ if (audienceGate) {
     if (e.key === "Escape" && !audienceGate.classList.contains("is-hidden")) {
       closeGate();
     }
+  });
+}
+
+function openGate() {
+  if (audienceGate) {
+    audienceGate.classList.remove("is-hidden");
+    window.scrollTo(0, 0);
+  }
+}
+
+const brandLogo = document.getElementById("brandLogo");
+if (brandLogo) {
+  brandLogo.addEventListener("click", (e) => {
+    e.preventDefault();
+    openGate();
   });
 }
 
@@ -214,6 +214,42 @@ if (distinctionOpen && distinctionOverlay) {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !distinctionOverlay.hidden) {
       closeDistinction();
+    }
+  });
+}
+
+// ===== POP-UP MISSION ET VISION =====
+const mvOverlay = document.getElementById("mvOverlay");
+const mvClose = document.getElementById("mvClose");
+const mvOpen = document.getElementById("mvOpen");
+
+if (mvOverlay) {
+  function openMv() {
+    mvOverlay.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMv() {
+    mvOverlay.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  if (mvOpen) {
+    mvOpen.addEventListener("click", openMv);
+  }
+  if (mvClose) {
+    mvClose.addEventListener("click", closeMv);
+  }
+
+  mvOverlay.addEventListener("click", (e) => {
+    if (e.target === mvOverlay) {
+      closeMv();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !mvOverlay.hidden) {
+      closeMv();
     }
   });
 }
