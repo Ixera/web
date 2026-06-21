@@ -280,3 +280,33 @@ if (mvOverlay) {
   tick();
   setInterval(tick, 1000);
 })();
+
+// ===== APPARITIONS AU DÉFILEMENT =====
+(function () {
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const targets = document.querySelectorAll(
+    ".section, .formed-by, .hero-copy, .stat-section, .value-stat-section"
+  );
+
+  if (prefersReduced || !("IntersectionObserver" in window)) {
+    targets.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+
+  targets.forEach((el) => el.classList.add("reveal"));
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+  );
+
+  targets.forEach((el) => observer.observe(el));
+})();
