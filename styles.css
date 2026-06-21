@@ -1579,6 +1579,28 @@ button:focus-visible,
 
 .governance{
   background:var(--paper-2);
+  position:relative;
+  overflow:hidden;
+}
+
+.governance:before{
+  content:"";
+  position:absolute;
+  width:42vw;
+  height:42vw;
+  right:-18vw;
+  bottom:-16vw;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(237,28,36,.12),rgba(237,28,36,0) 64%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.governance-head,
+.governance .board-grid,
+.governance .countdown{
+  position:relative;
+  z-index:1;
 }
 
 .governance-head{
