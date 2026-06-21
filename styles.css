@@ -180,11 +180,12 @@ a{
   font-size:15px;
   font-weight:850;
   line-height:1;
-  transition:transform .18s ease,background .18s ease,color .18s ease;
+  transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease;
 }
 
 .btn:hover{
   transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(17,17,15,.16);
 }
 
 .btn-primary{
@@ -343,7 +344,7 @@ a{
 
 .service-layout{
   display:grid;
-  grid-template-columns:.36fr 1fr;
+  grid-template-columns:.52fr 1fr;
   gap:clamp(34px,6vw,90px);
   align-items:start;
   margin-bottom:54px;
@@ -669,10 +670,11 @@ a{
 .result-item p{
   margin:0;
   max-width:470px;
-  color:var(--muted);
-  font-size:clamp(17px,1.4vw,20px);
-  line-height:1.45;
-  font-weight:400;
+  color:var(--ink);
+  font-size:clamp(19px,1.55vw,24px);
+  line-height:1.34;
+  letter-spacing:-.018em;
+  font-weight:650;
 }
 
 /* SYNTHÈSE ÉCOSYSTÈME */
@@ -713,15 +715,9 @@ a{
   border-bottom:0;
 }
 
-.about-layout{
-  display:grid;
-  grid-template-columns:.36fr 1fr;
-  gap:clamp(34px,6vw,90px);
-  align-items:start;
-}
-
 .about-copy{
   max-width:880px;
+  margin:0 auto;
 }
 
 .about-copy p:not(.eyebrow){
@@ -1066,8 +1062,7 @@ button:focus-visible,
   }
 
   .hero,
-  .service-layout,
-  .about-layout{
+  .service-layout{
     grid-template-columns:1fr;
   }
 
@@ -1499,77 +1494,7 @@ button:focus-visible,
     display:none;
   }
 }
-/* ===== MISSION ET VISION — boutons dans À propos + pop-up ===== */
-.mv-buttons{
-  margin-top:30px;
-}
-
-.mv-btn-single{
-  display:inline-flex;
-  align-items:center;
-  border:1px solid var(--line);
-  background:#fffaf6;
-  border-radius:999px;
-  padding:12px 22px;
-  font-family:inherit;
-  font-size:15px;
-  font-weight:800;
-  color:var(--ink);
-  cursor:pointer;
-  box-shadow:0 6px 18px rgba(17,17,15,.05);
-  transition:transform .18s ease,box-shadow .18s ease;
-}
-
-.mv-btn-single:hover{
-  transform:translateY(-1px);
-  box-shadow:0 10px 26px rgba(17,17,15,.09);
-}
-
-.mv-modal-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(28px,4vw,52px);
-  border-top:1px solid var(--ink);
-  padding-top:34px;
-}
-
-.mv-modal-grid--bare{
-  border-top:0;
-  padding-top:18px;
-}
-
-.mv-modal-accent{
-  display:block;
-  width:30px;
-  height:3px;
-  background:var(--red);
-  margin-bottom:20px;
-}
-
-.mv-modal-label{
-  margin:0 0 12px;
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--ink);
-}
-
-.mv-modal-text{
-  margin:0;
-  color:var(--muted);
-  font-size:clamp(17px,1.4vw,20px);
-  line-height:1.45;
-  font-weight:400;
-}
-
-@media (max-width:720px){
-  .mv-modal-grid{
-    grid-template-columns:1fr;
-    gap:32px;
-  }
-}
-
+/* ===== GOUVERNANCE — à ajouter à la fin de styles.css (avant les @media si tu veux, ou tout à la fin) ===== */
 .governance{
   background:var(--paper-2);
 }

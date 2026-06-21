@@ -171,21 +171,6 @@ if (audienceGate) {
   });
 }
 
-function openGate() {
-  if (audienceGate) {
-    audienceGate.classList.remove("is-hidden");
-    window.scrollTo(0, 0);
-  }
-}
-
-const brandLogo = document.getElementById("brandLogo");
-if (brandLogo) {
-  brandLogo.addEventListener("click", (e) => {
-    e.preventDefault();
-    openGate();
-  });
-}
-
 const distinctionOpen = document.getElementById("distinctionOpen");
 const distinctionClose = document.getElementById("distinctionClose");
 const distinctionOverlay = document.getElementById("distinctionOverlay");
@@ -214,42 +199,6 @@ if (distinctionOpen && distinctionOverlay) {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !distinctionOverlay.hidden) {
       closeDistinction();
-    }
-  });
-}
-
-// ===== POP-UP MISSION ET VISION =====
-const mvOverlay = document.getElementById("mvOverlay");
-const mvClose = document.getElementById("mvClose");
-const mvOpen = document.getElementById("mvOpen");
-
-if (mvOverlay) {
-  function openMv() {
-    mvOverlay.hidden = false;
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeMv() {
-    mvOverlay.hidden = true;
-    document.body.style.overflow = "";
-  }
-
-  if (mvOpen) {
-    mvOpen.addEventListener("click", openMv);
-  }
-  if (mvClose) {
-    mvClose.addEventListener("click", closeMv);
-  }
-
-  mvOverlay.addEventListener("click", (e) => {
-    if (e.target === mvOverlay) {
-      closeMv();
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !mvOverlay.hidden) {
-      closeMv();
     }
   });
 }
