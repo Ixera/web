@@ -221,8 +221,7 @@ if (distinctionOpen && distinctionOverlay) {
 // ===== POP-UP MISSION ET VISION =====
 const mvOverlay = document.getElementById("mvOverlay");
 const mvClose = document.getElementById("mvClose");
-const missionOpen = document.getElementById("missionOpen");
-const visionOpen = document.getElementById("visionOpen");
+const mvOpen = document.getElementById("mvOpen");
 
 if (mvOverlay) {
   function openMv() {
@@ -235,11 +234,8 @@ if (mvOverlay) {
     document.body.style.overflow = "";
   }
 
-  if (missionOpen) {
-    missionOpen.addEventListener("click", openMv);
-  }
-  if (visionOpen) {
-    visionOpen.addEventListener("click", openMv);
+  if (mvOpen) {
+    mvOpen.addEventListener("click", openMv);
   }
   if (mvClose) {
     mvClose.addEventListener("click", closeMv);

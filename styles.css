@@ -1501,31 +1501,28 @@ button:focus-visible,
 }
 /* ===== MISSION ET VISION — boutons dans À propos + pop-up ===== */
 .mv-buttons{
-  display:flex;
-  gap:14px;
-  margin-top:34px;
-  flex-wrap:wrap;
+  margin-top:30px;
 }
 
-.mv-btn{
-  appearance:none;
-  border:1px solid var(--ink);
-  background:transparent;
-  color:var(--ink);
-  font:inherit;
-  font-size:14px;
-  font-weight:700;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  padding:13px 30px;
+.mv-btn-single{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid var(--line);
+  background:#fffaf6;
   border-radius:999px;
+  padding:12px 22px;
+  font-family:inherit;
+  font-size:15px;
+  font-weight:800;
+  color:var(--ink);
   cursor:pointer;
-  transition:background .18s ease,color .18s ease;
+  box-shadow:0 6px 18px rgba(17,17,15,.05);
+  transition:transform .18s ease,box-shadow .18s ease;
 }
 
-.mv-btn:hover{
-  background:var(--ink);
-  color:#fff;
+.mv-btn-single:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 26px rgba(17,17,15,.09);
 }
 
 .mv-modal-grid{
