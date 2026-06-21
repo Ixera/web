@@ -343,7 +343,7 @@ a{
 
 .service-layout{
   display:grid;
-  grid-template-columns:.52fr 1fr;
+  grid-template-columns:.36fr 1fr;
   gap:clamp(34px,6vw,90px);
   align-items:start;
   margin-bottom:54px;
