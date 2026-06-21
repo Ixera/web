@@ -360,3 +360,70 @@ if (mvOverlay) {
   window.addEventListener("resize", onScroll, { passive: true });
   setActive();
 })();
+
+// ===== FENÊTRE FORMULAIRE CONTACT =====
+(function () {
+  const overlay = document.getElementById("contactOverlay");
+  const closeBtn = document.getElementById("contactClose");
+  const openBtns = document.querySelectorAll(".contact-open");
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("contactStatus");
+  if (!overlay || !form) return;
+
+  function openContact() {
+    overlay.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeContact() {
+    overlay.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  openBtns.forEach((b) => b.addEventListener("click", openContact));
+  if (closeBtn) closeBtn.addEventListener("click", closeContact);
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeContact();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !overlay.hidden) closeContact();
+  });
+
+  function msg(key) {
+    const lang = document.documentElement.lang === "en" ? "en" : "fr";
+    const t = {
+      sending: { fr: "Envoi en cours…", en: "Sending…" },
+      ok: { fr: "Merci. Votre message est envoyé.", en: "Thank you. Your message was sent." },
+      error: { fr: "Une erreur est survenue. Réessayez ou écrivez à jf.lavigne@ixera.ca.", en: "Something went wrong. Try again or email jf.lavigne@ixera.ca." }
+    };
+    return t[key][lang];
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    status.hidden = false;
+    status.className = "contact-status";
+    status.textContent = msg("sending");
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        status.classList.add("is-ok");
+        status.textContent = msg("ok");
+        form.reset();
+        setTimeout(closeContact, 2200);
+      } else {
+        status.classList.add("is-error");
+        status.textContent = msg("error");
+      }
+    } catch (err) {
+      status.classList.add("is-error");
+      status.textContent = msg("error");
+    }
+  });
+})();

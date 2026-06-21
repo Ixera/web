@@ -165,12 +165,11 @@
 </div>
 
         <div class="hero-actions">
-<a class="btn btn-primary"
-   href="mailto:jf.lavigne@ixera.ca"
+<button type="button" class="btn btn-primary contact-open"
    data-fr="Parlons de votre équipe de direction"
    data-en="Let’s discuss your senior leadership team">
    Parlons de votre équipe de direction
-</a>
+</button>
         </div>
       </div>
 
@@ -395,6 +394,41 @@
         </p>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="distinction-overlay" id="contactOverlay" hidden>
+  <div class="distinction-modal contact-modal" role="dialog" aria-modal="true" aria-labelledby="contactFormTitle">
+    <button type="button" class="distinction-close" id="contactClose" aria-label="Fermer">&times;</button>
+
+    <p class="mv-modal-label" id="contactFormTitle" data-fr="Entrons en contact" data-en="Let’s connect">Entrons en contact</p>
+    <p class="contact-modal-sub" data-fr="Quelques mots, et on vous revient." data-en="A few words, and we’ll get back to you.">Quelques mots, et on vous revient.</p>
+
+    <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="ef22f66c-07da-4244-a185-51871ceb0869">
+      <input type="hidden" name="subject" value="Nouveau message — site Ixera">
+      <input type="hidden" name="from_name" value="Site Ixera">
+      <input type="checkbox" name="botcheck" class="contact-hp" style="display:none" tabindex="-1" autocomplete="off">
+
+      <label class="contact-field">
+        <span data-fr="Nom" data-en="Name">Nom</span>
+        <input type="text" name="name" required autocomplete="name">
+      </label>
+
+      <label class="contact-field">
+        <span data-fr="Courriel" data-en="Email">Courriel</span>
+        <input type="email" name="email" required autocomplete="email">
+      </label>
+
+      <label class="contact-field">
+        <span data-fr="Message" data-en="Message">Message</span>
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+
+      <button type="submit" class="btn btn-primary contact-submit" data-fr="Envoyer" data-en="Send">Envoyer</button>
+
+      <p class="contact-status" id="contactStatus" hidden></p>
+    </form>
   </div>
 </div>
 
@@ -794,12 +828,11 @@
 
   <div class="contact-actions">
 
-<a class="btn btn-primary"
-   href="mailto:jf.lavigne@ixera.ca"
+<button type="button" class="btn btn-primary contact-open"
    data-fr="Entrons en contact →"
    data-en="Let’s connect →">
    Entrons en contact →
-</a>
+</button>
 
     <a href="https://www.linkedin.com/in/lavignejf"
        target="_blank"

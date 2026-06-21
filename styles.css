@@ -1846,3 +1846,78 @@ button:focus-visible,
     transition:none;
   }
 }
+
+/* ===== FENÊTRE FORMULAIRE CONTACT ===== */
+.contact-modal{
+  max-width:520px;
+  text-align:left;
+}
+
+.contact-modal-sub{
+  margin:6px 0 24px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.4;
+}
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.contact-field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.contact-field span{
+  font-size:13px;
+  font-weight:850;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--ink);
+}
+
+.contact-field input,
+.contact-field textarea{
+  width:100%;
+  padding:13px 15px;
+  border:1px solid var(--soft);
+  border-radius:14px;
+  background:#fffdfb;
+  font:inherit;
+  font-size:16px;
+  color:var(--ink);
+  transition:border-color .18s ease,box-shadow .18s ease;
+  box-sizing:border-box;
+}
+
+.contact-field textarea{
+  resize:vertical;
+  min-height:96px;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus{
+  outline:none;
+  border-color:var(--red);
+  box-shadow:0 0 0 3px rgba(237,28,36,.12);
+}
+
+.contact-submit{
+  margin-top:6px;
+  width:100%;
+  cursor:pointer;
+}
+
+.contact-status{
+  margin:4px 0 0;
+  font-size:15px;
+  font-weight:650;
+  text-align:center;
+}
+
+.contact-status.is-ok{ color:#1a7a3c; }
+.contact-status.is-error{ color:var(--red); }
