@@ -1482,10 +1482,16 @@ button:focus-visible,
 }
 
 .dg-head{
-  font-size:11px;
-  letter-spacing:.16em;
+  font-size:13px;
+  letter-spacing:.12em;
   text-transform:uppercase;
   font-weight:900;
+}
+
+.dg-logo{
+  display:block;
+  height:38px;
+  width:auto;
 }
 
 .dg-dim{
@@ -1499,7 +1505,7 @@ button:focus-visible,
 }
 
 .dg-them.dg-head{
-  color:var(--muted);
+  color:var(--ink);
 }
 
 .dg-us{
@@ -1574,22 +1580,25 @@ button:focus-visible,
     grid-template-columns:1fr 1fr;
   }
   .distinction-grid > div{
-    padding:12px 12px;
+    padding:9px 10px;
     border-top:0;
   }
   .dg-head.dg-dim{
     display:none;
   }
   .distinction-grid .dg-head{
-    font-size:10px;
-    letter-spacing:.1em;
-    font-weight:600;
-    padding-bottom:10px;
+    font-size:11px;
+    letter-spacing:.08em;
+    font-weight:700;
+    padding-bottom:7px;
+  }
+  .dg-logo{
+    height:26px;
   }
   .distinction-grid .dg-dim{
     grid-column:1 / -1;
     text-align:center;
-    padding:20px 2px 10px;
+    padding:13px 2px 7px;
     border-top:0;
     font-size:13px;
     font-weight:700;
@@ -1601,7 +1610,7 @@ button:focus-visible,
     height:3px;
     background:var(--red);
     border-radius:2px;
-    margin:0 auto 12px;
+    margin:0 auto 8px;
   }
   .distinction-grid .dg-them{
     border-left:0;
