@@ -1482,16 +1482,11 @@ button:focus-visible,
 }
 
 .dg-head{
-  font-size:13px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+  display:flex;
+  align-items:center;
+  font-size:15px;
   font-weight:900;
-}
-
-.dg-logo{
-  display:block;
-  height:38px;
-  width:auto;
+  text-transform:none;
 }
 
 .dg-dim{
@@ -1505,7 +1500,8 @@ button:focus-visible,
 }
 
 .dg-them.dg-head{
-  color:var(--ink);
+  background:var(--ink);
+  color:#fff;
 }
 
 .dg-us{
@@ -1514,7 +1510,8 @@ button:focus-visible,
 }
 
 .dg-us.dg-head{
-  color:var(--red);
+  background:var(--red);
+  color:#fff;
 }
 
 .dg-lead{
@@ -1587,13 +1584,8 @@ button:focus-visible,
     display:none;
   }
   .distinction-grid .dg-head{
-    font-size:11px;
-    letter-spacing:.08em;
-    font-weight:700;
-    padding-bottom:7px;
-  }
-  .dg-logo{
-    height:26px;
+    font-size:12px;
+    font-weight:800;
   }
   .distinction-grid .dg-dim{
     grid-column:1 / -1;
@@ -1620,10 +1612,12 @@ button:focus-visible,
     background:#f6dada;
   }
   .distinction-grid .dg-them.dg-head{
-    color:#2f2d2a;
+    background:var(--ink);
+    color:#fff;
   }
   .distinction-grid .dg-us.dg-head{
-    color:var(--red-dark);
+    background:var(--red);
+    color:#fff;
   }
   .distinction-grid .dg-sub{
     display:none;
