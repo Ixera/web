@@ -1547,8 +1547,28 @@ button:focus-visible,
 }
 
 @media(max-width:560px){
+  .distinction-overlay{
+    align-items:flex-start;
+    padding:14px 12px;
+  }
   .distinction-modal{
-    padding:24px 18px 28px;
+    padding:22px 16px 24px;
+  }
+  .distinction-modal .eyebrow{
+    margin-bottom:10px;
+  }
+  .distinction-modal h2{
+    margin:0 0 14px;
+    font-size:26px;
+  }
+  .mv-modal-grid--trio{
+    padding-top:8px;
+  }
+  .mv-modal-tag{
+    margin-bottom:10px;
+  }
+  .mv-modal-def{
+    margin:0 0 8px;
   }
   .distinction-grid{
     grid-template-columns:1fr 1fr;
@@ -1725,7 +1745,7 @@ button:focus-visible,
 @media (max-width:720px){
   .mv-modal-grid{
     grid-template-columns:1fr;
-    gap:32px;
+    gap:18px;
   }
 }
 
