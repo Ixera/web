@@ -1199,6 +1199,24 @@ footer small{
   }
 }
 
+.audience-candidate{
+  display:inline-block;
+  margin:22px auto 0;
+  color:var(--ink);
+  opacity:.55;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.01em;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:opacity .18s ease,border-color .18s ease;
+}
+
+.audience-candidate:hover{
+  opacity:1;
+  border-bottom-color:var(--red);
+}
+
 /* MOBILE TACTILE : relief plus franc + feedback au toucher */
 @media(hover:none){
   .btn-primary,
