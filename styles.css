@@ -79,9 +79,22 @@ a{
   white-space:nowrap;
 }
 
-@media(max-width:1100px){
+@media(min-width:981px) and (max-width:1100px){
   .brand-desc{
     display:none;
+  }
+}
+
+@media(max-width:480px){
+  .brand-block{
+    gap:12px;
+  }
+  .brand-desc{
+    padding-left:12px;
+  }
+  .brand-desc span{
+    font-size:9px;
+    letter-spacing:.08em;
   }
 }
 
@@ -482,7 +495,7 @@ a{
 }
 
 .section-copy .service-tie{
-  text-align:center;
+  text-align:left;
   margin:16px 0 0;
   color:var(--ink);
   font-weight:700;
