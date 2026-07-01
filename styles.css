@@ -132,23 +132,8 @@ a{
 
 .eyebrow-duo{
   display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:8px;
-  letter-spacing:normal;
-}
-
-.eyebrow-pill{
-  display:inline-flex;
-  align-items:center;
-  border:1px solid var(--line);
-  background:#fffaf6;
-  border-radius:999px;
-  padding:7px 14px;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.14em;
-  color:var(--red);
+  flex-direction:column;
+  gap:5px;
 }
 
 .hero h1{
