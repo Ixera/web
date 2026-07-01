@@ -913,7 +913,8 @@ a{
   color:#fff;
   border:1px solid transparent;
   text-decoration:none;
-  transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
+  box-shadow:0 3px 0 #084d92,0 9px 20px rgba(17,17,15,.20);
+  transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease;
 }
 
 .linkedin-btn svg{
@@ -926,6 +927,7 @@ a{
   border-color:#0a66c2;
   color:#0a66c2;
   transform:translateY(-2px);
+  box-shadow:0 3px 0 #0a66c2,0 13px 26px rgba(17,17,15,.18);
 }
 
 /* FORMÉ PAR */
