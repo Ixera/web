@@ -130,6 +130,21 @@ a{
   font-weight:900;
 }
 
+.eyebrow-duo{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  letter-spacing:.16em;
+}
+
+.eyebrow-bar{
+  width:2px;
+  height:13px;
+  background:currentColor;
+  margin:0 16px;
+  opacity:.5;
+}
+
 .hero h1{
   max-width:880px;
   margin:0 0 28px;
