@@ -1158,10 +1158,11 @@ footer small{
 .audience-gate h2{
   margin:0 0 30px;
   color:var(--ink);
-  font-size:clamp(38px,4.5vw,64px);
+  font-size:clamp(38px,4.5vw,52px);
   line-height:.96;
   letter-spacing:-.06em;
   font-weight:900;
+  white-space:nowrap;
 }
 
 .audience-gate-actions{
@@ -1512,7 +1513,8 @@ button:focus-visible,
 
   .audience-gate h2{
     margin-bottom:26px;
-    font-size:42px;
+    font-size:38px;
+    white-space:normal;
   }
 
   .audience-choice{
