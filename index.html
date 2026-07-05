@@ -69,65 +69,7 @@
   
 </head>
 <body>
-<div class="audience-gate" id="audienceGate" aria-label="Sélection du profil visiteur" role="dialog" aria-modal="true">
-  <div class="audience-gate-card">
-    <button id="gateLangToggle" class="audience-lang-toggle" type="button" aria-label="Changer de langue">EN</button>
-    <img class="audience-gate-logo" src="assets/ixera-logo.png" alt="ixera" />
-
-    <p
-      class="audience-gate-eyebrow"
-      data-fr="Avant de commencer"
-      data-en="Before we begin">
-      Avant de commencer
-    </p>
-
-<h2
-  data-fr="Quel est votre rôle?"
-  data-en="What Is Your Role?">
-  Quel est votre rôle?
-</h2>
-
-<div class="audience-gate-actions">
-  <button
-  type="button"
-  class="audience-choice"
-  data-role="pdg"
-  data-fr="PDG | Haute direction"
-  data-en="CEO | Senior leadership">
-  PDG | Haute direction
-</button>
-
-<button
-  type="button"
-  class="audience-choice"
-  data-role="ca"
-  data-fr="Conseil d’administration"
-  data-en="Board of Directors">
-  Conseil d’administration
-</button>
-
-<button
-  type="button"
-  class="audience-choice"
-  data-role="invest"
-  data-fr="Propriétaire | Investisseur"
-  data-en="Owner | Investor">
-  Propriétaire | Investisseur
-</button>
-</div>
-
-<a
-  class="audience-candidate"
-  href="https://www.linkedin.com/in/lavignejf"
-  target="_blank"
-  rel="noopener"
-  data-fr="Sinon, connectons-nous sur LinkedIn"
-  data-en="Otherwise, let’s connect on LinkedIn">
-  Sinon, connectons-nous sur LinkedIn
-</a>
-  </div>
-</div>
-  <header class="site-header"> 
+<header class="site-header"> 
     <div class="brand-block">
     <a class="brand" href="#top" id="brandLogo" aria-label="ixera">
       <img src="assets/ixera-logo.png" alt="ixera" />
@@ -154,6 +96,38 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow" data-fr="Continuité managériale" data-en="Leadership continuity">Continuité managériale</p>
+
+<div class="hero-roles" role="group" aria-label="Choisir votre profil">
+  <button
+    type="button"
+    class="hero-role is-active"
+    data-role="pdg"
+    aria-pressed="true"
+    data-fr="PDG | Haute direction"
+    data-en="CEO | Senior leadership">
+    PDG | Haute direction
+  </button>
+
+  <button
+    type="button"
+    class="hero-role"
+    data-role="ca"
+    aria-pressed="false"
+    data-fr="Conseil d’administration"
+    data-en="Board of Directors">
+    Conseil d’administration
+  </button>
+
+  <button
+    type="button"
+    class="hero-role"
+    data-role="invest"
+    aria-pressed="false"
+    data-fr="Propriétaire | Investisseur"
+    data-en="Owner | Investor">
+    Propriétaire | Investisseur
+  </button>
+</div>
 
 <h1
   id="heroTitle"

@@ -5,7 +5,6 @@ if ("scrollRestoration" in history) {
 window.scrollTo(0, 0);
 
 const btn = document.getElementById("langToggle");
-const gateBtn = document.getElementById("gateLangToggle");
 
 function getInitialLang() {
   const savedLanguage = localStorage.getItem("ixera-language");
@@ -23,9 +22,6 @@ function setLang(lang) {
   });
   if (btn) {
     btn.textContent = lang === "fr" ? "EN" : "FR";
-  }
-  if (gateBtn) {
-    gateBtn.textContent = lang === "fr" ? "EN" : "FR";
   }
   document.title =
     lang === "fr"
@@ -70,13 +66,6 @@ if (btn) {
   });
 }
 
-if (gateBtn) {
-  gateBtn.addEventListener("click", () => {
-    const currentLang = document.documentElement.lang === "fr" ? "en" : "fr";
-    setLang(currentLang);
-  });
-}
-
 document.querySelectorAll(".hero-toggle").forEach((toggle) => {
   toggle.addEventListener("click", () => {
     const panelId = toggle.getAttribute("aria-controls");
@@ -104,9 +93,6 @@ document.querySelectorAll(".approach-toggle").forEach((toggle) => {
     detail.hidden = isOpen;
   });
 });
-
-const audienceGate = document.getElementById("audienceGate");
-const audienceChoices = document.querySelectorAll(".audience-choice");
 
 // Variantes du hero selon le rôle choisi (FR + EN)
 const heroVariants = {
@@ -146,45 +132,33 @@ function applyRole(role) {
   setLang(document.documentElement.lang === "en" ? "en" : "fr");
 }
 
-function closeGate() {
-  if (audienceGate) {
-    audienceGate.classList.add("is-hidden");
-  }
+// Onglets de profil du hero
+const roleTabs = document.querySelectorAll(".hero-role");
+
+function setActiveTab(role) {
+  roleTabs.forEach((tab) => {
+    const active = tab.getAttribute("data-role") === role;
+    tab.classList.toggle("is-active", active);
+    tab.setAttribute("aria-pressed", String(active));
+  });
 }
 
-if (audienceGate) {
-  audienceChoices.forEach((choice) => {
-    choice.addEventListener("click", () => {
-      const role = choice.getAttribute("data-role");
-      if (role) {
-        applyRole(role);
-        localStorage.setItem("ixera-role", role);
-      }
-      closeGate();
-    });
-  });
-
-  // Fermeture au clavier (Échap) pour l'accessibilité
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !audienceGate.classList.contains("is-hidden")) {
-      closeGate();
+roleTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const role = tab.getAttribute("data-role");
+    if (role) {
+      applyRole(role);
+      setActiveTab(role);
+      localStorage.setItem("ixera-role", role);
     }
   });
-}
+});
 
-function openGate() {
-  if (audienceGate) {
-    audienceGate.classList.remove("is-hidden");
-    window.scrollTo(0, 0);
-  }
-}
-
-const brandLogo = document.getElementById("brandLogo");
-if (brandLogo) {
-  brandLogo.addEventListener("click", (e) => {
-    e.preventDefault();
-    openGate();
-  });
+// Appliquer le profil mémorisé au chargement
+const savedRole = localStorage.getItem("ixera-role");
+if (savedRole && heroVariants[savedRole]) {
+  applyRole(savedRole);
+  setActiveTab(savedRole);
 }
 
 const distinctionOpen = document.getElementById("distinctionOpen");
