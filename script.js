@@ -117,7 +117,7 @@ const heroVariants = {
 };
 
 function applyRole(role) {
-  const v = heroVariants[role] || heroVariants.pdg;
+  const v = heroVariants[role] || heroVariants.ca;
   const heroTitle = document.getElementById("heroTitle");
   const heroLead = document.getElementById("heroLead");
   if (heroTitle) {
@@ -154,12 +154,8 @@ roleTabs.forEach((tab) => {
   });
 });
 
-// Appliquer le profil mémorisé au chargement
-const savedRole = localStorage.getItem("ixera-role");
-if (savedRole && heroVariants[savedRole]) {
-  applyRole(savedRole);
-  setActiveTab(savedRole);
-}
+// Au chargement, le hero affiche toujours le profil Conseil d'administration.
+// Le choix cliqué reste mémorisé uniquement pour préremplir le formulaire de contact.
 
 const distinctionOpen = document.getElementById("distinctionOpen");
 const distinctionClose = document.getElementById("distinctionClose");
