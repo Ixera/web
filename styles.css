@@ -1079,6 +1079,27 @@ footer small{
   display:block;
 }
 
+/* TÉLÉPHONE SOUS LE FORMULAIRE DE CONTACT */
+.contact-phone{
+  margin:16px 0 0;
+  padding-top:14px;
+  border-top:1px solid var(--soft);
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+}
+
+.contact-phone a{
+  color:var(--red);
+  font-weight:750;
+  text-decoration:none;
+  margin-left:6px;
+}
+
+.contact-phone a:hover{
+  text-decoration:underline;
+}
+
 /* ONGLETS DE PROFIL DU HERO */
 .hero-roles{
   display:flex;
