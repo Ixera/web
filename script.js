@@ -342,18 +342,22 @@ if (mvOverlay) {
   if (!overlay || !form) return;
 
   const roleMap = {
-    pdg: "PDG",
+    pdg: "PDG | Haute direction",
     ca: "Conseil d'administration",
-    invest: "Propriétaire / Investisseur"
+    invest: "Propriétaire | Investisseur"
   };
 
   function openContact() {
     overlay.hidden = false;
     document.body.style.overflow = "hidden";
-    const saved = localStorage.getItem("ixera-role");
+    // Reprendre le profil actif sur la page (l'onglet sélectionné du hero)
+    const activeTab = document.querySelector(".hero-role.is-active");
+    const role = activeTab
+      ? activeTab.getAttribute("data-role")
+      : localStorage.getItem("ixera-role");
     const roleSelect = form.querySelector('select[name="role"]');
-    if (saved && roleSelect && !roleSelect.value) {
-      const mapped = roleMap[saved];
+    if (role && roleSelect) {
+      const mapped = roleMap[role];
       if (mapped) roleSelect.value = mapped;
     }
   }
