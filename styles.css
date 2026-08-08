@@ -2508,18 +2508,30 @@ button:focus-visible,
 html{ scroll-padding-top:76px; }
 .brand-desc{ gap:2px; }
 .brand-desc span{ color:#57514a; }
+.brand-block{ gap:0; }
+.brand-desc{ padding-left:9px; margin-left:9px; }
 .brand-desc .bd-top{
   font-size:9px;
   font-weight:600;
-  letter-spacing:.12em;
-  line-height:1.1;
+  letter-spacing:.06em;
+  line-height:1.12;
 }
 .brand-desc .bd-bot{
-  font-size:13.5px;
+  font-size:13px;
   font-weight:600;
-  letter-spacing:.045em;
+  letter-spacing:.16em;
   line-height:1.05;
   color:#3a352f;
+}
+
+/* BUREAU: moins d'espace entre l'entete et le contenu */
+@media(min-width:981px){
+  .hero{
+    min-height:auto;
+    align-items:start;
+    padding-top:clamp(40px,4.4vw,68px);
+    padding-bottom:clamp(56px,6vw,96px);
+  }
 }
 /* MOBILE: descriptif visible, moins d'espace en haut, ancrage corrige */
 @media(max-width:640px){
