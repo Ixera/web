@@ -2436,3 +2436,131 @@ button:focus-visible,
 @media(max-width:560px){
   .article-sign{ flex-direction:column; gap:14px; }
 }
+
+/* ============================================================
+   MENU MOBILE (hamburger, sans JavaScript)
+   ============================================================ */
+.nav-toggle-cb{
+  position:absolute;
+  width:1px;
+  height:1px;
+  opacity:0;
+  margin:0;
+}
+.nav-burger{ display:none; }
+
+@media(max-width:980px){
+  .nav-burger{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:44px;
+    height:44px;
+    padding:11px;
+    box-sizing:border-box;
+    justify-self:end;
+    border:1px solid var(--soft);
+    border-radius:12px;
+    background:#fffaf6;
+    cursor:pointer;
+  }
+  .nav-burger span{
+    display:block;
+    width:100%;
+    height:2px;
+    background:var(--ink);
+    border-radius:2px;
+    transition:transform .2s ease,opacity .2s ease;
+  }
+  .nav-toggle-cb:checked ~ .nav-burger span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-toggle-cb:checked ~ .nav-burger span:nth-child(2){ opacity:0; }
+  .nav-toggle-cb:checked ~ .nav-burger span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  .nav-toggle-cb:checked ~ .nav-links{
+    display:flex;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    margin:0;
+    padding:6px clamp(18px,5vw,24px) 16px;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 24px 40px rgba(17,17,15,.16);
+  }
+  .nav-toggle-cb:checked ~ .nav-links a{
+    padding:14px 2px;
+    border-bottom:1px solid var(--line);
+    font-size:17px;
+    font-weight:700;
+  }
+  .nav-toggle-cb:checked ~ .nav-links a:last-child{ border-bottom:0; }
+}
+
+/* ============================================================
+   ENTÊTE RAFFINÉ — direction A (bureau)
+   ============================================================ */
+.site-header{ height:66px; }
+.brand-desc{ gap:2px; }
+.brand-desc span{ color:#57514a; }
+.brand-desc .bd-top{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.12em;
+  line-height:1.1;
+}
+.brand-desc .bd-bot{
+  font-size:13.5px;
+  font-weight:800;
+  letter-spacing:.045em;
+  line-height:1;
+  color:#3a352f;
+}
+@media(max-width:640px){
+  .brand-desc{ display:none; }
+}
+
+@media(min-width:981px){
+  .nav-links{
+    gap:30px;
+    font-size:13.5px;
+    font-weight:550;
+    letter-spacing:.015em;
+    color:#3f3a34;
+  }
+  .nav-links a{ position:relative; padding:6px 0; }
+  .nav-links a:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:2px;
+    background:var(--red);
+    border-radius:2px;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .24s ease;
+  }
+  .nav-links a:not(:last-child):hover{ color:var(--ink); }
+  .nav-links a:not(:last-child):hover::after,
+  .nav-links a.is-active:not(:last-child)::after{ transform:scaleX(1); }
+
+  /* Contact en bouton discret, seul appel a l'action */
+  .nav-links a:last-child{
+    padding:8px 18px;
+    border-radius:999px;
+    background:var(--red);
+    color:#fff;
+    font-weight:750;
+    box-shadow:0 2px 0 var(--red-dark);
+    transition:background .18s ease, transform .18s ease;
+  }
+  .nav-links a:last-child:hover{
+    background:var(--red-dark);
+    color:#fff;
+    transform:translateY(-1px);
+  }
+}
