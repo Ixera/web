@@ -427,3 +427,29 @@ if (mvOverlay) {
     }
   });
 })();
+
+// ===== ALIGNEMENT DU DESCRIPTIF (deux lignes de meme largeur, quelle que soit la police) =====
+(function () {
+  function fitBrandDesc() {
+    var t = document.querySelector(".brand-desc .bd-top");
+    var b = document.querySelector(".brand-desc .bd-bot");
+    if (!t || !b) return;
+    t.style.letterSpacing = "";
+    b.style.letterSpacing = "";
+    var tw = t.getBoundingClientRect().width;
+    var bw = b.getBoundingClientRect().width;
+    if (tw > bw) {
+      var n = b.textContent.trim().length - 1;
+      if (n > 0) b.style.letterSpacing = ((tw - bw) / n) + "px";
+    } else if (bw > tw) {
+      var m = t.textContent.trim().length - 1;
+      if (m > 0) t.style.letterSpacing = ((bw - tw) / m) + "px";
+    }
+  }
+  window.addEventListener("load", fitBrandDesc);
+  window.addEventListener("resize", fitBrandDesc);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBrandDesc);
+  var lt = document.getElementById("langToggle");
+  if (lt) lt.addEventListener("click", function () { setTimeout(fitBrandDesc, 40); });
+  fitBrandDesc();
+})();

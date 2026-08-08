@@ -2505,6 +2505,7 @@ button:focus-visible,
    ENTÊTE RAFFINÉ — direction A (bureau)
    ============================================================ */
 .site-header{ height:66px; }
+html{ scroll-padding-top:76px; }
 .brand-desc{ gap:2px; }
 .brand-desc span{ color:#57514a; }
 .brand-desc .bd-top{
@@ -2520,8 +2521,17 @@ button:focus-visible,
   line-height:1;
   color:#3a352f;
 }
+/* MOBILE: descriptif visible, moins d'espace en haut, ancrage corrige */
 @media(max-width:640px){
-  .brand-desc{ display:none; }
+  .hero{
+    min-height:auto;
+    align-items:start;
+    padding:22px 20px 52px;
+    gap:26px;
+  }
+  .brand-desc{ padding-left:10px; }
+  .brand-desc .bd-top{ font-size:8px; letter-spacing:.1em; }
+  .brand-desc .bd-bot{ font-size:12px; }
 }
 
 @media(min-width:981px){
