@@ -2509,20 +2509,16 @@ html{ scroll-padding-top:76px; }
 .brand-desc{ gap:2px; }
 .brand-desc span{ color:#57514a; }
 .brand-block{ gap:0; }
-.brand-desc{ padding-left:9px; margin-left:9px; }
-.brand-desc .bd-top{
-  font-size:9px;
-  font-weight:600;
-  letter-spacing:.06em;
-  line-height:1.12;
-}
+.brand-desc{ padding-left:10px; margin-left:10px; }
+.brand-desc .bd-top,
 .brand-desc .bd-bot{
-  font-size:13px;
+  font-size:10px;
   font-weight:600;
-  letter-spacing:.16em;
-  line-height:1.05;
-  color:#3a352f;
+  letter-spacing:.11em;
+  line-height:1.42;
+  color:#5a544c;
 }
+.brand-desc .bd-bot{ color:#3f3a34; }
 
 /* BUREAU: moins d'espace entre l'entete et le contenu */
 @media(min-width:981px){
@@ -2541,9 +2537,9 @@ html{ scroll-padding-top:76px; }
     padding:22px 20px 52px;
     gap:26px;
   }
-  .brand-desc{ padding-left:10px; }
-  .brand-desc .bd-top{ font-size:8px; letter-spacing:.1em; }
-  .brand-desc .bd-bot{ font-size:12px; }
+  .brand-desc{ padding-left:9px; margin-left:9px; }
+  .brand-desc .bd-top,
+  .brand-desc .bd-bot{ font-size:9px; letter-spacing:.1em; line-height:1.4; }
 }
 
 @media(min-width:981px){
