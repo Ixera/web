@@ -77,8 +77,9 @@
       <img src="assets/ixera-logo.png" alt="ixera" />
     </a>
     <span class="brand-desc">
-      <span class="bd-top" data-fr="Bâtisseur d’équipes" data-en="Executive team">Bâtisseur d’équipes</span>
-      <span class="bd-bot" data-fr="de direction" data-en="builder">de direction</span>
+      <span class="bd-line" data-fr="Bâtisseur d’équipes" data-en="Executive team">Bâtisseur d’équipes</span>
+      <span class="bd-line" data-fr="de direction" data-en="builder">de direction</span>
+      <span class="bd-line" data-fr="du Québec" data-en="in Québec">du Québec</span>
     </span>
     </div>
 
@@ -917,23 +918,5 @@
 </footer>
 
   <script src="script.js"></script>
-  <script>
-  (function(){
-    function f(){
-      var t=document.querySelector(".brand-desc .bd-top"),b=document.querySelector(".brand-desc .bd-bot");
-      if(!t||!b)return;
-      t.style.letterSpacing=""; b.style.letterSpacing="";
-      var tw=t.getBoundingClientRect().width, bw=b.getBoundingClientRect().width;
-      if(tw>bw){ var n=b.textContent.trim().length-1; if(n>0) b.style.letterSpacing=((tw-bw)/n)+"px"; }
-      else if(bw>tw){ var m=t.textContent.trim().length-1; if(m>0) t.style.letterSpacing=((bw-tw)/m)+"px"; }
-    }
-    window.addEventListener("load",f);
-    window.addEventListener("resize",f);
-    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(f);
-    var lt=document.getElementById("langToggle");
-    if(lt)lt.addEventListener("click",function(){setTimeout(f,40);});
-    f();
-  })();
-  </script>
 </body>
 </html>

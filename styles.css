@@ -2510,15 +2510,15 @@ html{ scroll-padding-top:76px; }
 .brand-desc span{ color:#57514a; }
 .brand-block{ gap:0; }
 .brand-desc{ padding-left:10px; margin-left:10px; }
-.brand-desc .bd-top,
-.brand-desc .bd-bot{
+.brand-desc span{
   font-size:10px;
   font-weight:600;
   letter-spacing:.11em;
-  line-height:1.42;
-  color:#5a544c;
+  line-height:1.4;
+  color:#4a453f;
+  text-transform:uppercase;
+  white-space:nowrap;
 }
-.brand-desc .bd-bot{ color:#3f3a34; }
 
 /* BUREAU: moins d'espace entre l'entete et le contenu */
 @media(min-width:981px){
@@ -2538,8 +2538,7 @@ html{ scroll-padding-top:76px; }
     gap:26px;
   }
   .brand-desc{ padding-left:9px; margin-left:9px; }
-  .brand-desc .bd-top,
-  .brand-desc .bd-bot{ font-size:9px; letter-spacing:.1em; line-height:1.4; }
+  .brand-desc span{ font-size:8.5px; letter-spacing:.1em; line-height:1.4; }
 }
 
 @media(min-width:981px){
