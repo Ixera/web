@@ -2511,7 +2511,7 @@ html{ scroll-padding-top:76px; }
 .brand-block{ gap:0; }
 .brand-desc{ padding-left:10px; margin-left:10px; }
 .brand-desc span{
-  font-size:10px;
+  font-size:6.7px;
   font-weight:600;
   letter-spacing:.11em;
   line-height:1.4;
@@ -2520,25 +2520,25 @@ html{ scroll-padding-top:76px; }
   white-space:nowrap;
 }
 
-/* BUREAU: moins d'espace entre l'entete et le contenu */
+/* BUREAU: le haut respire (plus d'air sous l'entete) */
 @media(min-width:981px){
   .hero{
     min-height:auto;
     align-items:start;
-    padding-top:clamp(40px,4.4vw,68px);
+    padding-top:clamp(76px,7.4vw,116px);
     padding-bottom:clamp(56px,6vw,96px);
   }
 }
-/* MOBILE: descriptif visible, moins d'espace en haut, ancrage corrige */
+/* MOBILE: descriptif visible, haut qui respire, ancrage corrige */
 @media(max-width:640px){
   .hero{
     min-height:auto;
     align-items:start;
-    padding:22px 20px 52px;
+    padding:48px 20px 52px;
     gap:26px;
   }
   .brand-desc{ padding-left:9px; margin-left:9px; }
-  .brand-desc span{ font-size:8.5px; letter-spacing:.1em; line-height:1.4; }
+  .brand-desc span{ font-size:5.7px; letter-spacing:.1em; line-height:1.4; }
 }
 
 @media(min-width:981px){
@@ -2581,3 +2581,6 @@ html{ scroll-padding-top:76px; }
     transform:translateY(-1px);
   }
 }
+
+/* Version anglaise : masquer la 3e ligne "in Québec" (garder "du Québec" en FR) */
+html[lang="en"] .bd-qc{ display:none; }
