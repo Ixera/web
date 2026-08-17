@@ -2584,3 +2584,16 @@ html{ scroll-padding-top:76px; }
 
 /* Version anglaise : masquer la 3e ligne "in Québec" (garder "du Québec" en FR) */
 html[lang="en"] .bd-qc{ display:none; }
+
+/* Descriptif : meme police que le reste du site, plus compact */
+.brand-desc{ justify-content:center; gap:1px; }
+.brand-desc span{
+  font-family:inherit;
+  font-size:8.5px;
+  line-height:1.35;
+  font-weight:650;
+  letter-spacing:.05em;
+}
+@media(max-width:640px){
+  .brand-desc span{ font-size:7.5px; line-height:1.35; letter-spacing:.04em; }
+}
