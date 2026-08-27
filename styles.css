@@ -2597,3 +2597,57 @@ html[lang="en"] .bd-qc{ display:none; }
 @media(max-width:640px){
   .brand-desc span{ font-size:7.5px; line-height:1.35; letter-spacing:.04em; }
 }
+
+/* ===== BANDE DOCUMENTS (téléchargements publics) ===== */
+.dl-band{
+  padding:clamp(58px,7vw,100px) clamp(24px,5vw,94px);
+  background:var(--paper-2);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.dl-band .eyebrow{ margin-bottom:26px; }
+.dl-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  max-width:900px;
+}
+.dl-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  border:1px solid var(--line);
+  background:#fff;
+  padding:20px 22px;
+  border-radius:16px;
+  transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  .dl-card:hover{
+    border-color:var(--red);
+    transform:translateY(-2px);
+    box-shadow:0 12px 26px rgba(17,17,15,.08);
+  }
+}
+.dl-sq{ width:12px; height:12px; background:var(--red); border-radius:2px; flex-shrink:0; }
+.dl-txt{ display:flex; flex-direction:column; gap:4px; min-width:0; }
+.dl-name{ font-size:15px; font-weight:800; color:var(--ink); }
+.dl-desc{ font-size:12.5px; color:var(--muted); line-height:1.4; }
+.dl-go{
+  margin-left:auto;
+  flex-shrink:0;
+  background:var(--ink);
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:10px 16px;
+  border-radius:999px;
+  white-space:nowrap;
+  transition:background .18s ease;
+}
+.dl-card:hover .dl-go{ background:var(--red); }
+@media(max-width:720px){
+  .dl-grid{ grid-template-columns:1fr; }
+}
