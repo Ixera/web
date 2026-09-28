@@ -103,8 +103,8 @@ const heroVariants = {
     leadEn: "Your strategy is only as good as the leadership team that executes it."
   },
   invest: {
-    titleFr: "Votre investissement dépend de l’équipe qui l’exécute.",
-    titleEn: "Your investment depends on the team that executes it.",
+    titleFr: "Votre plan d’investissement dépend de l’équipe qui l’exécute.",
+    titleEn: "Your investment plan depends on the team that executes it.",
     leadFr: "Ixera procure une lecture indépendante du risque managérial.",
     leadEn: "Ixera provides an independent read on leadership risk."
   }
