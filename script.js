@@ -97,8 +97,8 @@ document.querySelectorAll(".approach-toggle").forEach((toggle) => {
 // Variantes du hero selon le rôle choisi (FR + EN)
 const heroVariants = {
   pdg: {
-    titleFr: "Avez-vous les bonnes personnes aux bons postes?",
-    titleEn: "Do you have the right people in the right roles?",
+    titleFr: "Avez-vous les bonnes personnes aux bons postes de direction?",
+    titleEn: "Do you have the right people in the right leadership roles?",
     leadFr: "Votre stratégie vaut l’équipe de direction qui l’exécute.",
     leadEn: "Your strategy is only as good as the leadership team that executes it."
   },
