@@ -97,27 +97,21 @@ document.querySelectorAll(".approach-toggle").forEach((toggle) => {
 // Variantes du hero selon le rôle choisi (FR + EN)
 const heroVariants = {
   pdg: {
-    titleFr: "Votre meilleur dirigeant est votre plus grand risque.",
-    titleEn: "Your best executive is your biggest risk.",
-    leadFr: "Quand un poste clé repose sur une seule personne, votre stratégie devient fragile. Ixera réduit ce risque.",
-    leadEn: "When a key position rests on one person, your strategy becomes fragile. Ixera reduces that risk."
-  },
-  ca: {
-    titleFr: "La relève de votre équipe de direction ne devrait jamais être une surprise.",
-    titleEn: "The succession of your leadership team should never catch you off guard.",
-    leadFr: "La gouvernance doit assurer la continuité managériale. Ixera procure une lecture indépendante du risque et de la relève, avant l’urgence.",
-    leadEn: "Governance must ensure leadership continuity. Ixera provides an independent reading of risk and succession, before urgency strikes."
+    titleFr: "Avez-vous les bonnes personnes aux bons postes?",
+    titleEn: "Do you have the right people in the right roles?",
+    leadFr: "Votre stratégie vaut l’équipe de direction qui l’exécute.",
+    leadEn: "Your strategy is only as good as the leadership team that executes it."
   },
   invest: {
-    titleFr: "La profondeur de gestion détermine la valeur de votre entreprise.",
-    titleEn: "Management depth determines the value of your company.",
-    leadFr: "Une solide équipe de direction protège votre valeur à l’entrée et maximise votre multiple à la sortie. Ixera la bâtit avec vous.",
-    leadEn: "A strong leadership team protects your value at entry and maximizes your multiple at exit. Ixera builds it with you."
+    titleFr: "Votre investissement dépend de l’équipe qui l’exécute.",
+    titleEn: "Your investment depends on the team that executes it.",
+    leadFr: "Ixera procure une lecture indépendante du risque managérial.",
+    leadEn: "Ixera provides an independent read on leadership risk."
   }
 };
 
 function applyRole(role) {
-  const v = heroVariants[role] || heroVariants.ca;
+  const v = heroVariants[role] || heroVariants.pdg;
   const heroTitle = document.getElementById("heroTitle");
   const heroLead = document.getElementById("heroLead");
   if (heroTitle) {
@@ -343,7 +337,6 @@ if (mvOverlay) {
 
   const roleMap = {
     pdg: "PDG | Haute direction",
-    ca: "Conseil d'administration",
     invest: "Propriétaire | Investisseur"
   };
 
