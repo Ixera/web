@@ -1119,12 +1119,18 @@ footer small{
   font-weight:750;
   line-height:1;
   cursor:pointer;
-  transition:background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease;
+  transition:background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease;
 }
 
 @media(hover:hover) and (pointer:fine){
   .hero-role:hover{
     border-color:var(--ink);
+    transform:translateY(-2px);
+    box-shadow:0 3px 0 var(--ink),0 10px 20px rgba(17,17,15,.16);
+  }
+  .hero-role.is-active:hover{
+    border-color:var(--red);
+    box-shadow:0 3px 0 var(--red-dark),0 10px 20px rgba(237,28,36,.22);
   }
 }
 
