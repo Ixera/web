@@ -480,11 +480,15 @@ a{
 
 .service-name{
   margin:0 0 10px;
+  min-height:2.2em;
   font-size:clamp(20px,1.8vw,26px);
   line-height:1.1;
   letter-spacing:-.02em;
   font-weight:850;
   color:var(--ink);
+}
+@media(max-width:640px){
+  .service-name{ min-height:0; }
 }
 
 .section-copy .service-desc{
@@ -1138,7 +1142,7 @@ footer small{
   background:var(--red);
   border-color:var(--red);
   color:#fff;
-  box-shadow:0 3px 0 var(--red-dark);
+  box-shadow:0 3px 0 var(--red-dark),0 9px 20px rgba(17,17,15,.20);
 }
 
 @media(max-width:560px){
