@@ -105,8 +105,8 @@ const heroVariants = {
   invest: {
     titleFr: "Votre plan d’investissement dépend de l’équipe qui l’exécute.",
     titleEn: "Your investment plan depends on the team that executes it.",
-    leadFr: "Ixera procure une lecture indépendante du risque managérial.",
-    leadEn: "Ixera provides an independent read on leadership risk."
+    leadFr: "Contrôler le risque managérial protège votre valeur à la sortie.",
+    leadEn: "Controlling leadership risk protects your value at exit."
   }
 };
 
