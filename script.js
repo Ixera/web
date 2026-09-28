@@ -336,8 +336,8 @@ if (mvOverlay) {
   if (!overlay || !form) return;
 
   const roleMap = {
-    pdg: "PDG | Haute direction",
-    invest: "Propriétaire | Investisseur"
+    pdg: "PDG | Direction générale",
+    invest: "Investisseur"
   };
 
   function openContact() {
