@@ -1187,6 +1187,11 @@ footer small{
   box-shadow:0 3px 0 var(--red-dark),0 9px 20px rgba(17,17,15,.20);
 }
 
+/* Coupures de ligne forcées du titre hero (desktop seulement) */
+@media(min-width:900px){
+  #heroTitle{ white-space:pre-line; }
+}
+
 @media(max-width:560px){
   .hero-roles{
     gap:6px;
