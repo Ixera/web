@@ -103,8 +103,8 @@ const heroVariants = {
     leadEn: "Your strategy is only as good as the leadership team that executes it."
   },
   invest: {
-    titleFr: "Votre plan d’investissement dépend de l’équipe qui l’exécute.",
-    titleEn: "Your investment plan depends on the team that executes it.",
+    titleFr: "Votre thèse d’investissement dépend de l’équipe en place.",
+    titleEn: "Your investment thesis depends on the team in place.",
     leadFr: "Contrôler le risque managérial protège votre valeur de l’entrée à la sortie.",
     leadEn: "Controlling leadership risk protects your value from entry to exit."
   }
