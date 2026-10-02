@@ -904,6 +904,8 @@ a{
 .about-founder{
   display:flex;
   flex-direction:column;
+  align-items:center;
+  text-align:center;
   gap:6px;
 }
 
@@ -914,7 +916,7 @@ a{
   height:auto;
   aspect-ratio:auto;
   object-fit:contain;
-  align-self:flex-start; /* ne pas étirer en largeur : la largeur suit les proportions de la photo */
+  align-self:center; /* ne pas étirer en largeur : la largeur suit les proportions de la photo */
   display:block;
 }
 
@@ -951,6 +953,7 @@ a{
   line-height:1.25;
   letter-spacing:-.01em;
   color:var(--ink);
+  white-space:nowrap; /* toujours sur une seule ligne */
 }
 
 .about-founder-role{

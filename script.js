@@ -79,10 +79,22 @@ function sizeAboutPortrait() {
   const h = Math.round(bottom - top);
   img.style.height = h + "px";
   // La légende (nom, titre) ne dépasse jamais la largeur de la photo
+  const name = founder.querySelector(".about-founder-name");
   if (img.naturalWidth && img.naturalHeight) {
-    founder.style.width = Math.round(h * img.naturalWidth / img.naturalHeight) + "px";
+    const w = Math.round(h * img.naturalWidth / img.naturalHeight);
+    founder.style.width = w + "px";
+    // Le nom reste sur une ligne : on réduit sa taille juste assez pour tenir dans la photo
+    if (name) {
+      name.style.fontSize = "";
+      const needed = name.scrollWidth;
+      if (needed > w) {
+        const fs = parseFloat(getComputedStyle(name).fontSize);
+        name.style.fontSize = Math.max(10, Math.floor(fs * (w - 2) / needed * 10) / 10) + "px";
+      }
+    }
   } else {
     founder.style.width = "";
+    if (name) name.style.fontSize = "";
   }
 }
 window.addEventListener("load", sizeAboutPortrait);
