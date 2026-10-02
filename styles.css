@@ -157,6 +157,15 @@ a{
   overflow:hidden;
 }
 
+/* Grand écran : la carte se rapproche du texte, le surplus reste à droite */
+@media(min-width:1780px){
+  .hero{
+    grid-template-columns:minmax(0,820px) minmax(360px,620px);
+    gap:72px;
+    justify-content:start;
+  }
+}
+
 .hero:before{
   content:"";
   position:absolute;
@@ -1175,8 +1184,10 @@ footer small{
   background:transparent;
   color:var(--ink);
   font:inherit;
-  font-size:13px;
+  font-size:12.5px;
   font-weight:750;
+  text-transform:uppercase;
+  letter-spacing:.06em;
   line-height:1;
   cursor:pointer;
   transition:background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease;
