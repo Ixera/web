@@ -129,7 +129,9 @@ a{
 }
 
 /* Lien Gouvernance retiré du menu principal (la section, elle, est conservée) */
-.nav-links .nav-gouvernance{
+.nav-links .nav-gouvernance,
+.nav-links a[href*="gouvernance" i],
+.nav-links a[href*="governance" i]{
   display:none;
 }
 
@@ -2197,8 +2199,8 @@ button:focus-visible,
 .blog-hero h1{
   margin:0 0 18px;
   max-width:900px;
-  font-size:clamp(38px,4.1vw,56px);
-  line-height:1.05;
+  font-size:clamp(32px,3.4vw,46px);
+  line-height:1.08;
   letter-spacing:-.055em;
   font-weight:900;
 }
@@ -2617,8 +2619,9 @@ html{ scroll-padding-top:76px; }
     letter-spacing:.015em;
     color:#3f3a34;
   }
+  /* Tous les liens du menu, Contact inclus, ont le même style */
   .nav-links a{ position:relative; padding:6px 0; }
-  .nav-links a:not(:last-child)::after{
+  .nav-links a::after{
     content:"";
     position:absolute;
     left:0; right:0; bottom:0;
@@ -2629,24 +2632,8 @@ html{ scroll-padding-top:76px; }
     transform-origin:left;
     transition:transform .24s ease;
   }
-  .nav-links a:not(:last-child):hover{ color:var(--ink); }
-  .nav-links a:not(:last-child):hover::after,
-
-  /* Contact en bouton discret, seul appel a l'action */
-  .nav-links a:last-child{
-    padding:8px 18px;
-    border-radius:999px;
-    background:var(--red);
-    color:#fff;
-    font-weight:750;
-    box-shadow:0 2px 0 var(--red-dark);
-    transition:background .18s ease, transform .18s ease;
-  }
-  .nav-links a:last-child:hover{
-    background:var(--red-dark);
-    color:#fff;
-    transform:translateY(-1px);
-  }
+  .nav-links a:hover{ color:var(--ink); }
+  .nav-links a:hover::after{ transform:scaleX(1); }
 }
 
 /* Version anglaise : masquer la 3e ligne "in Québec" (garder "du Québec" en FR) */
