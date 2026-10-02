@@ -104,11 +104,22 @@ const heroVariants = {
   },
   invest: {
     titleFr: "La valeur de votre\ninvestissement dépend\nde l’équipe en place.",
-    titleEn: "The value of your\ninvestment depends\non the team in place.",
-    leadFr: "Contrôler le risque managérial protège votre valeur de l’entrée à la sortie.",
-    leadEn: "Controlling leadership risk protects your value from entry to exit."
+    titleEn: "The value of your investment depends on the leadership team in place.",
+    leadFr: "Nous contrôlons votre risque managérial, de l’entrée à la sortie.",
+    leadEn: "We manage your leadership risk, from entry to exit."
   }
 };
+
+// Textes qui varient selon le profil ailleurs dans la page (carte noire, Services).
+// Chaque élément porte data-fr-pdg / data-en-pdg et data-fr-invest / data-en-invest.
+function applyRoleVariants(role) {
+  document.querySelectorAll("[data-fr-pdg]").forEach((el) => {
+    const fr = el.getAttribute("data-fr-" + role) || el.getAttribute("data-fr-pdg");
+    const en = el.getAttribute("data-en-" + role) || el.getAttribute("data-en-pdg");
+    if (fr !== null) el.setAttribute("data-fr", fr);
+    if (en !== null) el.setAttribute("data-en", en);
+  });
+}
 
 function applyRole(role) {
   const v = heroVariants[role] || heroVariants.pdg;
@@ -122,6 +133,7 @@ function applyRole(role) {
     heroLead.dataset.fr = v.leadFr;
     heroLead.dataset.en = v.leadEn;
   }
+  applyRoleVariants(role in heroVariants ? role : "pdg");
   // Réafficher dans la langue courante
   setLang(document.documentElement.lang === "en" ? "en" : "fr");
 }
