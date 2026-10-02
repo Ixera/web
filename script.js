@@ -64,9 +64,11 @@ setLang(getInitialLang());
 function sizeAboutPortrait() {
   const copy = document.querySelector(".about-copy");
   const img = document.querySelector(".about-portrait");
-  if (!copy || !img) return;
+  const founder = document.querySelector(".about-founder");
+  if (!copy || !img || !founder) return;
   if (window.matchMedia("(max-width:980px)").matches) {
     img.style.height = "";
+    founder.style.width = "";
     return;
   }
   // Du haut du premier paragraphe au bas du dernier (le bouton est exclu)
@@ -74,10 +76,21 @@ function sizeAboutPortrait() {
   if (!paras.length) return;
   const top = paras[0].getBoundingClientRect().top;
   const bottom = paras[paras.length - 1].getBoundingClientRect().bottom;
-  img.style.height = Math.round(bottom - top) + "px";
+  const h = Math.round(bottom - top);
+  img.style.height = h + "px";
+  // La légende (nom, titre) ne dépasse jamais la largeur de la photo
+  if (img.naturalWidth && img.naturalHeight) {
+    founder.style.width = Math.round(h * img.naturalWidth / img.naturalHeight) + "px";
+  } else {
+    founder.style.width = "";
+  }
 }
 window.addEventListener("load", sizeAboutPortrait);
 window.addEventListener("resize", sizeAboutPortrait);
+(function () {
+  const img = document.querySelector(".about-portrait");
+  if (img) img.addEventListener("load", sizeAboutPortrait);
+})();
 if (document.fonts && document.fonts.ready) {
   document.fonts.ready.then(sizeAboutPortrait);
 }
