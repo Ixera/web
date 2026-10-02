@@ -122,9 +122,15 @@ a{
   color:var(--red);
 }
 
+/* Le lien de la section courante garde le même style que les autres */
 .nav-links a.is-active{
-  color:var(--red);
-  font-weight:850;
+  color:inherit;
+  font-weight:inherit;
+}
+
+/* Lien Gouvernance retiré du menu principal (la section, elle, est conservée) */
+.nav-links .nav-gouvernance{
+  display:none;
 }
 
 .lang-toggle{
@@ -733,6 +739,11 @@ a{
   font-size:18px;
   line-height:1.43;
   color:var(--muted);
+}
+
+/* Variante sans verbe (ex. statistique investisseur) : pas d'espace vide */
+.stat-verb:empty{
+  display:none;
 }
 
 .stat-number,
@@ -2620,7 +2631,6 @@ html{ scroll-padding-top:76px; }
   }
   .nav-links a:not(:last-child):hover{ color:var(--ink); }
   .nav-links a:not(:last-child):hover::after,
-  .nav-links a.is-active:not(:last-child)::after{ transform:scaleX(1); }
 
   /* Contact en bouton discret, seul appel a l'action */
   .nav-links a:last-child{

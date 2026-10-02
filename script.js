@@ -114,8 +114,10 @@ const heroVariants = {
 // Chaque élément porte data-fr-pdg / data-en-pdg et data-fr-invest / data-en-invest.
 function applyRoleVariants(role) {
   document.querySelectorAll("[data-fr-pdg]").forEach((el) => {
-    const fr = el.getAttribute("data-fr-" + role) || el.getAttribute("data-fr-pdg");
-    const en = el.getAttribute("data-en-" + role) || el.getAttribute("data-en-pdg");
+    let fr = el.getAttribute("data-fr-" + role);
+    let en = el.getAttribute("data-en-" + role);
+    if (fr === null) fr = el.getAttribute("data-fr-pdg");
+    if (en === null) en = el.getAttribute("data-en-pdg");
     if (fr !== null) el.setAttribute("data-fr", fr);
     if (en !== null) el.setAttribute("data-en", en);
   });
