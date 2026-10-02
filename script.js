@@ -69,7 +69,12 @@ function sizeAboutPortrait() {
     img.style.height = "";
     return;
   }
-  img.style.height = Math.round(copy.getBoundingClientRect().height) + "px";
+  // Du haut du premier paragraphe au bas du dernier (le bouton est exclu)
+  const paras = copy.querySelectorAll("p");
+  if (!paras.length) return;
+  const top = paras[0].getBoundingClientRect().top;
+  const bottom = paras[paras.length - 1].getBoundingClientRect().bottom;
+  img.style.height = Math.round(bottom - top) + "px";
 }
 window.addEventListener("load", sizeAboutPortrait);
 window.addEventListener("resize", sizeAboutPortrait);
