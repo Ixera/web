@@ -99,8 +99,8 @@ const heroVariants = {
   pdg: {
     titleFr: "Avez-vous les bonnes personnes aux bons postes de direction?",
     titleEn: "Do you have the right people in the right leadership roles?",
-    leadFr: "L’exécution de votre stratégie repose sur votre équipe de direction.",
-    leadEn: "The execution of your strategy depends on your leadership team."
+    leadFr: "Nous bâtissons et renforçons votre équipe de direction pour exécuter votre stratégie.",
+    leadEn: "We build and strengthen your leadership team to execute your strategy."
   },
   invest: {
     titleFr: "La valeur de votre\ninvestissement dépend\nde l’équipe de direction.",
