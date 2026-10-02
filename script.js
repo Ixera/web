@@ -103,8 +103,8 @@ const heroVariants = {
     leadEn: "The execution of your strategy depends on your leadership team."
   },
   invest: {
-    titleFr: "La valeur de votre\ninvestissement dépend\nde l’équipe en place.",
-    titleEn: "The value of your investment depends on the leadership team in place.",
+    titleFr: "La valeur de votre\ninvestissement dépend\nde l’équipe de direction.",
+    titleEn: "The value of your investment depends on your leadership team.",
     leadFr: "Nous contrôlons votre risque managérial, de l’entrée à la sortie.",
     leadEn: "We manage your leadership risk, from entry to exit."
   }
