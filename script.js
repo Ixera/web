@@ -55,9 +55,27 @@ function setLang(lang) {
     );
   }
   localStorage.setItem("ixera-language", lang);
+  if (typeof sizeAboutPortrait === "function") sizeAboutPortrait();
 }
 
 setLang(getInitialLang());
+
+// À propos : la photo (entière, proportions intactes) prend la hauteur du bloc de texte
+function sizeAboutPortrait() {
+  const copy = document.querySelector(".about-copy");
+  const img = document.querySelector(".about-portrait");
+  if (!copy || !img) return;
+  if (window.matchMedia("(max-width:980px)").matches) {
+    img.style.height = "";
+    return;
+  }
+  img.style.height = Math.round(copy.getBoundingClientRect().height) + "px";
+}
+window.addEventListener("load", sizeAboutPortrait);
+window.addEventListener("resize", sizeAboutPortrait);
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(sizeAboutPortrait);
+}
 
 if (btn) {
   btn.addEventListener("click", () => {

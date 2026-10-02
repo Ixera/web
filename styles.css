@@ -895,7 +895,7 @@ a{
 /* Dans la colonne de contenu : texte + photo, groupe compact */
 .about-content{
   display:grid;
-  grid-template-columns:minmax(0,640px) 260px;
+  grid-template-columns:minmax(0,640px) 264px;
   gap:clamp(28px,3.5vw,48px);
   align-items:start;
   justify-content:start;
@@ -904,11 +904,23 @@ a{
 .about-founder{
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:6px;
+}
+
+/* Photo entière (aucun recadrage), réduite : sa hauteur = hauteur du bloc de texte (réglée par script.js) */
+.about-content .about-portrait{
+  width:auto;
+  max-width:100%;
+  height:auto;
+  aspect-ratio:auto;
+  object-fit:contain;
+  align-self:flex-start; /* ne pas étirer en largeur : la largeur suit les proportions de la photo */
+  display:block;
 }
 
 @media(max-width:980px){
   .about-content{ grid-template-columns:1fr; }
+  .about-content .about-portrait{ width:100%; max-width:280px; height:auto !important; }
 }
 
 .about-portrait{
@@ -935,15 +947,16 @@ a{
 .about-founder-name{
   margin:2px 0 0;
   font-weight:850;
-  font-size:19px;
+  font-size:15px;
   letter-spacing:-.01em;
   color:var(--ink);
 }
 
 .about-founder-role{
   margin:0;
-  font-size:15px;
+  font-size:12.5px;
   font-weight:600;
+  line-height:1.35;
   color:var(--red);
 }
 
