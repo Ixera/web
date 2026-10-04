@@ -56,6 +56,7 @@ function setLang(lang) {
   }
   localStorage.setItem("ixera-language", lang);
   if (typeof sizeAboutPortrait === "function") sizeAboutPortrait();
+  if (typeof reserveHeroHeight === "function") reserveHeroHeight();
 }
 
 setLang(getInitialLang());
@@ -143,20 +144,108 @@ document.querySelectorAll(".approach-toggle").forEach((toggle) => {
 });
 
 // Variantes du hero selon le rôle choisi (FR + EN)
-const heroVariants = {
+// Direction & Gouvernance alterne entre deux messages (fondu, 5 s chacun).
+// Investisseurs & Fonds affiche un seul message fixe.
+var heroVariants = {
   pdg: {
-    titleFr: "Avez-vous les bonnes personnes aux bons postes de direction?",
-    titleEn: "Do you have the right people in the right leadership roles?",
-    leadFr: "Nous bâtissons et renforçons votre équipe de direction pour exécuter votre stratégie.",
-    leadEn: "We build and strengthen your leadership team to execute your strategy."
+    messages: [
+      {
+        titleFr: "Votre stratégie est ambitieuse. Avez-vous les bonnes personnes dans les bons postes pour y parvenir?",
+        titleEn: "Your strategy is ambitious. Do you have the right people in the right roles to get there?",
+        leadFr: "Nous relions votre stratégie, votre équipe et le marché des dirigeants pour bâtir l’équipe que votre contexte exige.",
+        leadEn: "We connect your strategy, your team and the executive market to build the team your context requires."
+      },
+      {
+        titleFr: "Votre équipe de direction\nsemble solide. Comment\ngérez-vous le risque\nd’un départ?",
+        titleEn: "Your leadership team\nlooks solid. How do you\nmanage the risk\nof a departure?",
+        leadFr: "Nous suivons vos postes clés, la relève et le marché des dirigeants pour préparer vos options avant l’urgence.",
+        leadEn: "We track your key positions, succession and the executive market to prepare your options before the urgency."
+      }
+    ]
   },
   invest: {
-    titleFr: "Le plan d’investissement\nest solide. L’équipe\nl’est-elle autant?",
-    titleEn: "The investment plan is\nsolid. Is the team\njust as strong?",
-    leadFr: "Nous contrôlons votre risque managérial,\nde l’entrée à la sortie.",
-    leadEn: "We manage your leadership risk,\nfrom entry to exit."
+    messages: [
+      {
+        titleFr: "Le plan d’investissement\nest solide. L’équipe\nl’est-elle autant?",
+        titleEn: "The investment plan is\nsolid. Is the team\njust as strong?",
+        leadFr: "Nous contrôlons votre risque managérial,\nde l’entrée à la sortie.",
+        leadEn: "We manage your leadership risk,\nfrom entry to exit."
+      }
+    ]
   }
 };
+
+const HERO_ROTATE_MS = 5000;   // durée d'affichage de chaque message
+const HERO_FADE_MS = 450;      // durée du fondu (doit suivre styles.css)
+var heroTimer = null;
+var heroIndex = 0;
+var heroRole = "pdg";
+
+function heroEls() {
+  return {
+    title: document.getElementById("heroTitle"),
+    lead: document.getElementById("heroLead")
+  };
+}
+
+// Écrit un message dans les attributs data-fr / data-en, puis réaffiche dans la langue courante
+function writeHeroMessage(m) {
+  const { title, lead } = heroEls();
+  if (title) { title.dataset.fr = m.titleFr; title.dataset.en = m.titleEn; }
+  if (lead) { lead.dataset.fr = m.leadFr; lead.dataset.en = m.leadEn; }
+  setLang(document.documentElement.lang === "en" ? "en" : "fr");
+}
+
+// Réserve la hauteur du plus long message du profil pour que rien ne bouge pendant l'alternance
+function reserveHeroHeight() {
+  if (typeof heroVariants === "undefined") return;
+  const { title, lead } = heroEls();
+  if (!title || !lead) return;
+  const v = heroVariants[heroRole] || heroVariants.pdg;
+  title.style.minHeight = "";
+  lead.style.minHeight = "";
+  if (v.messages.length < 2) return;
+  const lang = document.documentElement.lang === "en" ? "en" : "fr";
+  const keepT = title.textContent, keepL = lead.textContent;
+  let maxT = 0, maxL = 0;
+  v.messages.forEach((m) => {
+    title.textContent = lang === "en" ? m.titleEn : m.titleFr;
+    lead.textContent = lang === "en" ? m.leadEn : m.leadFr;
+    maxT = Math.max(maxT, title.offsetHeight);
+    maxL = Math.max(maxL, lead.offsetHeight);
+  });
+  title.textContent = keepT;
+  lead.textContent = keepL;
+  title.style.minHeight = maxT + "px";
+  lead.style.minHeight = maxL + "px";
+}
+
+function stopHeroRotation() {
+  if (heroTimer) { clearTimeout(heroTimer); heroTimer = null; }
+  const { title, lead } = heroEls();
+  if (title) title.classList.remove("is-fading");
+  if (lead) lead.classList.remove("is-fading");
+}
+
+function scheduleHeroRotation() {
+  const v = heroVariants[heroRole];
+  if (!v || v.messages.length < 2) return;
+  heroTimer = setTimeout(() => {
+    const { title, lead } = heroEls();
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const next = () => {
+      heroIndex = (heroIndex + 1) % v.messages.length;
+      writeHeroMessage(v.messages[heroIndex]);
+      if (title) title.classList.remove("is-fading");
+      if (lead) lead.classList.remove("is-fading");
+      scheduleHeroRotation();
+    };
+    if (reduce || !title || !lead) { next(); return; }
+    title.classList.add("is-fading");
+    lead.classList.add("is-fading");
+    heroTimer = setTimeout(next, HERO_FADE_MS);
+  }, HERO_ROTATE_MS);
+}
 
 // Textes qui varient selon le profil ailleurs dans la page (carte noire, Services).
 // Chaque élément porte data-fr-pdg / data-en-pdg et data-fr-invest / data-en-invest.
@@ -172,21 +261,23 @@ function applyRoleVariants(role) {
 }
 
 function applyRole(role) {
-  const v = heroVariants[role] || heroVariants.pdg;
-  const heroTitle = document.getElementById("heroTitle");
-  const heroLead = document.getElementById("heroLead");
-  if (heroTitle) {
-    heroTitle.dataset.fr = v.titleFr;
-    heroTitle.dataset.en = v.titleEn;
-  }
-  if (heroLead) {
-    heroLead.dataset.fr = v.leadFr;
-    heroLead.dataset.en = v.leadEn;
-  }
-  applyRoleVariants(role in heroVariants ? role : "pdg");
-  // Réafficher dans la langue courante
-  setLang(document.documentElement.lang === "en" ? "en" : "fr");
+  stopHeroRotation();
+  heroRole = role in heroVariants ? role : "pdg";
+  heroIndex = 0;
+  const v = heroVariants[heroRole];
+  writeHeroMessage(v.messages[0]);
+  applyRoleVariants(heroRole);
+  reserveHeroHeight();
+  scheduleHeroRotation();
 }
+
+// Au chargement: message 1 du profil Direction & Gouvernance, puis alternance
+window.addEventListener("load", () => {
+  reserveHeroHeight();
+  scheduleHeroRotation();
+});
+window.addEventListener("resize", reserveHeroHeight);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserveHeroHeight);
 
 // Onglets de profil du hero
 const roleTabs = document.querySelectorAll(".hero-role");

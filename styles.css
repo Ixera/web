@@ -216,6 +216,17 @@ a{
   letter-spacing:-.025em;
 }
 
+/* Alternance des messages du hero (Direction & Gouvernance): fondu discret */
+#heroTitle, #heroLead{
+  transition:opacity .45s ease;
+}
+#heroTitle.is-fading, #heroLead.is-fading{
+  opacity:0;
+}
+@media (prefers-reduced-motion: reduce){
+  #heroTitle, #heroLead{ transition:none; }
+}
+
 .value-line{
   display:flex;
   flex-wrap:wrap;
