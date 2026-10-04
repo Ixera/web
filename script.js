@@ -159,7 +159,7 @@ var heroVariants = {
         titleFr: "Comment gérez-vous\nle risque de perdre\nun membre de votre\néquipe de direction?",
         titleEn: "How do you manage\nthe risk of losing\na member of your\nleadership team?",
         leadFr: "Nous suivons vos postes clés, la relève et le marché des dirigeants pour préparer vos options avant l’urgence.",
-        leadEn: "We track your key positions, succession and the executive market to prepare your options before the urgency."
+        leadEn: "We track your key positions, succession and the executive market to prepare your options before urgency strikes."
       }
     ]
   },
