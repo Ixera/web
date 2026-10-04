@@ -150,14 +150,14 @@ var heroVariants = {
   pdg: {
     messages: [
       {
-        titleFr: "Votre stratégie est ambitieuse. Avez-vous les bonnes personnes dans les bons postes pour y parvenir?",
-        titleEn: "Your strategy is ambitious. Do you have the right people in the right roles to get there?",
-        leadFr: "Nous relions votre stratégie, votre équipe et le marché des dirigeants pour bâtir l’équipe que votre contexte exige.",
-        leadEn: "We connect your strategy, your team and the executive market to build the team your context requires."
+        titleFr: "Avez-vous\nles bonnes personnes\naux bons postes?",
+        titleEn: "Do you have the right\npeople in the right roles?",
+        leadFr: "Nous relions votre stratégie, vos dirigeants et le marché pour bâtir l’équipe que votre contexte exige.",
+        leadEn: "We connect your strategy, your executives and the market to build the team your context requires."
       },
       {
-        titleFr: "Votre équipe de direction\nsemble solide. Comment\ngérez-vous le risque\nd’un départ?",
-        titleEn: "Your leadership team\nlooks solid. How do you\nmanage the risk\nof a departure?",
+        titleFr: "Comment gérez-vous\nle risque d’un départ?",
+        titleEn: "How do you manage\nthe risk of a departure?",
         leadFr: "Nous suivons vos postes clés, la relève et le marché des dirigeants pour préparer vos options avant l’urgence.",
         leadEn: "We track your key positions, succession and the executive market to prepare your options before the urgency."
       }
@@ -196,28 +196,28 @@ function writeHeroMessage(m) {
   setLang(document.documentElement.lang === "en" ? "en" : "fr");
 }
 
-// Réserve la hauteur du plus long message du profil pour que rien ne bouge pendant l'alternance
+// Réserve, sur la colonne de texte, la hauteur du plus long message du profil:
+// le titre et le sous-titre coulent naturellement, mais la carte noire et la mise en page ne bougent pas.
 function reserveHeroHeight() {
   if (typeof heroVariants === "undefined") return;
   const { title, lead } = heroEls();
   if (!title || !lead) return;
+  const col = title.closest(".hero-copy") || title.parentElement;
+  if (!col) return;
   const v = heroVariants[heroRole] || heroVariants.pdg;
-  title.style.minHeight = "";
-  lead.style.minHeight = "";
+  col.style.minHeight = "";
   if (v.messages.length < 2) return;
   const lang = document.documentElement.lang === "en" ? "en" : "fr";
   const keepT = title.textContent, keepL = lead.textContent;
-  let maxT = 0, maxL = 0;
+  let max = 0;
   v.messages.forEach((m) => {
     title.textContent = lang === "en" ? m.titleEn : m.titleFr;
     lead.textContent = lang === "en" ? m.leadEn : m.leadFr;
-    maxT = Math.max(maxT, title.offsetHeight);
-    maxL = Math.max(maxL, lead.offsetHeight);
+    max = Math.max(max, col.offsetHeight);
   });
   title.textContent = keepT;
   lead.textContent = keepL;
-  title.style.minHeight = maxT + "px";
-  lead.style.minHeight = maxL + "px";
+  col.style.minHeight = max + "px";
 }
 
 function stopHeroRotation() {
