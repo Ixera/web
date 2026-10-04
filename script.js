@@ -153,7 +153,7 @@ var heroVariants = {
         titleFr: "Avez-vous\nles bonnes personnes\naux bons postes\nde direction?",
         titleEn: "Do you have\nthe right people\nin the right\nleadership roles?",
         leadFr: "Nous relions votre stratégie, votre équipe et le marché des dirigeants pour bâtir l’équipe qu’il vous faut.",
-        leadEn: "We connect your strategy, your team and the executive market to build the team you need."
+        leadEn: "We connect your strategy, your team and the executive market to build and reinforce the team you need."
       },
       {
         titleFr: "Comment gérez-vous\nle risque de perdre\nun membre de votre\néquipe de direction?",
