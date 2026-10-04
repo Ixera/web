@@ -157,15 +157,6 @@ a{
   overflow:hidden;
 }
 
-/* Grand écran : la carte se rapproche du texte, le surplus reste à droite */
-@media(min-width:1780px){
-  .hero{
-    grid-template-columns:minmax(0,820px) minmax(360px,620px);
-    gap:72px;
-    justify-content:start;
-  }
-}
-
 .hero:before{
   content:"";
   position:absolute;
@@ -208,7 +199,7 @@ a{
 }
 
 .hero-lead{
-  max-width:740px;
+  max-width:800px;
   margin:0;
   color:#292620;
   font-size:clamp(23px,1.95vw,31px);
@@ -2735,4 +2726,14 @@ footer{
 @media(max-width:720px){
   footer{ flex-direction:column; gap:22px; }
   .footer-col-right{ text-align:left; align-items:flex-start; }
+}
+
+/* Grand écran : le contenu est plafonné à 1560px et centré, les fonds restent pleine largeur */
+@media(min-width:1600px){
+  :root{ --gutter:max(94px, calc((100vw - 1560px) / 2)); }
+  .site-header{ padding-left:calc(var(--gutter) - 16px); padding-right:calc(var(--gutter) - 16px); }
+  .hero, .section, .contact, .formed-by, footer, .blog-hero, .blog-list{
+    padding-left:var(--gutter);
+    padding-right:var(--gutter);
+  }
 }
