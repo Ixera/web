@@ -152,12 +152,12 @@ var heroVariants = {
       {
         titleFr: "Avez-vous\nles bonnes personnes\naux bons postes?",
         titleEn: "Do you have the right\npeople in the right roles?",
-        leadFr: "Nous relions votre stratégie, vos dirigeants et le marché pour bâtir l’équipe que votre contexte exige.",
-        leadEn: "We connect your strategy, your executives and the market to build the team your context requires."
+        leadFr: "Nous relions votre stratégie, votre équipe et le marché des dirigeants pour bâtir l’équipe qu’il vous faut.",
+        leadEn: "We connect your strategy, your team and the executive market to build the team you need."
       },
       {
-        titleFr: "Comment gérez-vous\nle risque d’un départ?",
-        titleEn: "How do you manage\nthe risk of a departure?",
+        titleFr: "Comment gérez-vous\nle risque de perdre\nun membre de votre\néquipe de direction?",
+        titleEn: "How do you manage\nthe risk of losing\na member of your\nleadership team?",
         leadFr: "Nous suivons vos postes clés, la relève et le marché des dirigeants pour préparer vos options avant l’urgence.",
         leadEn: "We track your key positions, succession and the executive market to prepare your options before the urgency."
       }
@@ -175,7 +175,7 @@ var heroVariants = {
   }
 };
 
-const HERO_ROTATE_MS = 10000;   // durée d'affichage de chaque message
+const HERO_ROTATE_MS = 10000;  // durée d’affichage de chaque message
 const HERO_FADE_MS = 450;      // durée du fondu (doit suivre styles.css)
 var heroTimer = null;
 var heroIndex = 0;
