@@ -150,8 +150,8 @@ var heroVariants = {
   pdg: {
     messages: [
       {
-        titleFr: "Avez-vous\nles bonnes personnes\naux bons postes?",
-        titleEn: "Do you have the right\npeople in the right roles?",
+        titleFr: "Avez-vous\nles bonnes personnes\naux bons postes\nde direction?",
+        titleEn: "Do you have\nthe right people\nin the right\nleadership roles?",
         leadFr: "Nous relions votre stratégie, votre équipe et le marché des dirigeants pour bâtir l’équipe qu’il vous faut.",
         leadEn: "We connect your strategy, your team and the executive market to build the team you need."
       },
@@ -265,8 +265,8 @@ function applyRole(role) {
   heroRole = role in heroVariants ? role : "pdg";
   heroIndex = 0;
   const v = heroVariants[heroRole];
-  writeHeroMessage(v.messages[0]);
   applyRoleVariants(heroRole);
+  writeHeroMessage(v.messages[0]);
   reserveHeroHeight();
   scheduleHeroRotation();
 }
