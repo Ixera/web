@@ -175,7 +175,7 @@ var heroVariants = {
   }
 };
 
-const HERO_ROTATE_MS = 5000;   // durée d'affichage de chaque message
+const HERO_ROTATE_MS = 10000;   // durée d'affichage de chaque message
 const HERO_FADE_MS = 450;      // durée du fondu (doit suivre styles.css)
 var heroTimer = null;
 var heroIndex = 0;
