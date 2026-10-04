@@ -1233,7 +1233,7 @@ a{
 
 /* Coupures de ligne forcées du titre hero (desktop seulement) */
 @media(min-width:900px){
-  #heroTitle{ white-space:pre-line; }
+  #heroTitle, #heroLead{ white-space:pre-line; }
 }
 
 @media(max-width:560px){
