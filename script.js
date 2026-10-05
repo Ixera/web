@@ -152,12 +152,16 @@ var heroVariants = {
       {
         titleFr: "Avez-vous\nles bonnes personnes\naux bons postes\nde direction?",
         titleEn: "Do you have\nthe right people\nin the right\nleadership roles?",
+        titleFrWide: "Avez-vous\nles bonnes personnes\naux bons postes de direction?",
+        titleEnWide: "Do you have\nthe right people\nin the right leadership roles?",
         leadFr: "Nous relions votre stratégie, votre équipe et le marché des dirigeants pour bâtir et renforcer l’équipe qu’il vous faut.",
         leadEn: "We connect your strategy, your team and the executive market to build and reinforce the team you need."
       },
       {
         titleFr: "Comment gérez-vous\nle risque de perdre\nun membre de votre\néquipe de direction?",
         titleEn: "How do you manage\nthe risk of losing\na member of your\nleadership team?",
+        titleFrWide: "Comment gérez-vous le risque\nde perdre un membre de votre\néquipe de direction?",
+        titleEnWide: "How do you manage the risk\nof losing a member of your\nleadership team?",
         leadFr: "Nous suivons vos postes clés, la relève et le marché des dirigeants pour préparer vos options avant l’urgence.",
         leadEn: "We track your key positions, succession and the executive market to prepare your options before urgency strikes."
       }
@@ -168,6 +172,8 @@ var heroVariants = {
       {
         titleFr: "Le plan d’investissement\nest solide.\nL’équipe de direction\nl’est-elle autant?",
         titleEn: "The investment plan\nis solid.\nIs the leadership team\njust as strong?",
+        titleFrWide: "Le plan d’investissement\nest solide. L’équipe de direction\nl’est-elle autant?",
+        titleEnWide: "The investment plan\nis solid. Is the leadership team\njust as strong?",
         leadFr: "Nous contrôlons votre risque managérial,\nde l’entrée à la sortie.",
         leadEn: "We manage your leadership risk,\nfrom entry to exit."
       }
@@ -189,9 +195,15 @@ function heroEls() {
 }
 
 // Écrit un message dans les attributs data-fr / data-en, puis réaffiche dans la langue courante
+// À partir de 1200px, les titres passent sur 3 lignes qui remplissent la colonne (comme le sous-titre)
+const heroWideQuery = window.matchMedia("(min-width:1200px)");
+
 function writeHeroMessage(m) {
   const { title, lead } = heroEls();
-  if (title) { title.dataset.fr = m.titleFr; title.dataset.en = m.titleEn; }
+  const wide = heroWideQuery.matches;
+  const fr = (wide && m.titleFrWide) ? m.titleFrWide : m.titleFr;
+  const en = (wide && m.titleEnWide) ? m.titleEnWide : m.titleEn;
+  if (title) { title.dataset.fr = fr; title.dataset.en = en; }
   if (lead) { lead.dataset.fr = m.leadFr; lead.dataset.en = m.leadEn; }
   setLang(document.documentElement.lang === "en" ? "en" : "fr");
 }
@@ -210,8 +222,11 @@ function reserveHeroHeight() {
   const lang = document.documentElement.lang === "en" ? "en" : "fr";
   const keepT = title.textContent, keepL = lead.textContent;
   let max = 0;
+  const wide = heroWideQuery.matches;
   v.messages.forEach((m) => {
-    title.textContent = lang === "en" ? m.titleEn : m.titleFr;
+    const fr = (wide && m.titleFrWide) ? m.titleFrWide : m.titleFr;
+    const en = (wide && m.titleEnWide) ? m.titleEnWide : m.titleEn;
+    title.textContent = lang === "en" ? en : fr;
     lead.textContent = lang === "en" ? m.leadEn : m.leadFr;
     max = Math.max(max, col.offsetHeight);
   });
@@ -272,10 +287,17 @@ function applyRole(role) {
 }
 
 // Au chargement: message 1 du profil Direction & Gouvernance, puis alternance
+function refreshHeroMessage() {
+  const v = heroVariants[heroRole] || heroVariants.pdg;
+  const m = v.messages[heroIndex] || v.messages[0];
+  if (m) writeHeroMessage(m);
+}
 window.addEventListener("load", () => {
+  refreshHeroMessage();
   reserveHeroHeight();
   scheduleHeroRotation();
 });
+if (heroWideQuery.addEventListener) heroWideQuery.addEventListener("change", refreshHeroMessage);
 window.addEventListener("resize", reserveHeroHeight);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(reserveHeroHeight);
 
