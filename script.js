@@ -166,8 +166,8 @@ var heroVariants = {
   invest: {
     messages: [
       {
-        titleFr: "Le plan d’investissement est solide. L’équipe de direction l’est‑elle autant?",
-        titleEn: "The investment plan is solid. Is the leadership team just as strong?",
+        titleFr: "Votre plan d’investissement est solide. L’équipe de direction l’est‑elle autant?",
+        titleEn: "Your investment plan is solid. Is the leadership team just as strong?",
         leadFr: "Nous contrôlons votre risque managérial,\nde l’entrée à la sortie.",
         leadEn: "We manage your leadership risk,\nfrom entry to exit."
       }
