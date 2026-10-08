@@ -156,8 +156,8 @@ var heroVariants = {
         leadEn: "We connect your strategy, your team and the executive market to build and reinforce the team you need."
       },
       {
-        titleFr: "Comment gérez-vous le risque de perdre un membre de votre équipe de direction?",
-        titleEn: "How do you manage the risk of losing a member of your leadership team?",
+        titleFr: "Et si un membre clé de votre équipe de direction partait demain?",
+        titleEn: "What if a key member of your leadership team left tomorrow?",
         leadFr: "Nous suivons vos postes clés, la relève et le marché des dirigeants pour préparer vos options avant l’urgence.",
         leadEn: "We track your key positions, succession and the executive market to prepare your options before urgency strikes."
       }
