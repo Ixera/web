@@ -545,7 +545,9 @@ a{
   margin-top:0;
 }
 
-.approach-section{ padding-top:clamp(56px,6vw,96px); }
+.approach-section{ padding-top:clamp(56px,6vw,96px); padding-bottom:clamp(40px,4vw,64px); }
+/* Résultats suit le modèle de près, sans grand vide entre les deux */
+.section.results-section{ padding-top:clamp(48px,4.5vw,72px); }
 
 
 
@@ -563,7 +565,7 @@ sup.tm{
 .approach-step{
   position:relative;
   z-index:1;
-  min-height:272px;
+  min-height:0;               /* la carte prend la hauteur de son contenu ; la grille garde les 4 égales */
   padding:26px 26px 28px;
   border:1px solid var(--line);
   border-radius:16px;
