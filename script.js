@@ -156,20 +156,15 @@ document.querySelectorAll(".hero-toggle").forEach((toggle) => {
   });
 });
 
-// Approche : un clic sur n'importe quel chevron ouvre (ou ferme) les quatre cartes ensemble
-(function () {
-  const toggles = document.querySelectorAll(".approach-toggle");
-  toggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const open = toggle.getAttribute("aria-expanded") !== "true";
-      toggles.forEach((t) => {
-        t.setAttribute("aria-expanded", String(open));
-        const detail = t.closest(".approach-step").querySelector(".approach-detail");
-        if (detail) detail.hidden = !open;
-      });
-    });
+// Approche : chaque chevron ouvre et ferme sa propre carte, une à une (toutes fermées au chargement)
+document.querySelectorAll(".approach-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const detail = toggle.closest(".approach-step").querySelector(".approach-detail");
+    const open = toggle.getAttribute("aria-expanded") !== "true";
+    toggle.setAttribute("aria-expanded", String(open));
+    if (detail) detail.hidden = !open;
   });
-})();
+});
 
 // Variantes du hero selon le rôle choisi (FR + EN)
 // Direction & Gouvernance alterne entre deux messages (fondu, 5 s chacun).
