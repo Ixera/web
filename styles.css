@@ -628,32 +628,6 @@ sup.tm{
   }
 }
 
-/* Cadre fin qui englobe la démarche, titré « Continuité managériale » sur le trait du haut */
-.approach-frame{
-  position:relative;
-  margin-top:28px;
-  padding:46px 30px;
-  border:1px solid rgba(237,28,36,.35);
-  border-radius:28px;
-}
-.approach-frame-label{
-  position:absolute;
-  top:-9px; left:50%;
-  transform:translateX(-50%);
-  padding:0 18px;
-  background:var(--paper);
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:var(--red);
-  white-space:nowrap;
-}
-@media(max-width:980px){
-  .approach-frame{ margin-top:22px; padding:40px 16px 28px; border-radius:22px; }
-  .approach-frame-label{ font-size:11px; letter-spacing:.18em; padding:0 12px; top:-8px; }
-}
-
 /* Zone titre de hauteur fixe : les quatre textes partent de la même ligne */
 .approach-toggle{ min-height:118px; align-content:start; }
 
