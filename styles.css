@@ -551,14 +551,14 @@ a{
 
 /* Mention de marque : Continuité managériale MC / Leadership Continuity TM */
 sup.tm{
-  font-size:.5em;
+  font-size:.38em;
   line-height:0;
   vertical-align:super;
   margin-left:.1em;
   letter-spacing:0;
   font-weight:600;
 }
-.eyebrow sup.tm{ font-size:.75em; margin-left:.25em; }
+.eyebrow sup.tm{ font-size:.55em; margin-left:.15em; letter-spacing:.05em; }
 
 .approach-step{
   position:relative;
