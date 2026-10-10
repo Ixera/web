@@ -15,10 +15,33 @@ function getInitialLang() {
   return browserLanguage.toLowerCase().startsWith("fr") ? "fr" : "en";
 }
 
+// Mention de marque : « Continuité managériale » devient « Continuité managériale MC »
+// et « Leadership Continuity » devient « Leadership Continuity TM », en exposant, avec majuscule initiale.
+const BRAND_RE = /(continuité managériale|leadership continuity)/gi;
+function renderText(el, text) {
+  if (text == null) { el.textContent = ""; return; }
+  BRAND_RE.lastIndex = 0;
+  if (!BRAND_RE.test(text)) { el.textContent = text; return; }
+  el.textContent = "";
+  BRAND_RE.lastIndex = 0;
+  let last = 0, m;
+  while ((m = BRAND_RE.exec(text))) {
+    if (m.index > last) el.appendChild(document.createTextNode(text.slice(last, m.index)));
+    const fr = /managériale/i.test(m[0]);
+    el.appendChild(document.createTextNode(fr ? "Continuité Managériale" : "Leadership Continuity"));
+    const sup = document.createElement("sup");
+    sup.className = "tm";
+    sup.textContent = fr ? "MC" : "TM";
+    el.appendChild(sup);
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) el.appendChild(document.createTextNode(text.slice(last)));
+}
+
 function setLang(lang) {
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-fr]").forEach((el) => {
-    el.textContent = el.dataset[lang];
+    renderText(el, el.dataset[lang]);
   });
   if (btn) {
     btn.textContent = lang === "fr" ? "EN" : "FR";
@@ -26,7 +49,7 @@ function setLang(lang) {
   document.title =
     lang === "fr"
       ? "Ixera | Continuité managériale"
-      : "Ixera | Leadership continuity";
+      : "Ixera | Leadership Continuity";
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
     metaDescription.setAttribute(
@@ -42,7 +65,7 @@ function setLang(lang) {
       "content",
       lang === "fr"
         ? "Ixera | Continuité managériale"
-        : "Ixera | Leadership continuity"
+        : "Ixera | Leadership Continuity"
     );
   }
   const ogDescription = document.querySelector('meta[property="og:description"]');
