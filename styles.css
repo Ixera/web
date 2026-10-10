@@ -536,8 +536,8 @@ a{
 .approach-system{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--ink);
-  border-bottom:1px solid var(--line);
+  column-gap:48px;
+  border:0;
 }
 
 .approach-system.compact-grid{
@@ -555,80 +555,7 @@ a{
 }
 .approach-section{ padding-top:clamp(56px,6vw,96px); }
 
-/* Flux sous la grille Approche : flèche 01 → 04, puis boucle de retour 04 → 01 */
-.approach-flow{
-  position:relative;
-  margin-top:26px;
-  --flow-ink:#2a2824;
-}
-.flow-line{
-  position:relative;
-  height:1px;
-  margin:0 6px 0 0;
-  background:var(--flow-ink);
-}
-.flow-line::after{            /* pointe de flèche à droite */
-  content:"";
-  position:absolute;
-  right:-6px; top:-5px;
-  border-left:9px solid var(--flow-ink);
-  border-top:5.5px solid transparent;
-  border-bottom:5.5px solid transparent;
-}
-.flow-line::before{           /* point de départ sous 01 */
-  content:"";
-  position:absolute;
-  left:12.5%; top:-3px;
-  width:7px; height:7px; margin-left:-3px;
-  border-radius:50%;
-  background:var(--flow-ink);
-}
-.flow-label{
-  position:absolute;
-  left:50%; top:50%;
-  transform:translate(-50%,-50%);
-  padding:0 14px;
-  background:var(--paper);
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.24em;
-  text-transform:uppercase;
-  color:var(--ink);
-  white-space:nowrap;
-}
-.flow-loop{
-  position:relative;
-  margin:0 12.5% 0 12.5%;      /* du centre de 04 au centre de 01 */
-  height:46px;
-  border:1px solid var(--flow-ink);
-  border-top:0;
-  border-radius:0 0 30px 30px;
-  opacity:.55;
-}
-.flow-loop::before{           /* pointe de flèche remontant vers 01 */
-  content:"";
-  position:absolute;
-  left:-6px; top:-6px;
-  border-bottom:9px solid var(--flow-ink);
-  border-left:5.5px solid transparent;
-  border-right:5.5px solid transparent;
-}
-.flow-loop-label{
-  position:absolute;
-  left:50%; bottom:-7px;
-  transform:translateX(-50%);
-  padding:0 12px;
-  background:var(--paper);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:var(--ink);
-  white-space:nowrap;
-}
-@media(max-width:980px){
-  .approach-flow{ display:none; }
-}
+
 
 /* Mention de marque : Continuité managériale MC / Leadership Continuity TM */
 sup.tm{
@@ -642,17 +569,96 @@ sup.tm{
 .eyebrow sup.tm{ font-size:.75em; margin-left:.25em; }
 
 .approach-step{
+  position:relative;
   min-height:275px;
   padding:28px 26px 32px;
-  border-right:1px solid var(--line);
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 10px 28px rgba(17,17,15,.06);
   display:flex;
   flex-direction:column;
   justify-content:space-between;
   background:#fffaf6;
 }
 
-.approach-step:last-child{
-  border-right:0;
+/* Flèche rouge entre les cartes (dans l'espace de 48px) */
+.approach-step:not(:last-child)::before{
+  content:"";
+  position:absolute;
+  top:50%; right:-48px;
+  width:48px; height:1px;
+  background:#2a2824;
+  opacity:.45;
+}
+.approach-step:not(:last-child)::after{
+  content:"\2192";
+  position:absolute;
+  top:50%; right:-43px;
+  width:38px; height:38px;
+  margin-top:-19px;
+  border:1px solid var(--red);
+  border-radius:50%;
+  background:var(--paper);
+  color:var(--red);
+  font-size:20px;
+  line-height:36px;
+  text-align:center;
+  font-weight:700;
+  z-index:1;
+}
+
+/* Sous-étiquette (Gouvernance, Exécution, Talent, Décision) : disparaît quand la carte est ouverte */
+.approach-step span.approach-sub{
+  grid-column:1 / 2;
+  margin-top:7px;
+  font-size:11.5px;
+  font-weight:500;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  opacity:.85;
+}
+.red-step span.approach-sub{ color:#fff; opacity:.8; }
+.approach-toggle[aria-expanded="true"] .approach-sub{ display:none; }
+
+/* Boucle de rétroaction 04 → 01, accrochée sous les cartes */
+.approach-loop{
+  position:relative;
+  height:52px;
+  margin:0 calc((100% - 144px) / 8);   /* du centre de 04 au centre de 01 */
+  border:1px solid #2a2824;
+  border-top:0;
+  border-radius:0 0 32px 32px;
+  opacity:.7;
+}
+.approach-loop::after{                 /* point de départ sous 04 */
+  content:"";
+  position:absolute;
+  right:-4px; top:-4px;
+  width:7px; height:7px;
+  border-radius:50%;
+  background:#2a2824;
+}
+.approach-loop::before{                /* pointe remontant vers 01 */
+  content:"";
+  position:absolute;
+  left:-6px; top:-8px;
+  border-bottom:10px solid #2a2824;
+  border-left:5.5px solid transparent;
+  border-right:5.5px solid transparent;
+}
+.approach-loop-label{
+  position:absolute;
+  left:50%; bottom:-7px;
+  transform:translateX(-50%);
+  padding:0 12px;
+  background:var(--paper);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--ink);
+  white-space:nowrap;
 }
 
 .approach-step span{
@@ -1416,16 +1422,29 @@ button:focus-visible,
   }
 
   .approach-system{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
+    row-gap:48px;
   }
-
-  .approach-step:nth-child(2){
-    border-right:0;
+  .approach-step:not(:last-child)::before{
+    top:auto; right:auto; bottom:-48px; left:50%;
+    width:1px; height:48px;
   }
-
-  .approach-step:nth-child(1),
-  .approach-step:nth-child(2){
-    border-bottom:1px solid var(--line);
+  .approach-step:not(:last-child)::after{
+    top:auto; right:auto; bottom:-43px; left:50%;
+    margin-top:0; margin-left:-19px;
+    transform:rotate(90deg);
+  }
+  .approach-loop{
+    height:auto; margin:18px 0 0; border:0; opacity:1;
+    text-align:center;
+  }
+  .approach-loop::before, .approach-loop::after{ display:none; }
+  .approach-loop-label{
+    position:static; transform:none; padding:0;
+  }
+  .approach-loop-label::before{
+    content:"\21BA  ";
+    font-size:15px; letter-spacing:0; color:var(--red);
   }
 
   .results-content{
@@ -1497,14 +1516,8 @@ button:focus-visible,
     font-size:29px;
   }
 
-  .approach-system{
-    grid-template-columns:1fr;
-  }
-
   .approach-step{
-    border-right:0!important;
-    border-bottom:1px solid var(--line);
-    min-height:210px;
+    min-height:200px;
   }
 
   .btn{
