@@ -608,6 +608,16 @@ sup.tm{
     border-top:7.5px solid transparent;
     border-bottom:7.5px solid transparent;
   }
+  /* Rétroaction possible dès Management et Marché : lien pointillé vers la boucle, sans passer par une décision */
+  .approach-step:nth-child(2)::after,
+  .approach-step:nth-child(3)::after{
+    content:"";
+    position:absolute;
+    left:50%; top:100%;
+    width:0; height:30px;
+    margin-left:-.75px;
+    border-left:1.5px dashed var(--red);
+  }
 }
 
 /* Zone titre : le texte suit de près le sous-titre (Gouvernance, etc.) */
