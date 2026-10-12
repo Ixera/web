@@ -575,7 +575,6 @@ sup.tm{
   border-color:transparent;
   background:linear-gradient(155deg,#f2262d 0%,#e01920 55%,#c9121a 100%);
   box-shadow:0 1px 2px rgba(17,17,15,.06),0 28px 52px -26px rgba(201,18,26,.55);
-  overflow:hidden;
 }
 .red-step:hover{
   border-color:transparent;
@@ -598,20 +597,9 @@ sup.tm{
     border-radius:20px;
     pointer-events:none;
   }
-  /* Petit chevron discret entre les cartes : sens de lecture */
-  .approach-step:not(:last-child)::after{
-    content:"";
-    position:absolute;
-    top:calc(var(--title-y) - 1px); right:-22px;
-    width:8px; height:8px;
-    margin-top:-3.25px;
-    border-top:1.5px solid var(--red);
-    border-right:1.5px solid var(--red);
-    transform:rotate(45deg);
-    background:var(--paper);
-  }
-  /* Pointe pleine à l'arrivée sur 01 : elle touche le bord de la carte sans y entrer */
-  .approach-step:first-child::before{
+  /* Pointe pleine à l'entrée de chaque carte : la ligne reste continue et le sens se lit
+     (sur 01, c'est l'arrivée de la boucle). Elle touche le bord de la carte sans y entrer. */
+  .approach-step::before{
     content:"";
     position:absolute;
     top:calc(var(--title-y) - 1px); left:-13px;
