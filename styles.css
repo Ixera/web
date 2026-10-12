@@ -304,17 +304,6 @@ a{
   overflow:hidden;
 }
 
-.hero-card:before{
-  content:"";
-  position:absolute;
-  right:-120px;
-  top:-120px;
-  width:330px;
-  height:330px;
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:50%;
-}
-
 .card-logo{
   width:38px;
   height:38px;
@@ -579,15 +568,6 @@ sup.tm{
   border-color:var(--red);
   background:radial-gradient(circle at 86% 18%,rgba(255,255,255,.16),rgba(255,255,255,0) 38%),linear-gradient(160deg,#ee2027,#d9121a);
   overflow:hidden;
-}
-.red-step::after{                      /* anneau décoratif, comme sur la carte noire du hero */
-  content:"";
-  position:absolute;
-  width:280px; height:280px;
-  right:-110px; bottom:-130px;
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:50%;
-  pointer-events:none;
 }
 
 /* Boucle de continuité (bureau) : une seule ligne fine et fermée.
