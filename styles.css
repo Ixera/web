@@ -524,10 +524,12 @@ a{
 /* APPROCHE */
 .approach-system{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(4,minmax(0,1fr));
   column-gap:32px;
   border:0;
   position:relative;
+  /* hauteur du milieu des titres (Stratégie, etc.) : la boucle et les flèches s'y alignent */
+  --title-y:calc(68px + clamp(12.75px, 1.1475vw, 20.4px));
 }
 
 .approach-system.compact-grid{
@@ -555,19 +557,29 @@ sup.tm{
   position:relative;
   z-index:1;
   min-height:0;               /* la carte prend la hauteur de son contenu ; la grille garde les 4 égales */
-  padding:26px 26px 28px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  box-shadow:0 12px 32px rgba(17,17,15,.05);
+  padding:26px 26px 30px;
+  border:1px solid rgba(17,17,15,.07);
+  border-radius:18px;
+  background:linear-gradient(180deg,#fffdfa 0%,#fdf8f2 100%);
+  box-shadow:0 1px 2px rgba(17,17,15,.04),0 26px 48px -30px rgba(17,17,15,.28);
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
-  background:#fffaf6;
+  transition:box-shadow .35s ease,border-color .35s ease;
+}
+.approach-step:hover{
+  border-color:rgba(17,17,15,.12);
+  box-shadow:0 1px 2px rgba(17,17,15,.05),0 34px 60px -30px rgba(17,17,15,.34);
 }
 .red-step{
-  border-color:var(--red);
-  background:radial-gradient(circle at 86% 18%,rgba(255,255,255,.16),rgba(255,255,255,0) 38%),linear-gradient(160deg,#ee2027,#d9121a);
+  border-color:transparent;
+  background:linear-gradient(155deg,#f2262d 0%,#e01920 55%,#c9121a 100%);
+  box-shadow:0 1px 2px rgba(17,17,15,.06),0 28px 52px -26px rgba(201,18,26,.55);
   overflow:hidden;
+}
+.red-step:hover{
+  border-color:transparent;
+  box-shadow:0 1px 2px rgba(17,17,15,.06),0 36px 64px -26px rgba(201,18,26,.62);
 }
 
 /* Boucle de continuité (bureau) : une seule ligne fine et fermée.
@@ -581,7 +593,7 @@ sup.tm{
     position:absolute;
     z-index:0;
     left:0; right:0;
-    top:50%; bottom:-30px;
+    top:var(--title-y); bottom:-30px;
     border:1.5px solid var(--red);
     border-radius:20px;
     pointer-events:none;
@@ -590,7 +602,7 @@ sup.tm{
   .approach-step:not(:last-child)::after{
     content:"";
     position:absolute;
-    top:50%; right:-22px;
+    top:calc(var(--title-y) - 1px); right:-22px;
     width:8px; height:8px;
     margin-top:-3.25px;
     border-top:1.5px solid var(--red);
@@ -602,7 +614,7 @@ sup.tm{
   .approach-step:first-child::before{
     content:"";
     position:absolute;
-    top:50%; left:-13px;
+    top:calc(var(--title-y) - 1px); left:-13px;
     margin-top:-6.75px;
     border-left:13px solid var(--red);
     border-top:7.5px solid transparent;
@@ -610,8 +622,9 @@ sup.tm{
   }
 }
 
-/* Zone titre de hauteur fixe : les quatre textes partent de la même ligne */
-.approach-toggle{ min-height:118px; align-content:start; }
+/* Zone titre : le texte suit de près le sous-titre (Gouvernance, etc.) */
+.approach-toggle{ min-height:0; align-content:start; }
+.approach-step .approach-toggle + p{ margin-top:16px; }
 
 /* Sous-étiquette (Gouvernance, Exécution, Talent, Décision) : collée sous le titre, disparaît quand la carte est ouverte */
 .approach-step span.approach-sub{
@@ -625,7 +638,6 @@ sup.tm{
   opacity:.85;
 }
 .red-step span.approach-sub{ color:#fff; opacity:.8; }
-.approach-toggle[aria-expanded="true"] .approach-sub{ display:none; }
 
 /* Étiquette de la boucle, posée sur la ligne de retour sous les cartes */
 .approach-loop{
@@ -697,13 +709,25 @@ sup.tm{
 
 .approach-toggle span:first-child{
   grid-column:1 / 2;
+  display:block;
 }
+/* Barre rouge sous le numéro, comme sous « Selon McKinsey » */
+.approach-toggle span:first-child::after{
+  content:"";
+  display:block;
+  width:28px;
+  height:2px;
+  margin-top:10px;
+  background:var(--red);
+  border-radius:2px;
+}
+.red-step .approach-toggle span:first-child::after{ background:#fff; }
 
 .approach-toggle h3{
   grid-column:1 / 2;
 }
 
-/* Bouton d'ouverture : chevron, sans cercle */
+/* Bouton d'ouverture : + fin qui devient − à l'ouverture (comme la carte noire du hero) */
 .approach-step span.approach-plus{ font-size:0; letter-spacing:0; color:inherit; }
 .approach-plus{
   grid-column:2 / 3;
@@ -716,22 +740,23 @@ sup.tm{
   border:0;
   font-size:0;
   opacity:.7;
+  transition:opacity .2s ease;
 }
-.approach-plus::before{
+.approach-plus::before,
+.approach-plus::after{
   content:"";
   position:absolute;
   left:50%; top:50%;
-  width:11px; height:11px;
-  margin:-9px 0 0 -6px;
-  border-right:2px solid currentColor;
-  border-bottom:2px solid currentColor;
-  transform:rotate(45deg);
-  transition:transform .25s ease, margin .25s ease;
+  width:16px; height:1.5px;
+  margin:-.75px 0 0 -8px;
+  background:currentColor;
+  border-radius:1px;
 }
-.approach-toggle[aria-expanded="true"] .approach-plus::before{
-  margin:-2px 0 0 -6px;
-  transform:rotate(-135deg);
+.approach-plus::after{
+  transform:rotate(90deg);
+  transition:transform .3s ease;
 }
+.approach-toggle[aria-expanded="true"] .approach-plus::after{ transform:rotate(0deg); }
 .approach-toggle:hover .approach-plus{ opacity:1; }
 
 .approach-detail{
