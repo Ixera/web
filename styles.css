@@ -2942,3 +2942,260 @@ footer{
     padding-right:var(--gutter);
   }
 }
+
+/* ============================================================
+   BLOGUE : page d'accueil raffinée (à la une, grille, appel à l'action)
+   ============================================================ */
+.blog-page .blog-hero{ padding-bottom:clamp(28px,3.5vw,44px); }
+
+/* À la une : carte sombre, même univers que la carte noire du hero */
+.blog-featured{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 clamp(24px,5vw,94px);
+}
+.blog-feature{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);
+  gap:clamp(28px,4vw,64px);
+  align-items:center;
+  padding:clamp(30px,4vw,56px);
+  border-radius:24px;
+  color:#fff;
+  background:radial-gradient(circle at 92% 100%,rgba(237,28,36,.55),rgba(237,28,36,.06) 32%,rgba(0,0,0,0) 55%),linear-gradient(145deg,#151515,#211d1b 66%,#111);
+  box-shadow:0 1px 2px rgba(17,17,15,.08),0 34px 70px -34px rgba(17,17,15,.55);
+  overflow:hidden;
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  .blog-feature:hover{
+    transform:translateY(-3px);
+    box-shadow:0 1px 2px rgba(17,17,15,.08),0 44px 80px -34px rgba(17,17,15,.6);
+  }
+}
+.blog-feature-label{
+  display:inline-block;
+  margin-bottom:18px;
+  padding:6px 12px;
+  border-radius:999px;
+  background:var(--red);
+  font-size:10.5px;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.blog-feature-meta{
+  display:block;
+  margin-bottom:14px;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.02em;
+  color:rgba(255,255,255,.62);
+}
+.blog-feature h2{
+  margin:0 0 16px;
+  font-size:clamp(28px,3vw,44px);
+  line-height:1.04;
+  letter-spacing:-.045em;
+  font-weight:900;
+}
+.blog-feature p{
+  margin:0 0 26px;
+  max-width:560px;
+  font-size:17px;
+  line-height:1.5;
+  color:rgba(255,255,255,.74);
+}
+.blog-feature-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:13px 22px;
+  border-radius:999px;
+  background:#fff;
+  color:var(--ink);
+  font-size:15px;
+  font-weight:850;
+}
+.blog-feature-btn::after{ content:"\2192"; color:var(--red); }
+.blog-feature-quote{
+  margin:0;
+  padding:4px 0 4px 24px;
+  border-left:3px solid var(--red);
+  font-size:clamp(20px,1.9vw,27px);
+  line-height:1.32;
+  letter-spacing:-.02em;
+  font-weight:600;
+  color:rgba(255,255,255,.92);
+}
+
+/* Toutes les chroniques : grille de deux colonnes */
+.blog-all{
+  max-width:1120px;
+  margin:0 auto;
+  padding:clamp(52px,6vw,84px) clamp(24px,5vw,94px) clamp(40px,5vw,64px);
+}
+.blog-all-title{
+  margin:0 0 26px;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--red);
+}
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(18px,2.2vw,28px);
+}
+.blog-tile{
+  display:flex;
+  flex-direction:column;
+  padding:28px 28px 24px;
+  border:1px solid rgba(17,17,15,.07);
+  border-radius:18px;
+  background:linear-gradient(180deg,#fffdfa 0%,#fdf8f2 100%);
+  box-shadow:0 1px 2px rgba(17,17,15,.04),0 26px 48px -32px rgba(17,17,15,.26);
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+@media(hover:hover) and (pointer:fine){
+  .blog-tile:hover{
+    transform:translateY(-3px);
+    border-color:rgba(237,28,36,.28);
+    box-shadow:0 1px 2px rgba(17,17,15,.05),0 34px 60px -30px rgba(17,17,15,.32);
+  }
+  .blog-tile:hover h3{ color:var(--red); }
+}
+.blog-tile-accent{
+  display:block;
+  width:32px;
+  height:3px;
+  margin-bottom:18px;
+  border-radius:2px;
+  background:var(--red);
+}
+.blog-tile-tag{
+  margin-bottom:10px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--red);
+}
+.blog-tile h3{
+  margin:0 0 12px;
+  font-size:clamp(21px,1.8vw,26px);
+  line-height:1.12;
+  letter-spacing:-.035em;
+  font-weight:850;
+  color:var(--ink);
+  transition:color .2s ease;
+}
+.blog-tile p{
+  margin:0 0 22px;
+  font-size:15.5px;
+  line-height:1.5;
+  color:var(--muted);
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.blog-tile-foot{
+  margin-top:auto;
+  padding-top:16px;
+  border-top:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.blog-tile-meta{
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--muted);
+}
+.blog-tile-more{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:13.5px;
+  font-weight:850;
+  color:var(--red);
+}
+.blog-tile-more::after{ content:"\2192"; }
+
+/* Appel à l'action en bas de page */
+.blog-cta{
+  max-width:1120px;
+  margin:0 auto clamp(56px,7vw,96px);
+  padding:0 clamp(24px,5vw,94px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.blog-cta p{
+  margin:0;
+  font-size:clamp(20px,2vw,28px);
+  font-weight:850;
+  letter-spacing:-.03em;
+  color:var(--ink);
+}
+
+@media(max-width:860px){
+  .blog-feature{ grid-template-columns:1fr; }
+  .blog-feature-quote{ font-size:20px; }
+  .blog-grid{ grid-template-columns:1fr; }
+}
+
+/* ============================================================
+   ARTICLE : barre de partage LinkedIn
+   ============================================================ */
+.article-share{
+  margin-top:44px;
+  padding:22px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.article-share-label{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.article-share-actions{ display:flex; gap:10px; flex-wrap:wrap; }
+.share-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:11px 18px;
+  border-radius:999px;
+  border:1px solid var(--red);
+  background:var(--red);
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  line-height:1;
+  box-shadow:0 3px 0 var(--red-dark),0 9px 20px rgba(17,17,15,.16);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease;
+}
+.share-btn svg{ width:16px; height:16px; flex:0 0 auto; }
+.share-btn-ghost{
+  background:transparent;
+  color:var(--ink);
+  border-color:rgba(17,17,15,.25);
+  box-shadow:none;
+}
+@media(hover:hover) and (pointer:fine){
+  .share-btn:hover{ transform:translateY(-2px); }
+  .share-btn-ghost:hover{ border-color:var(--ink); }
+}
