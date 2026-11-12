@@ -1096,6 +1096,16 @@ sup.tm{
   letter-spacing:-.018em;
 }
 
+/* Signature : trois lignes, plus foncées et plus grasses que le texte */
+.about-copy p.about-signature{
+  margin-top:24px;
+  color:var(--ink);
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:-.02em;
+}
+.about-signature span{ display:block; }
+
 .about-copy .mv-buttons{
   margin-top:14px;
 }
