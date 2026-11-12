@@ -1096,12 +1096,14 @@ sup.tm{
   letter-spacing:-.018em;
 }
 
-/* Signature : trois lignes, plus foncées et plus grasses que le texte */
+/* Signature : trois lignes, en gras italique, un peu plus petites que le texte */
 .about-copy p.about-signature{
   margin-top:24px;
   color:var(--ink);
+  font-size:clamp(17px,1.34vw,21px);
   font-weight:700;
-  line-height:1.35;
+  font-style:italic;
+  line-height:1.45;
   letter-spacing:-.02em;
 }
 .about-signature span{ display:block; }
