@@ -48,15 +48,15 @@ function setLang(lang) {
   }
   document.title =
     lang === "fr"
-      ? "Ixera | Continuité managériale"
-      : "Ixera | Leadership Continuity";
+      ? "Ixera | Recrutement de cadres et continuité managériale, Montréal"
+      : "Ixera | Executive Search and Leadership Continuity, Montréal";
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
     metaDescription.setAttribute(
       "content",
       lang === "fr"
-        ? "Conseils Ixera inc. est une firme de recherche de dirigeants et de cadres basée à Montréal. Recherche de dirigeants, planification de la relève, revue du risque managérial et continuité managériale pour PDG, conseils d'administration et propriétaires dirigeants."
-        : "Conseils Ixera inc. is a Montréal-based executive and senior management search firm. Executive search, succession planning, leadership risk review and leadership continuity for CEOs, boards and owner-operators."
+        ? "Votre stratégie dépend de quelques postes clés. Ixera gère ce risque, du recrutement de dirigeants à la continuité de votre équipe de direction."
+        : "Your strategy depends on a few key roles. Ixera manages that risk, from executive recruitment to the continuity of your leadership team."
     );
   }
   const ogTitle = document.querySelector('meta[property="og:title"]');
