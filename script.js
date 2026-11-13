@@ -29,10 +29,6 @@ function renderText(el, text) {
     if (m.index > last) el.appendChild(document.createTextNode(text.slice(last, m.index)));
     const fr = /managériale/i.test(m[0]);
     el.appendChild(document.createTextNode(fr ? "Continuité Managériale" : "Leadership Continuity"));
-    const sup = document.createElement("sup");
-    sup.className = "tm";
-    sup.textContent = fr ? "MC" : "TM";
-    el.appendChild(sup);
     last = m.index + m[0].length;
   }
   if (last < text.length) el.appendChild(document.createTextNode(text.slice(last)));
