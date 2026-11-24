@@ -6,13 +6,14 @@ window.scrollTo(0, 0);
 
 const btn = document.getElementById("langToggle");
 
+// Le site s'ouvre toujours en français (aussi pour Google).
+// L'anglais s'affiche seulement si le visiteur l'a choisi (bouton EN) ou avec ?lang=en.
 function getInitialLang() {
-  const savedLanguage = localStorage.getItem("ixera-language");
-  const browserLanguage = navigator.language || navigator.userLanguage || "fr";
-  if (savedLanguage) {
-    return savedLanguage;
-  }
-  return browserLanguage.toLowerCase().startsWith("fr") ? "fr" : "en";
+  const param = new URLSearchParams(window.location.search).get("lang");
+  if (param === "en" || param === "fr") return param;
+  let savedLanguage = null;
+  try { savedLanguage = localStorage.getItem("ixera-language"); } catch (e) {}
+  return savedLanguage === "en" ? "en" : "fr";
 }
 
 // Texte affiché tel qu'écrit : continuité managériale traitée comme nom commun, sans MC ni TM.
