@@ -25,6 +25,11 @@ function setLang(lang) {
   document.querySelectorAll("[data-fr]").forEach((el) => {
     renderText(el, el.dataset[lang]);
   });
+  // Liens qui changent selon la langue (ex. articles du blogue en anglais)
+  document.querySelectorAll("[data-href-en]").forEach((el) => {
+    if (!el.dataset.hrefFr) el.dataset.hrefFr = el.getAttribute("href");
+    el.setAttribute("href", lang === "en" ? el.dataset.hrefEn : el.dataset.hrefFr);
+  });
   if (btn) {
     btn.textContent = lang === "fr" ? "EN" : "FR";
   }
