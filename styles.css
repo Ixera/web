@@ -1955,8 +1955,8 @@ button:focus-visible,
 }
 
 .distinction-modal.difference-modal h2{
-  max-width:600px;
   margin:0 0 26px;
+  text-wrap:balance;
   padding-right:48px;
   font-size:clamp(24px,2.5vw,32px);
   line-height:1.1;
@@ -2041,10 +2041,6 @@ button:focus-visible,
   font-size:15px;
   line-height:1.45;
   color:var(--ink);
-}
-
-.difference-us .difference-text{
-  font-weight:650;
 }
 
 .difference-close-line{
