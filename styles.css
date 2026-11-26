@@ -480,39 +480,57 @@ a{
   flex-direction:column;
 }
 
-/* Le texte prend la place libre : le bouton « En 5 points » reste au bas de la carte */
+/* Le texte prend la place libre : les boutons restent au bas de la carte */
 .service-card .service-desc{
   flex:1 0 auto;
 }
 
-.service-more{
-  align-self:flex-start;
+.service-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
   margin-top:20px;
+}
+
+/* Même bouton rouge que le reste du site ; au survol : fond blanc, texte et bordure rouges */
+.service-more{
   display:inline-flex;
   align-items:center;
-  border:1px solid var(--ink);
-  background:transparent;
+  border:1px solid var(--red);
+  background:var(--red);
   border-radius:999px;
-  padding:10px 20px;
+  padding:12px 22px;
   font-family:inherit;
-  font-size:14px;
+  font-size:15px;
   font-weight:800;
   line-height:1.2;
-  color:var(--ink);
+  color:#fff;
   cursor:pointer;
-  transition:background .18s ease,color .18s ease,transform .18s ease;
+  box-shadow:0 3px 0 var(--red-dark),0 9px 20px rgba(17,17,15,.20);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
 }
 
 @media(hover:hover) and (pointer:fine){
   .service-more:hover{
-    background:var(--ink);
-    color:#fff;
-    transform:translateY(-1px);
+    background:#fff;
+    border-color:var(--red);
+    color:var(--red);
+    transform:translateY(-2px);
+    box-shadow:0 3px 0 var(--red),0 13px 26px rgba(17,17,15,.18);
+  }
+}
+
+@media(hover:none){
+  .service-more:active{
+    transform:scale(.97);
+    background:var(--red-dark);
+    border-color:var(--red-dark);
+    box-shadow:0 4px 12px rgba(237,28,36,.24);
   }
 }
 
 .service-more:focus-visible{
-  outline:2px solid var(--red);
+  outline:2px solid var(--ink);
   outline-offset:3px;
 }
 
