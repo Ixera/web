@@ -347,6 +347,149 @@ if (distinctionOpen && distinctionOverlay) {
   });
 }
 
+// ===== CARROUSEL « EN 5 POINTS » (cartes de service) =====
+// Un bouton .service-more porte data-points="<service>".
+// Les images sont dans assets/ : <service>-<langue>-<numéro>.webp
+(function () {
+  const overlay = document.getElementById("pointsOverlay");
+  const modal = document.getElementById("pointsModal");
+  const stage = document.getElementById("pointsStage");
+  const image = document.getElementById("pointsImage");
+  const dots = document.getElementById("pointsDots");
+  const prevBtn = document.getElementById("pointsPrev");
+  const nextBtn = document.getElementById("pointsNext");
+  const closeBtn = document.getElementById("pointsClose");
+  if (!overlay || !modal || !stage || !image || !dots || !prevBtn || !nextBtn || !closeBtn) return;
+
+  // Pour ajouter un service : une entrée ici, ses images dans assets/, et un bouton data-points dans sa carte.
+  const sets = {
+    continuite: {
+      label: {
+        fr: "Continuité managériale en 5 points",
+        en: "Leadership continuity in 5 points"
+      },
+      alt: {
+        fr: [
+          "Continuité managériale. Et si vous connaissiez déjà votre prochain dirigeant?",
+          "Avant même qu’il y ait un poste à combler. Stratégie, équipe, marché. Trois lectures. En continu.",
+          "Le risque managérial. Votre stratégie évolue. Vos besoins en dirigeants aussi. Le risque, c’est de s’en rendre compte trop tard.",
+          "La continuité managériale. Quand il faut recruter, on sait déjà quoi chercher. Avec une longueur d’avance.",
+          "Le résultat. Moins de coûts. Moins de délai. Moins de risque. La façon de recruter les dirigeants se transforme. Voir venir. Choisir juste. Bâtir pour durer."
+        ],
+        en: [
+          "Leadership continuity. What if you already knew your next executive?",
+          "Before there is even a role to fill. Strategy, leadership team, talent market. Three things to track. Continuously.",
+          "Leadership risk. Your strategy evolves. So do your leadership needs. The risk is realizing it too late.",
+          "Leadership continuity. When it’s time to recruit, you already know what to look for. A head start.",
+          "The outcome. Lower costs. Shorter timelines. Less risk. The way executives are recruited is changing. Anticipate. Choose wisely. Build to last."
+        ]
+      }
+    }
+  };
+
+  const ui = {
+    fr: { close: "Fermer", prev: "Précédent", next: "Suivant", point: "Point" },
+    en: { close: "Close", prev: "Previous", next: "Next", point: "Point" }
+  };
+
+  let key = null;
+  let index = 0;
+  let opener = null;
+
+  function currentLang() {
+    return document.documentElement.lang === "en" ? "en" : "fr";
+  }
+
+  function source(i) {
+    return "assets/" + key + "-" + currentLang() + "-" + (i + 1) + ".webp";
+  }
+
+  function show(i) {
+    const set = sets[key];
+    const total = set.alt.fr.length;
+    index = Math.max(0, Math.min(total - 1, i));
+    image.src = source(index);
+    image.alt = set.alt[currentLang()][index];
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === total - 1;
+    dots.querySelectorAll(".points-dot").forEach((dot, n) => {
+      dot.classList.toggle("is-active", n === index);
+      dot.setAttribute("aria-current", n === index ? "true" : "false");
+    });
+    // Précharge l'image suivante pour un passage sans délai
+    if (index < total - 1) {
+      new Image().src = source(index + 1);
+    }
+  }
+
+  function open(name, from) {
+    if (!sets[name]) return;
+    key = name;
+    opener = from || null;
+    const lang = currentLang();
+    const set = sets[key];
+    modal.setAttribute("aria-label", set.label[lang]);
+    closeBtn.setAttribute("aria-label", ui[lang].close);
+    prevBtn.setAttribute("aria-label", ui[lang].prev);
+    nextBtn.setAttribute("aria-label", ui[lang].next);
+    dots.textContent = "";
+    set.alt.fr.forEach((_, n) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "points-dot";
+      dot.setAttribute("aria-label", ui[lang].point + " " + (n + 1));
+      dot.addEventListener("click", () => show(n));
+      dots.appendChild(dot);
+    });
+    show(0);
+    overlay.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeBtn.focus();
+  }
+
+  function close() {
+    overlay.hidden = true;
+    document.body.style.overflow = "";
+    if (opener) opener.focus();
+  }
+
+  document.querySelectorAll(".service-more[data-points]").forEach((button) => {
+    button.addEventListener("click", () => open(button.getAttribute("data-points"), button));
+  });
+
+  closeBtn.addEventListener("click", close);
+  prevBtn.addEventListener("click", () => show(index - 1));
+  nextBtn.addEventListener("click", () => show(index + 1));
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (overlay.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(index - 1);
+    if (e.key === "ArrowRight") show(index + 1);
+  });
+
+  // Glissement du doigt sur téléphone
+  let startX = null;
+  let startY = null;
+  stage.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+  stage.addEventListener("touchend", (e) => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    startX = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      show(dx < 0 ? index + 1 : index - 1);
+    }
+  }, { passive: true });
+})();
+
 // ===== POP-UP MISSION ET VISION =====
 const mvOverlay = document.getElementById("mvOverlay");
 const mvClose = document.getElementById("mvClose");

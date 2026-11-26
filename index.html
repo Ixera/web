@@ -314,6 +314,7 @@
           <p class="service-desc" data-fr="Évaluer l’adéquation entre votre stratégie, votre équipe de direction et le marché des dirigeants." data-en="Assess the fit between your strategy, your leadership team and the executive market."
              data-fr-pdg="Évaluer l’adéquation entre votre stratégie, votre équipe de direction et le marché des dirigeants." data-en-pdg="Assess the fit between your strategy, your leadership team and the executive market."
              data-fr-invest="Contrôler dans le temps l’adéquation entre l’équipe de direction et le plan d’investissement." data-en-invest="Manage the alignment between the leadership team and the investment plan over time.">Évaluer l’adéquation entre votre stratégie, votre équipe de direction et le marché des dirigeants.</p>
+          <button type="button" class="service-more" data-points="continuite" aria-haspopup="dialog" data-fr="En 5 points" data-en="In 5 points">En 5 points</button>
         </div>
       </div>
 
@@ -384,6 +385,27 @@
         <span class="dg-lead" data-fr="Pourvoir le poste" data-en="Fill the position">Pourvoir le poste</span>
         <span class="dg-sub" data-fr="Trouver un candidat correspondant au profil défini." data-en="Find a candidate matching the defined profile.">Trouver un candidat correspondant au profil défini.</span>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Carrousel « En 5 points » d'un service. Les images sont dans assets/ : <service>-<langue>-<numéro>.webp -->
+<div class="distinction-overlay points-overlay" id="pointsOverlay" hidden>
+  <div class="points-modal" id="pointsModal" role="dialog" aria-modal="true" aria-label="Continuité managériale en 5 points">
+    <div class="points-top">
+      <button type="button" class="points-btn" id="pointsClose" aria-label="Fermer">&times;</button>
+    </div>
+    <div class="points-stage" id="pointsStage">
+      <img class="points-slide" id="pointsImage" alt="" width="1080" height="1350" />
+    </div>
+    <div class="points-bar">
+      <button type="button" class="points-btn" id="pointsPrev" aria-label="Précédent">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M15 5 L8 12 L15 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="points-dots" id="pointsDots"></div>
+      <button type="button" class="points-btn" id="pointsNext" aria-label="Suivant">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24"><path d="M9 5 L16 12 L9 19" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
   </div>
 </div>
